@@ -1,0 +1,12 @@
+Build pruids.c
+
+Make sure pruids does not have set-user-id bit set
+
+Execute pruids with current user (user1). Real and effective user id should be equal
+
+
+With current user set set-user-id to pruids file
+$ chmod s+u pruids
+
+login with a different user (user2)
+Execute pruids with user2. Real user id should be of user2 and effective user id should be of user1

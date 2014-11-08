@@ -1,0 +1,16 @@
+Login as root and create two directories testdir1 and testdir2
+# mkdir testdir1
+# mkdir testdir2
+
+change created dirs owner to user2:user2
+# chown user2:user2 testdir*
+# chmod 777 testdir*
+
+set set-group-id bit to testdir2
+# chmod g+s testdir2
+
+Login as user1 and create a file in testdir1 and a file in testdir2
+$ touch testdir1/file testdir2/file
+
+Check group of file created
+$ ls -l testdir1/file testdir2/file

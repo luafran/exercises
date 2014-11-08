@@ -1,0 +1,22 @@
+
+SUBDIRS = util core plugin apps
+
+.PHONY: subdirs $(SUBDIRS)
+
+subdirs: $(SUBDIRS)
+
+$(SUBDIRS):
+	$(MAKE) -C $@
+
+core: util
+plugin: core
+# apps should depend on core when plugins be true plugins
+apps: plugin
+
+clean:
+	- for i in $(SUBDIRS) ; do ( cd $$i && $(MAKE) clean ) ; done
+
+distclean:
+	- for i in $(SUBDIRS) ; do ( cd $$i && $(MAKE) distclean ) ; done
+	- rmdir build_output
+

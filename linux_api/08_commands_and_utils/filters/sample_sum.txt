@@ -1,0 +1,8 @@
+Gustavo	100
+Ignacio 200
+Sergio	400
+Gustavo 150
+Gustavo 200
+Ignacio	300
+Marcelo 750
+Sergio  500

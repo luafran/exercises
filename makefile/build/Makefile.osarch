@@ -1,0 +1,232 @@
+# $Id: Makefile.osarch,v 1.25.2.1 2003/01/31 23:58:11 bko Exp $
+
+######################################################################
+
+# these options are NECESSARY options for a give operating system or
+# architecture.  If they could or should be turned off, they shouldn't
+# be here (or they should be wrapped in if code that is controllable
+# by Makefile.opt).
+
+
+############################## Linux ##############################
+
+ifeq ($(OSTYPE),Linux)
+
+    CXXFLAGS += -D_REENTRANT
+    CFLAGS   += -D_REENTRANT
+
+    ifeq ($(USE_SYSTEM_LIBS),true)
+        USE_SYSTEM_IMAP := false
+	     USE_SYSTEM_XERCES_C := true
+		  USE_SYSTEM_LIBXML := true
+    endif
+endif
+
+
+############################# QNX ##################################
+
+ifeq ($(OSTYPE),QNX)
+
+    CXXFLAGS += -D_REENTRANT
+    CFLAGS   += -D_REENTRANT
+    LDLIBS_LAST   += -lsocket -lstdc++ 
+    USE_OPENSSL = 0
+endif
+
+
+############################## Solaris ##############################
+
+ifeq ($(OSTYPE),SunOS)
+
+    USE_LIBGETOPT = 1
+    CFLAGS += -DSUNXIL_WARNING_DISABLE
+    CXXFLAGS += -DSUNXIL_WARNING_DISABLE
+    INSTALL_PATH_DEFAULT = /tmp
+
+    ifeq ($(TOOLCHAIN_TYPE),gnu)
+
+        CXXFLAGS += -D_REENTRANT
+        CFLAGS   += -D_REENTRANT
+        LDLIBS_LAST_PURE   += -lnsl -lsocket -nodefaultlibs -Wl,-Bstatic -lstdc++ -Wl,-Bdynamic -lc -lgcc -lm
+        LDLIBS_LAST   += -R/usr/local/lib -lnsl -lsocket
+
+# you may also need to override the version of AR to use GNU ar
+
+        ifneq ($(AR_PATH),)
+            AR = $(AR_PATH)
+        endif
+
+    else
+
+        CXXFLAGS += -D_REENTRANT -mt -D_RWSTD_MULTI_THREAD -dalign -xarch=v8plus
+        CFLAGS   += -D_REENTRANT -xarch=v8plus
+        LDFLAGS  +=  -DTHREAD=MULTI -mt  -dalign -xarch=v8plus -L/opt/SUNWspro/WS6/lib/rw7 -L/opt/SUNWspro/WS6/lib/ -L/usr/local/ssl/lib/ 
+        LDLIBS_LAST_PURE   += -lnsl -lsocket -lm
+        LDLIBS_LAST   += -lrwtool -liostream -lnsl -lsocket -lCstd
+
+        ifeq ($(USE_VARARG_HACK),1)
+            CFLAGS+= -DVARARG_HACK
+            CXXFLAGS+= -DVARARG_HACK
+            FILEPP = $(HOME)/filepp-1.2.0/filepp
+        endif
+
+    endif
+
+endif
+
+
+############################## MacOS X ##############################
+
+# Mac OS X is missing poll and some pthreads bits which are built by
+# the 
+
+ifeq ($(OSTYPE),Darwin)
+
+    USE_LIBGETOPT = 1
+    USE_R_WRAPPER = 1
+
+    ifeq ($(USE_SYSTEM_LIBS),true)
+        USE_SYSTEM_IMAP := true
+		  USE_SYSTEM_XERCES_C := true
+		  USE_SYSTEM_LIBXML := true
+		  USE_SYSTEM_LIBSNDFILE := true
+    endif
+endif
+
+
+############################ cygwin ##################################
+
+ifeq ($(OSTYPE),cygwin)
+    USE_LIBGETOPT = 1
+    CFLAGS += -I$(ROOT)/contrib/win32/mingw/include \
+              -I$(ROOT)/contrib/win32/pthreads
+    CXXFLAGS += -I$(ROOT)/contrib/win32/mingw/include \
+                -I$(ROOT)/contrib/win32/pthreads
+endif
+
+
+ifeq ($(PROCESSOR_OPTS),1)
+    ifeq ($(ARCH),i686)
+        CXXFLAGS += -march=i686
+        CFLAGS += -march=i686
+        LDFLAGS  +=
+        LDLIBS	 +=
+    endif
+endif
+
+
+
+# set up general compilation options
+
+LDFLAGS  += 
+CXXFLAGS += 
+CFLAGS   +=
+LDLIBS   +=
+INCDIRS  += $(BUILD)
+
+
+
+######################################################################
+
+# this section lets you override the default compile type
+
+######################################################################
+
+ifdef CODE_OPTIMIZE
+COMPILE_TYPE := opt
+endif
+
+ifdef CODE_GOPTIMIZE
+COMPILE_TYPE := gopt
+endif
+
+ifdef CODE_PROFILE
+COMPILE_TYPE := prof
+endif
+
+ifdef CODE_NODEBUG
+COMPILE_TYPE := nodebug
+endif
+
+ifdef CODE_SMALL
+COMPILE_TYPE := small
+endif
+
+ifdef LIB_DYNAMIC
+BUILD_SHARED_LIBS := yes
+endif
+
+TARGET_TYPE := $(COMPILE_TYPE)
+
+
+ifeq ($(COMPILE_TYPE),small)
+CXXFLAGS += $(COMPILE_SMALL_FLAG)
+CFLAGS += $(COMPILE_SMALL_FLAG)
+endif
+
+ifeq ($(COMPILE_TYPE),nodebug)
+endif
+
+ifeq ($(COMPILE_TYPE),debug)
+CXXFLAGS += $(DEBUG_FLAG)
+CFLAGS   += $(DEBUG_FLAG)
+endif
+
+
+ifeq ($(COMPILE_TYPE),opt)
+ifneq ($(CODE_OPTIMIZE), 1)
+CXXFLAGS += -O$(CODE_OPTIMIZE) -DCODE_OPTIMIZE
+CFLAGS += -O$(CODE_OPTIMIZE) -DCODE_OPTIMIZE
+else
+CXXFLAGS += -O -DCODE_OPTIMIZE
+CFLAGS += -O -DCODE_OPTIMIZE
+endif
+endif
+
+ifeq ($(COMPILE_TYPE),gopt)
+CXXFLAGS += $(DEBUG_FLAG)
+CFLAGS   += $(DEBUG_FLAG)
+ifneq ($(CODE_GOPTIMIZE), 1)
+CXXFLAGS += -O$(CODE_GOPTIMIZE) -DCODE_OPTIMIZE
+CFLAGS += -O$(CODE_GOPTIMIZE) -DCODE_OPTIMIZE
+else
+CXXFLAGS += -O -DCODE_OPTIMIZE
+CFLAGS += -O -DCODE_OPTIMIZE
+endif
+endif
+
+
+# profiling
+
+ifeq ($(COMPILE_TYPE),prof)
+LDFLAGS  += -pg 
+CXXFLAGS += -pg
+CFLAGS   += -pg
+endif
+
+ifeq ($(USE_OPENSSL),true)
+USE_OPENSSL=1
+endif
+
+ifeq ($(USE_OPENSSL),1)
+# HAS, not USE, in defines
+DEFINES += HAS_OPENSSL
+endif
+
+ifeq ($(ARCH),i586) 
+DEFINES += USING_PENTIUM
+endif
+
+ifeq ($(ARCH),i686)
+DEFINES += USING_PENTIUM
+endif
+
+######################################################################
+#              More Toolchain defaults
+######################################################################
+
+
+OS_ARCH  := $(OSTYPE).$(ARCH)
+
+TARGET_NAME := $(TARGET_TYPE).$(OS_ARCH)
+

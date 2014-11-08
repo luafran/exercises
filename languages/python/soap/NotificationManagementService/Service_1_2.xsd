@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://Intel.ServicesManager.ServiceContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://Intel.ServicesManager.ServiceContracts" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:import schemaLocation="Service_1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:complexType name="ArrayOfRemoteMessageType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RemoteMessageType" nillable="true" type="tns:RemoteMessageType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRemoteMessageType" nillable="true" type="tns:ArrayOfRemoteMessageType"/>
+  <xs:complexType name="RemoteMessageType">
+    <xs:sequence>
+      <xs:element name="Topic" nillable="true" type="xs:string"/>
+      <xs:element name="Type" nillable="true" type="xs:string"/>
+      <xs:element name="SessionId" type="ser:guid"/>
+      <xs:element name="AgentIdentity" nillable="true" type="tns:AgentIdentityType"/>
+      <xs:element minOccurs="0" name="ReplyTopic" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AgentVersion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DomainId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Payload" nillable="true">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" processContents="lax"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoteMessageType" nillable="true" type="tns:RemoteMessageType"/>
+  <xs:complexType name="AgentIdentityType">
+    <xs:sequence>
+      <xs:element name="Id" type="ser:guid"/>
+      <xs:element name="Persistent" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgentIdentityType" nillable="true" type="tns:AgentIdentityType"/>
+  <xs:complexType name="RemoteErrorType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExceptionType" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ExceptionMessage" nillable="true" type="xs:string"/>
+      <xs:element name="ErrorCode" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="UserMessage" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoteErrorType" nillable="true" type="tns:RemoteErrorType"/>
+</xs:schema>

@@ -1,0 +1,14 @@
+defines = -DNDEBUG
+includes = -I../..
+cflags = -O3 -Wno-deprecated
+cflags_c = 
+cflags_cc = 
+
+build obj/libgraphs.graph.o: cc ../../graph.c
+build obj/libgraphs.search.o: cc ../../search.c
+
+ldflags = 
+libs = 
+build lib/libgraphs.so: solink obj/libgraphs.graph.o obj/libgraphs.search.o
+  soname = libgraphs.so
+build libgraphs: phony lib/libgraphs.so

@@ -1,0 +1,123 @@
+        -:    0:Source:/usr/include/c++/4.2/ext/atomicity.h
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:// Support for atomic operations -*- C++ -*-
+        -:    2:
+        -:    3:// Copyright (C) 2004, 2005, 2006 Free Software Foundation, Inc.
+        -:    4://
+        -:    5:// This file is part of the GNU ISO C++ Library.  This library is free
+        -:    6:// software; you can redistribute it and/or modify it under the
+        -:    7:// terms of the GNU General Public License as published by the
+        -:    8:// Free Software Foundation; either version 2, or (at your option)
+        -:    9:// any later version.
+        -:   10:
+        -:   11:// This library is distributed in the hope that it will be useful,
+        -:   12:// but WITHOUT ANY WARRANTY; without even the implied warranty of
+        -:   13:// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        -:   14:// GNU General Public License for more details.
+        -:   15:
+        -:   16:// You should have received a copy of the GNU General Public License along
+        -:   17:// with this library; see the file COPYING.  If not, write to the Free
+        -:   18:// Software Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,
+        -:   19:// USA.
+        -:   20:
+        -:   21:// As a special exception, you may use this file as part of a free software
+        -:   22:// library without restriction.  Specifically, if other files instantiate
+        -:   23:// templates or use macros or inline functions from this file, or you compile
+        -:   24:// this file and link it with other files to produce an executable, this
+        -:   25:// file does not by itself cause the resulting executable to be covered by
+        -:   26:// the GNU General Public License.  This exception does not however
+        -:   27:// invalidate any other reasons why the executable file might be covered by
+        -:   28:// the GNU General Public License.
+        -:   29:
+        -:   30:/** @file atomicity.h
+        -:   31: *  This is an internal header file, included by other library headers.
+        -:   32: *  You should not attempt to use it directly.
+        -:   33: */
+        -:   34:
+        -:   35:#ifndef _GLIBCXX_ATOMICITY_H
+        -:   36:#define _GLIBCXX_ATOMICITY_H	1
+        -:   37:
+        -:   38:#include <bits/c++config.h>
+        -:   39:#include <bits/gthr.h>
+        -:   40:#include <bits/atomic_word.h>
+        -:   41:
+        -:   42:_GLIBCXX_BEGIN_NAMESPACE(__gnu_cxx)
+        -:   43:
+        -:   44:  // Functions for portable atomic access.
+        -:   45:  // To abstract locking primitives across all thread policies, use:
+        -:   46:  // __exchange_and_add_dispatch
+        -:   47:  // __atomic_add_dispatch
+        -:   48:#ifdef _GLIBCXX_ATOMIC_BUILTINS
+        -:   49:  static inline _Atomic_word 
+    #####:   50:  __exchange_and_add(volatile _Atomic_word* __mem, int __val)
+    #####:   51:  { return __sync_fetch_and_add(__mem, __val); }
+        -:   52:
+        -:   53:  static inline void
+        -:   54:  __atomic_add(volatile _Atomic_word* __mem, int __val)
+        -:   55:  { __sync_fetch_and_add(__mem, __val); }
+        -:   56:#else
+        -:   57:  _Atomic_word
+        -:   58:  __attribute__ ((__unused__))
+        -:   59:  __exchange_and_add(volatile _Atomic_word*, int);
+        -:   60:
+        -:   61:  void
+        -:   62:  __attribute__ ((__unused__))
+        -:   63:  __atomic_add(volatile _Atomic_word*, int);
+        -:   64:#endif
+        -:   65:
+        -:   66:  static inline _Atomic_word
+    #####:   67:  __exchange_and_add_single(_Atomic_word* __mem, int __val)
+        -:   68:  {
+    #####:   69:    _Atomic_word __result = *__mem;
+    #####:   70:    *__mem += __val;
+    #####:   71:    return __result;
+        -:   72:  }
+        -:   73:
+        -:   74:  static inline void
+        -:   75:  __atomic_add_single(_Atomic_word* __mem, int __val)
+        -:   76:  { *__mem += __val; }
+        -:   77:
+        -:   78:  static inline _Atomic_word
+        -:   79:  __attribute__ ((__unused__))
+    #####:   80:  __exchange_and_add_dispatch(_Atomic_word* __mem, int __val)
+        -:   81:  {
+        -:   82:#ifdef __GTHREADS
+    #####:   83:    if (__gthread_active_p())
+    #####:   84:      return __exchange_and_add(__mem, __val);
+        -:   85:    else
+    #####:   86:      return __exchange_and_add_single(__mem, __val);
+        -:   87:#else
+        -:   88:    return __exchange_and_add_single(__mem, __val);
+        -:   89:#endif
+        -:   90:  }
+        -:   91:
+        -:   92:  static inline void
+        -:   93:  __attribute__ ((__unused__))
+        -:   94:  __atomic_add_dispatch(_Atomic_word* __mem, int __val)
+        -:   95:  {
+        -:   96:#ifdef __GTHREADS
+        -:   97:    if (__gthread_active_p())
+        -:   98:      __atomic_add(__mem, __val);
+        -:   99:    else
+        -:  100:      __atomic_add_single(__mem, __val);
+        -:  101:#else
+        -:  102:    __atomic_add_single(__mem, __val);
+        -:  103:#endif
+        -:  104:  }
+        -:  105:
+        -:  106:_GLIBCXX_END_NAMESPACE
+        -:  107:
+        -:  108:// Even if the CPU doesn't need a memory barrier, we need to ensure
+        -:  109:// that the compiler doesn't reorder memory accesses across the
+        -:  110:// barriers.
+        -:  111:#ifndef _GLIBCXX_READ_MEM_BARRIER
+        -:  112:#define _GLIBCXX_READ_MEM_BARRIER __asm __volatile ("":::"memory")
+        -:  113:#endif
+        -:  114:#ifndef _GLIBCXX_WRITE_MEM_BARRIER
+        -:  115:#define _GLIBCXX_WRITE_MEM_BARRIER __asm __volatile ("":::"memory")
+        -:  116:#endif
+        -:  117:
+        -:  118:#endif 

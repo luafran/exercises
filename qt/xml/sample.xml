@@ -1,0 +1,9 @@
+<data>
+   <commands>
+      <dequeue>path_to_msg_file</dequeue>
+      <enqueue>path_to_msg_file</enqueue>
+      <wait>1000</wait>
+      <error>path_to_error_file</error>
+   </commands>
+</data>
+

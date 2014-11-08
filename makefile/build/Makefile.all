@@ -1,0 +1,68 @@
+# the following macros set the following variables:
+
+
+#  OSTYPE  -- this variable is the OS type of the target system.  By default
+#             this is the OS of the host system
+
+#  ARCH    -- this is the machine architecture of the target system.
+#             By default this is the architecture of the host system.
+
+#  LARCH   -- this is the "logical" architecture for the target system.
+#             This is to let systems with different "architectures" but
+#             in the same family be the same, e.g. IA32 for i386, i486, i586,
+#             and i686.
+
+#  ROOT    -- this is the location of the "root" of the file system.  It
+#             requires that the BUILD macro be set to the path to the build
+#             directory.
+
+
+ifndef OSTYPE
+OSTYPE = $(shell uname)
+endif
+
+ifeq ($(OSTYPE),linux)
+OSTYPE = Linux
+endif
+
+ifeq ($(OSTYPE),linux-gnu)
+OSTYPE = Linux
+endif
+
+
+ifndef ARCH
+ARCH = $(shell uname -m| sed 's/ /_/g')
+endif
+
+LARCH := $(ARCH)
+
+ifeq ($(ARCH),i686)
+LARCH := ia32
+endif
+
+ifeq ($(ARCH),i586)
+LARCH := ia32
+endif
+
+ifeq ($(ARCH),i486)
+LARCH := ia32
+endif
+
+ifeq ($(ARCH),i386)
+LARCH := ia32
+endif
+
+
+# set the environment 
+
+ROOT = $(BUILD)/..
+
+TOOLS = $(ROOT)/tools
+
+PATH := $(shell pwd)/$(ROOT)/tools:$(PATH)
+
+# this variable is set to the default path to install to if no one
+# else overrides it via configure.
+
+INSTALL_PATH_DEFAULT =
+

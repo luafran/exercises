@@ -1,0 +1,151 @@
+ROOT = ../..
+
+###### Makefile pre section. Edit if necessary
+
+# GNU Toolchain
+CC              = gcc
+CXX             = g++
+LINK            = g++
+AR              = ar
+ARFLAGS         = cqs
+RANLIB          = ranlib
+TAR             = tar -cf
+COMPRESS        = gzip -9f
+COPY            = cp -f
+SED             = sed
+COPY_FILE       = $(COPY)
+COPY_DIR        = $(COPY) -r
+INSTALL_FILE    = install -m 644 -p
+INSTALL_DIR     = $(COPY_DIR)
+INSTALL_PROGRAM = install -m 755 -p
+DEL_FILE        = rm -f
+SYMLINK         = ln -sf
+DEL_DIR         = rmdir
+MOVE            = mv -f
+CHK_DIR_EXISTS  = test -d
+MKDIR           = mkdir -p
+MKSHLIB		    = $(CXX) -fPIC -shared 
+DEP		       = $(CXX) 
+DFLAGS          = -MM
+CFLAGS          += -Wall -Wextra -Wno-unused -fPIC
+CXXFLAGS	    += -Wall -Wextra -Wno-unused -pipe -fPIC -D_REENTRANT
+DFLAG_INTEGRATED = -MMD
+DEBUG_FLAG	= -g
+COMPILE_SMALL_FLAG = -Os -fno-inline -fno-keep-static-consts
+LD_STATIC       = -Wl,-Bstatic
+LD_DYNAMIC      = -Wl,-Bdynamic
+
+first: all
+
+
+####### Project specific configuration. Edit 
+
+TARGET_NAME = plugin1
+TARGET_TYPE = lib_shared
+DESTDIR = ../../build_output/plugin
+OBJDIR  = ./obj
+
+SRC = Component11.cpp Component12.cpp
+
+CXXFLAGS        += -g
+
+DEFINES         += DEBUG
+INCDIRS_TP      = $(BOOST_ROOT)/include
+INCDIRS_LOCAL   = . ../include $(ROOT)/util/include $(ROOT)/core/include
+
+LFLAGS          +=
+LIBDIRS         +=
+LIBS            +=
+TARGET_DEPENDS  +=
+
+
+##### Makefile post section. Do not edit
+
+INCDIRS      = $(INCDIRS_TP) $(INCDIRS_LOCAL)
+INCLUDE_LIST = $(foreach dir,$(INCDIRS),-I$(dir))
+DEFINE_LIST  = $(foreach def,$(DEFINES),-D$(def))
+
+LDLIBS			= $(LIBDIRS) $(LIBS)
+
+CXXFLAGS += $(INCLUDE_LIST) $(DEFINE_LIST)
+CFLAGS += $(INCLUDE_LIST) $(DEFINE_LIST)
+
+OBJS = $(patsubst %.c,$(OBJDIR)/%.o,$(patsubst %.cpp,$(OBJDIR)/%.o,$(SRC))) $(EXTRA_OBJS)
+
+DEPENDENCIES = $(patsubst %.c,$(OBJDIR)/%.d,$(patsubst %.cpp,$(OBJDIR)/%.d,$(SRC)))
+
+TARGETD       = lib$(TARGET_NAME).so.1.0.0
+TARGET0       = lib$(TARGET_NAME).so
+TARGET1       = lib$(TARGET_NAME).so.1
+TARGET2       = lib$(TARGET_NAME).so.1.0
+TARGETA       = lib$(TARGET_NAME).a
+
+ifeq ($(TARGET_TYPE),lib_shared)
+TARGET = $(TARGETD)
+else
+ifeq ($(TARGET_TYPE),lib_static)
+TARGET = $(TARGETA)
+endif
+endif
+
+.SUFFIXES: .o .c .cpp .cc .cxx .C
+
+# Root target
+all: $(DESTDIR)/$(TARGET)
+
+dependencies: $(DEPENDENCIES)
+
+# Compile a cpp file
+$(OBJDIR)/%.o: %.cpp
+		@$(CHK_DIR_EXISTS) $(OBJDIR) || $(MKDIR) $(OBJDIR) 
+		$(CXX) -c $(CXXFLAGS) -o $@ $<
+
+# Create a shared library
+$(DESTDIR)/$(TARGETD):  $(OBJS) $(TARGET_DEPENDS)
+		@$(CHK_DIR_EXISTS) $(DESTDIR) || $(MKDIR) $(DESTDIR) 
+		-$(DEL_FILE) $(TARGET) $(TARGET0) $(TARGET1) $(TARGET2)
+		$(MKSHLIB) $(LFLAGS) $(LIBPATH) -o $(TARGET) $(OBJS) $(LIBS)
+		-ln -s $(TARGETD) $(TARGET0)
+		-ln -s $(TARGETD) $(TARGET1)
+		-ln -s $(TARGETD) $(TARGET2)
+		-$(DEL_FILE) $(DESTDIR)/$(TARGETD)
+		-$(DEL_FILE) $(DESTDIR)/$(TARGET0)
+		-$(DEL_FILE) $(DESTDIR)/$(TARGET1)
+		-$(DEL_FILE) $(DESTDIR)/$(TARGET2)
+		-$(MOVE) $(TARGETD) $(TARGET0) $(TARGET1) $(TARGET2) $(DESTDIR)
+
+# Create a static library
+$(DESTDIR)/$(TARGETA):  $(OBJS) $(TARGET_DEPENDS)  
+		@$(CHK_DIR_EXISTS) $(DESTDIR) || $(MKDIR) $(DESTDIR) 
+		-$(DEL_FILE) $(TARGETA)
+		$(AR) $(ARFLAGS) $(TARGETA) $(OBJS)
+		-$(DEL_FILE) $(DESTDIR)/$(TARGETA)
+		-$(MOVE) $(TARGETA) $(DESTDIR)
+
+
+# Build dependency files
+$(OBJDIR)/%.d: %.cpp
+	@$(CHK_DIR_EXISTS) $(OBJDIR) || $(MKDIR) $(OBJDIR)
+	@echo "Making $@"
+	@$(SHELL) -ec '$(DEP) $(CFLAGS) $(CXXFLAGS) $(CPPFLAGS) $(DFLAGS) $< \
+		$(DMANGLE) | sed -e "s#^$(*F).o[ :]*#$(@D)\/$(*F).o $@ : #" \
+		> $@; [ -s $@ ] || rm -f $@'
+
+.SECONDARY: $(DEPENDENCIES) $(OBJS)
+
+# Clean
+clean:
+	-$(DEL_FILE) $(OBJDIR)/*.[oda]
+	-$(DEL_FILE) $(OBJDIR)/*/*.[oda]
+	-$(DEL_FILE) *~ core *.core core.*
+
+# Distclean
+distclean: clean
+	-$(DEL_FILE) $(DESTDIR)/$(TARGET) 
+	-$(DEL_FILE) $(DESTDIR)/$(TARGET0) $(DESTDIR)/$(TARGET1) $(DESTDIR)/$(TARGET2)
+	-$(DEL_DIR)  $(OBJDIR)
+	-$(DEL_DIR)  $(DESTDIR)
+
+
+-include $(DEPENDENCIES)
+

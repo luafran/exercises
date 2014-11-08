@@ -1,0 +1,12 @@
+S_ISREG() Regular file
+S_ISDIR() Directory file
+S_ISCHR() Character special file
+S_ISBLK() Block special file
+S_ISFIFO() FIFO
+S_ISSOCK() Socket
+
+Create a fifo file
+$ mkfifo /tmp/myfifo
+
+Build filetype.c and execute it with following args (you may need to use different files)
+$ ./filetype /etc/passwd /lib link_to_file_types.txt /dev/tty /dev/sda1 /var/run/dbus/system_bus_socket /tmp/myfifo

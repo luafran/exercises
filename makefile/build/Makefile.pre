@@ -1,0 +1,86 @@
+
+include $(BUILD)/Makefile.all
+
+# This is the section where default tool names and macros are set
+
+######################################################################
+#                     Default tool names/locations
+######################################################################
+
+# the OSCLASS defines the general likeness of the target OS.  
+# right now OSCLASS can equal UNIX for Unix type systems or VXWORKS for
+# vxworks.
+
+OSCLASS = UNIX
+
+######################################################################
+#                     Default Options
+######################################################################
+
+# the following options are defaults.  The purpose of this file is to
+# allow you to do various things.  There are ways to override these
+# defaults should you want to, so please do not change these values.
+
+# please see Makefile.tools for more information.
+
+TOOLCHAIN_TYPE		:= gnu
+COMPILE_TYPE  		:= debug
+
+
+######################################################################
+#		      System Dependent Options
+######################################################################
+
+# the following options are defaults for particular tool chains.  In
+# you may override them by using the Makefile.opt file.
+
+############################## Solaris ##############################
+
+
+ifeq ($(OSTYPE),SunOS)
+TOOLCHAIN_TYPE=sunpro
+endif
+
+
+######################################################################
+# the following line includes options you can control by hand, should
+# you choose to override any of the above options
+######################################################################
+
+include $(BUILD)/Makefile.opt
+
+
+# the following line includes options manageable by configure
+#-include $(BUILD)/Makefile.conf
+
+######################################################################
+# the following are the guts of this makefile.  they are controlled 
+# by Makefile.opt
+######################################################################
+
+include $(BUILD)/Makefile.tools
+include $(BUILD)/Makefile.osarch
+
+######################################################################
+# set defaults if the none of the above has overridden them.
+######################################################################
+
+ifndef INSTALL_PATH
+INSTALL_PATH = $(INSTALL_PATH_DEFAULT)
+endif
+
+ifeq ($(INSTALL_PATH),default)
+INSTALL_PATH = $(INSTALL_PATH_DEFAULT)
+endif
+
+######################################################################
+# pre tools
+######################################################################
+
+ifeq ($(BUILD_SHARED_LIBS),yes)
+CONFIGURE_ARGS += --disable-shared
+endif
+CONFIGURE = ./configure $(CONFIGURE_ARGS)
+
+default: code
+

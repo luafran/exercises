@@ -1,0 +1,4 @@
+shift
+
+echo "args = [$*]"
+

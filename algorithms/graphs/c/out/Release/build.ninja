@@ -1,0 +1,33 @@
+cc = gcc
+cxx = g++
+ld = $cxx -Wl,--threads -Wl,--thread-count=4
+cc_host = $cc
+cxx_host = $cxx
+
+rule cc
+  command = $cc -MMD -MF $out.d $defines $includes $cflags $cflags_c -c $in -o $out
+  description = CC $out
+  depfile = $out.d
+rule cxx
+  command = $cxx -MMD -MF $out.d $defines $includes $cflags $cflags_cc -c $in -o $out
+  description = CXX $out
+  depfile = $out.d
+rule alink
+  command = rm -f $out && ar rcsT $out $in
+  description = AR $out
+rule solink
+  command = $ld -shared $ldflags -o $out -Wl,-soname=$soname -Wl,--whole-archive $in -Wl,--no-whole-archive $libs
+  description = SOLINK $out
+rule link
+  command = $ld $ldflags -o $out -Wl,-rpath=\$$ORIGIN/lib -Wl,--start-group $in -Wl,--end-group $libs
+  description = LINK $out
+rule stamp
+  command = touch $out
+  description = STAMP $out
+rule copy
+  command = ln -f $in $out 2>/dev/null || cp -af $in $out
+  description = COPY $in $out
+
+subninja obj/libgraphs.ninja
+subninja obj/test_graph.ninja
+build all: phony lib/libgraphs.so test_graph

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://Intel.ServicesManager" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://Intel.ServicesManager">
+  <xs:import schemaLocation="Service_1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:import schemaLocation="Service_1_2.xsd" namespace="http://Intel.ServicesManager.ServiceContracts"/>
+  <xs:element name="GetMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agentId" type="q1:guid" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMessagesResult" nillable="true" type="q2:ArrayOfRemoteMessageType" xmlns:q2="http://Intel.ServicesManager.ServiceContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messagesInfo" nillable="true" type="q3:ArrayOfRemoteMessageType" xmlns:q3="http://Intel.ServicesManager.ServiceContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessagesResponse">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessageSync">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="message" nillable="true" type="q4:RemoteMessageType" xmlns:q4="http://Intel.ServicesManager.ServiceContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessageSyncResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendMessageSyncResult" nillable="true" type="q5:RemoteMessageType" xmlns:q5="http://Intel.ServicesManager.ServiceContracts"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

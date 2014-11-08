@@ -1,0 +1,130 @@
+        -:    0:Source:/usr/include/c++/4.2/ext/new_allocator.h
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:// Allocator that wraps operator new -*- C++ -*-
+        -:    2:
+        -:    3:// Copyright (C) 2001, 2002, 2003, 2004, 2005 Free Software Foundation, Inc.
+        -:    4://
+        -:    5:// This file is part of the GNU ISO C++ Library.  This library is free
+        -:    6:// software; you can redistribute it and/or modify it under the
+        -:    7:// terms of the GNU General Public License as published by the
+        -:    8:// Free Software Foundation; either version 2, or (at your option)
+        -:    9:// any later version.
+        -:   10:
+        -:   11:// This library is distributed in the hope that it will be useful,
+        -:   12:// but WITHOUT ANY WARRANTY; without even the implied warranty of
+        -:   13:// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        -:   14:// GNU General Public License for more details.
+        -:   15:
+        -:   16:// You should have received a copy of the GNU General Public License along
+        -:   17:// with this library; see the file COPYING.  If not, write to the Free
+        -:   18:// Software Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,
+        -:   19:// USA.
+        -:   20:
+        -:   21:// As a special exception, you may use this file as part of a free software
+        -:   22:// library without restriction.  Specifically, if other files instantiate
+        -:   23:// templates or use macros or inline functions from this file, or you compile
+        -:   24:// this file and link it with other files to produce an executable, this
+        -:   25:// file does not by itself cause the resulting executable to be covered by
+        -:   26:// the GNU General Public License.  This exception does not however
+        -:   27:// invalidate any other reasons why the executable file might be covered by
+        -:   28:// the GNU General Public License.
+        -:   29:
+        -:   30:/** @file ext/new_allocator.h
+        -:   31: *  This file is a GNU extension to the Standard C++ Library.
+        -:   32: */
+        -:   33:
+        -:   34:#ifndef _NEW_ALLOCATOR_H
+        -:   35:#define _NEW_ALLOCATOR_H 1
+        -:   36:
+        -:   37:#include <new>
+        -:   38:#include <bits/functexcept.h>
+        -:   39:
+        -:   40:_GLIBCXX_BEGIN_NAMESPACE(__gnu_cxx)
+        -:   41:
+        -:   42:  using std::size_t;
+        -:   43:  using std::ptrdiff_t;
+        -:   44:
+        -:   45:  /**
+        -:   46:   *  @brief  An allocator that uses global new, as per [20.4].
+        -:   47:   *
+        -:   48:   *  This is precisely the allocator defined in the C++ Standard. 
+        -:   49:   *    - all allocation calls operator new
+        -:   50:   *    - all deallocation calls operator delete
+        -:   51:   */
+        -:   52:  template<typename _Tp>
+        -:   53:    class new_allocator
+        -:   54:    {
+        -:   55:    public:
+        -:   56:      typedef size_t     size_type;
+        -:   57:      typedef ptrdiff_t  difference_type;
+        -:   58:      typedef _Tp*       pointer;
+        -:   59:      typedef const _Tp* const_pointer;
+        -:   60:      typedef _Tp&       reference;
+        -:   61:      typedef const _Tp& const_reference;
+        -:   62:      typedef _Tp        value_type;
+        -:   63:
+        -:   64:      template<typename _Tp1>
+        -:   65:        struct rebind
+        -:   66:        { typedef new_allocator<_Tp1> other; };
+        -:   67:
+    #####:   68:      new_allocator() throw() { }
+        -:   69:
+    #####:   70:      new_allocator(const new_allocator&) throw() { }
+        -:   71:
+        -:   72:      template<typename _Tp1>
+        -:   73:        new_allocator(const new_allocator<_Tp1>&) throw() { }
+        -:   74:
+    #####:   75:      ~new_allocator() throw() { }
+        -:   76:
+        -:   77:      pointer
+        -:   78:      address(reference __x) const { return &__x; }
+        -:   79:
+        -:   80:      const_pointer
+        -:   81:      address(const_reference __x) const { return &__x; }
+        -:   82:
+        -:   83:      // NB: __n is permitted to be 0.  The C++ standard says nothing
+        -:   84:      // about what the return value is when __n == 0.
+        -:   85:      pointer
+        -:   86:      allocate(size_type __n, const void* = 0)
+        -:   87:      { 
+        -:   88:	if (__builtin_expect(__n > this->max_size(), false))
+        -:   89:	  std::__throw_bad_alloc();
+        -:   90:
+        -:   91:	return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+        -:   92:      }
+        -:   93:
+        -:   94:      // __p is not permitted to be a null pointer.
+        -:   95:      void
+        -:   96:      deallocate(pointer __p, size_type)
+        -:   97:      { ::operator delete(__p); }
+        -:   98:
+        -:   99:      size_type
+        -:  100:      max_size() const throw() 
+        -:  101:      { return size_t(-1) / sizeof(_Tp); }
+        -:  102:
+        -:  103:      // _GLIBCXX_RESOLVE_LIB_DEFECTS
+        -:  104:      // 402. wrong new expression in [some_] allocator::construct
+        -:  105:      void 
+        -:  106:      construct(pointer __p, const _Tp& __val) 
+        -:  107:      { ::new(__p) _Tp(__val); }
+        -:  108:
+        -:  109:      void 
+        -:  110:      destroy(pointer __p) { __p->~_Tp(); }
+        -:  111:    };
+        -:  112:
+        -:  113:  template<typename _Tp>
+        -:  114:    inline bool
+        -:  115:    operator==(const new_allocator<_Tp>&, const new_allocator<_Tp>&)
+        -:  116:    { return true; }
+        -:  117:  
+        -:  118:  template<typename _Tp>
+        -:  119:    inline bool
+        -:  120:    operator!=(const new_allocator<_Tp>&, const new_allocator<_Tp>&)
+        -:  121:    { return false; }
+        -:  122:
+        -:  123:_GLIBCXX_END_NAMESPACE
+        -:  124:
+        -:  125:#endif

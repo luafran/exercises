@@ -1,0 +1,3 @@
+This is a sample test that contains lower and UPER cases.
+This is line 2 of sample text and
+this is line 3

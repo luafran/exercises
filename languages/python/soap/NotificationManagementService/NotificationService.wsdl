@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="NotificationService" targetNamespace="http://Intel.ServicesManager" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://Intel.ServicesManager" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Intel.ServicesManager/Imports">
+      <xsd:import schemaLocation="Service.xsd" namespace="http://Intel.ServicesManager"/>
+      <xsd:import schemaLocation="Service_1_2.xsd" namespace="http://Intel.ServicesManager.ServiceContracts"/>
+      <xsd:import schemaLocation="Service_1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="NotificationService_GetMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessages"/>
+  </wsdl:message>
+  <wsdl:message name="NotificationService_GetMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessagesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="NotificationService_GetMessages_RemoteErrorTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:RemoteErrorType" xmlns:q1="http://Intel.ServicesManager.ServiceContracts"/>
+  </wsdl:message>
+  <wsdl:message name="NotificationService_SendMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessages"/>
+  </wsdl:message>
+  <wsdl:message name="NotificationService_SendMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessagesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="NotificationService_SendMessages_RemoteErrorTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:RemoteErrorType" xmlns:q2="http://Intel.ServicesManager.ServiceContracts"/>
+  </wsdl:message>
+  <wsdl:message name="NotificationService_SendMessageSync_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageSync"/>
+  </wsdl:message>
+  <wsdl:message name="NotificationService_SendMessageSync_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageSyncResponse"/>
+  </wsdl:message>
+  <wsdl:message name="NotificationService_SendMessageSync_RemoteErrorTypeFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:RemoteErrorType" xmlns:q3="http://Intel.ServicesManager.ServiceContracts"/>
+  </wsdl:message>
+  <wsdl:portType name="NotificationService">
+    <wsdl:operation name="GetMessages">
+      <wsdl:input wsaw:Action="http://Intel.ServicesManager/NotificationService/GetMessages" message="tns:NotificationService_GetMessages_InputMessage"/>
+      <wsdl:output wsaw:Action="http://Intel.ServicesManager/NotificationService/GetMessagesResponse" message="tns:NotificationService_GetMessages_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://Intel.ServicesManager/NotificationService/GetMessagesRemoteErrorTypeFault" name="RemoteErrorTypeFault" message="tns:NotificationService_GetMessages_RemoteErrorTypeFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessages">
+      <wsdl:input wsaw:Action="http://Intel.ServicesManager/NotificationService/SendMessages" message="tns:NotificationService_SendMessages_InputMessage"/>
+      <wsdl:output wsaw:Action="http://Intel.ServicesManager/NotificationService/SendMessagesResponse" message="tns:NotificationService_SendMessages_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://Intel.ServicesManager/NotificationService/SendMessagesRemoteErrorTypeFault" name="RemoteErrorTypeFault" message="tns:NotificationService_SendMessages_RemoteErrorTypeFault_FaultMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageSync">
+      <wsdl:input wsaw:Action="http://Intel.ServicesManager/NotificationService/SendMessageSync" message="tns:NotificationService_SendMessageSync_InputMessage"/>
+      <wsdl:output wsaw:Action="http://Intel.ServicesManager/NotificationService/SendMessageSyncResponse" message="tns:NotificationService_SendMessageSync_OutputMessage"/>
+      <wsdl:fault wsaw:Action="http://Intel.ServicesManager/NotificationService/SendMessageSyncRemoteErrorTypeFault" name="RemoteErrorTypeFault" message="tns:NotificationService_SendMessageSync_RemoteErrorTypeFault_FaultMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_NotificationService" type="tns:NotificationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetMessages">
+      <soap:operation soapAction="http://Intel.ServicesManager/NotificationService/GetMessages" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RemoteErrorTypeFault">
+        <soap:fault name="RemoteErrorTypeFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessages">
+      <soap:operation soapAction="http://Intel.ServicesManager/NotificationService/SendMessages" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RemoteErrorTypeFault">
+        <soap:fault name="RemoteErrorTypeFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageSync">
+      <soap:operation soapAction="http://Intel.ServicesManager/NotificationService/SendMessageSync" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="RemoteErrorTypeFault">
+        <soap:fault name="RemoteErrorTypeFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NotificationService">
+    <wsdl:port name="NS" binding="tns:BasicHttpBinding_NotificationService">
+      <soap:address location="http://servicegateway.sym.cps.intel.com/NotificationManagementServiceSite/Service.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

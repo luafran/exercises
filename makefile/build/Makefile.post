@@ -1,0 +1,181 @@
+
+#-include $(BUILD)/Makefile.pkg
+
+# This section adds the appropriate flags, headers, etc. for packages.
+# See the Makefile.pkg for further information about how packages work.
+#
+INCDIRS  += $(foreach package,$(PACKAGES), $($(package)_INCLUDEDIRS))
+CXXFLAGS += $(foreach package,$(PACKAGES), $($(package)_CXXFLAGS))
+LDFLAGS  += $(foreach package,$(PACKAGES), $($(package)_LDFLAGS))
+LIBDIRS  += $(foreach package,$(PACKAGES), $($(package)_LIBDIRS))
+LIBNAMES += $(foreach package,$(PACKAGES), $($(package)_LIBNAME) )
+LDLIBS_LAST += $(foreach package,$(PACKAGES), $($(package)_LDLIBS_LAST))
+LDLIBS   += $(foreach libs,$(LIBDIRS), -L$(libs)) $(foreach libs,$(LIBNAMES), -l$(libs))
+DEFINES += $(foreach package,$(PACKAGES), $($(package)_DEFINES) )
+
+DEPEND_FILES += $(foreach pkg,$(PACKAGES), $($(pkg)_DEPENDS))
+DEPEND_TARGETS += $(foreach pkg,$(PACKAGES), $($(pkg)_TARGETS))
+#
+
+ifeq ($(BUILD_SHARED_LIBS),yes)
+.dependlibs: $(patsubst %.a,%.so,$(DEPEND_FILES))
+else
+.dependlibs: $(DEPEND_FILES)
+endif
+	touch .dependlibs
+
+
+INCLUDE_LIST = $(foreach dir,$(INCDIRS),-I$(dir))
+DEFINE_LIST = $(foreach dir,$(DEFINES),-D$(dir))
+
+CXXFLAGS += $(INCLUDE_LIST) $(DEFINE_LIST)
+CFLAGS += $(INCLUDE_LIST) $(DEFINE_LIST)
+
+OBJDIR = obj.$(TARGET_NAME)
+BINDIR = bin.$(TARGET_NAME)
+
+SRC += $(SRC_$(OSCLASS))
+ALLSRC += $(TESTPROGRAMS) $(SRC)
+
+OBJS = $(patsubst %.c,$(OBJDIR)/%.o,$(patsubst %.cpp,$(OBJDIR)/%.o,$(SRC))) $(EXTRA_OBJS)
+
+DEPENDENCIES = $(patsubst %.c,$(OBJDIR)/%.d,$(patsubst %.cpp,$(OBJDIR)/%.d,$(ALLSRC)))
+
+SHARED_LIB = $(patsubst %,$(OBJDIR)/%.so,$(strip $(TARGET_LIBRARY)))
+STATIC_LIB = $(patsubst %,$(OBJDIR)/%.a,$(strip $(TARGET_LIBRARY)))
+
+LIBTARGETS += $(STATIC_LIB)
+ifeq ($(BUILD_SHARED_LIBRARY),true)
+LIBTARGETS += $(SHARED_LIB)
+endif
+
+.PHONY : all code clean default install copy-files doc $(BIN) $(OBJ) test prefs full headercheck verify fakepre cppdoc
+
+########## Start of rules ##########
+
+#code: $(HEADERS_SPECIAL) $(OBJDIR) $(BINDIR) $(TARGETS) $(LIBTARGETS) $(CODETARGETS) $(CODETARGETS_LT) $(COPY) $(TESTPROGRAM_OBJS)
+code: $(HEADERS_SPECIAL) $(OBJDIR) $(BINDIR) $(TARGETS) $(LIBTARGETS) $(CODETARGETS) $(TESTPROGRAM_OBJS)
+
+$(BUILD)/fakepre: $(HEADERS_SPECIAL)
+	@touch $(BUILD)/fakepre
+
+$(ROOT)/.make_prefs:
+	echo 'USE_BUILDDIR=no' > $@
+	include $(ROOT)/.make_prefs
+
+prefs:
+	$(TOOLS)/makeprefs $(ROOT)/.make_prefs
+
+dependencies: $(DEPENDENCIES)
+
+ifdef ROOT_TARGET
+target:
+	cd $(ROOT) ; $(MAKE) $(ROOT_TARGET)
+endif
+
+all: code test
+
+$(BINDIR):
+	-@ $(TOOLS)/mkbuildlinks $(BINDIR) $(ROOT)/.make_prefs
+ifdef CODE_SUBDIRS
+	-@ for subdir in $(CODE_SUBDIRS) ;  do ( mkdir -p $(BINDIR)/$$subdir ) ; done
+endif
+$(OBJDIR):
+	-@ $(TOOLS)/mkbuildlinks $(OBJDIR) $(ROOT)/.make_prefs
+
+
+#move this to Makefile.osarch or tools
+ifeq ($(OSTYPE),cygwin)
+OUTPUT_FLAG=-Fo
+else
+OUTPUT_FLAG=-o
+endif
+
+
+###### compile c code
+$(OBJDIR)/%.o: %.c $(OBJDIR)/%.d
+	$(CC) $(CFLAGS) -c $(OUTPUT_FLAG)$@ $<
+
+
+###### compile c++ code
+$(OBJDIR)/%.o: %.cpp $(OBJDIR)/%.d
+		$(CXX) $(CXXFLAGS) -c $(OUTPUT_FLAG) $@ $<
+
+
+##### build executables
+$(BINDIR)/%: $(OBJDIR)/%.o $(OBJS) $(EXTRAS) .dependlibs
+	$(LINKER) $(LDFLAGS) -o $@ $(DATESTAMP) $(patsubst %.dependlibs,%, $^) $(LDLIBS)
+
+
+###### Build and include dependency files
+ifeq ($(OSTYPE),cygwin)
+$(OBJDIR)/%.d: %.c $(OBJDIR)
+	echo > $@
+$(OBJDIR)/%.d: %.cpp $(OBJDIR)
+	echo > $@
+else
+$(OBJDIR)/%.d: %.c $(NOCOMPILE_SRC) $(ROOT)/.make_prefs
+	-@ $(TOOLS)/mkbuildlinks $(OBJDIR) $(ROOT)/.make_prefs
+ifdef CODE_SUBDIRS
+	-@for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(OBJDIR)/$$subdir ) ; done
+endif
+ifeq ($(MAKE_SEPARATE_DEPENDENCY),1)
+	@echo "Making $@"
+	@$(SHELL) -ec '$(DEP) $(CFLAGS) $(CXXFLAGS) $(CPPFLAGS) $(DFLAGS) $< \
+		$(DMANGLE) | sed -e "s#^$(*F).o[ :]*#$(@D)\/$(*F).o $@ : #" \
+		> $@; [ -s $@ ] || rm -f $@'
+endif
+
+$(OBJDIR)/%.d: %.cpp $(NOCOMPILE_SRC) $(ROOT)/.make_prefs
+	-@ $(TOOLS)/mkbuildlinks $(OBJDIR) $(ROOT)/.make_prefs
+ifdef CODE_SUBDIRS
+	-@for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(OBJDIR)/$$subdir ) ; done
+endif
+ifeq ($(MAKE_SEPARATE_DEPENDENCY),1)
+	@echo "Making $@"
+	@$(SHELL) -ec '$(DEP) $(CFLAGS) $(CXXFLAGS) $(CPPFLAGS) $(DFLAGS) $< \
+		$(DMANGLE) | sed -e "s#^$(*F).o[ :]*#$(@D)\/$(*F).o $@ : #" \
+		> $@; [ -s $@ ] || rm -f $@'
+endif
+
+endif
+
+
+.SECONDARY: $(DEPENDENCIES) $(OBJS)
+
+
+###### Create static library
+ifdef TARGET_LIBRARY
+$(OBJDIR)/$(strip $(TARGET_LIBRARY)).a: $(OBJS) $(OTHERLIBS)
+	-@$(DEL_FILE) $@
+	$(AR) $(ARFLAGS) $@ $^ || rm $@
+	$(RANLIB) $@ || rm $@
+
+$(OBJDIR)/$(strip $(TARGET_LIBRARY)).so: $(OBJS) $(OTHERLIBS)
+	-@$(DEL_FILE) $@
+	$(MKSHLIB) -o $@ $^
+	-@$(MKDIR) $(ROOT)/lib.$(TARGET_NAME)
+	-@$(SYMLINK) $(shell pwd)/$@ $(ROOT)/lib.$(TARGET_NAME)
+endif
+
+
+###### Clean
+
+clean:
+	-$(DEL_FILE) obj.*/*.[oda]
+	-$(DEL_FILE) obj.*/*/*.[oda]
+	-$(DEL_FILE) bin.*/*
+	-$(DEL_FILE) bin.*/*/*
+	-$(DEL_FILE) *~ core *.core core.*
+
+distclean: clean
+	-$(DEL_FILE) $(DESTDIR)/$(TARGET) 
+	-$(DEL_FILE) $(DESTDIR)/$(TARGET0) $(DESTDIR)/$(TARGET1) $(DESTDIR)/$(TARGET2)
+	-$(DEL_DIR)  $(OBJDIR)
+	-$(DEL_DIR)  $(DESTDIR)
+
+-include $(DEPENDENCIES)
+
+# this MUST be the last item in the makefile -- it will be done first always.
+-include $(BUILD)/fakepre
+

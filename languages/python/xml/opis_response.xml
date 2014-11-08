@@ -1,0 +1,3853 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StationPricesDataTable xmlns="https://services.opisnet.com/RealtimePriceService/">
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="StationPrices" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="StationPrices">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Station_Name" msdata:ReadOnly="true" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="60" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Address1" msdata:ReadOnly="true" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="60" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Address2" msdata:ReadOnly="true" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="60" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="City" msdata:ReadOnly="true" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="40" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="State" msdata:ReadOnly="true" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="2" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Zip" msdata:ReadOnly="true" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="10" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Brand_Name" msdata:ReadOnly="true" minOccurs="0">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="30" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="Unleaded_Price" msdata:Caption="unlprice" type="xs:decimal" minOccurs="0" />
+                <xs:element name="MidGrade_Price" msdata:Caption="midprice" type="xs:decimal" minOccurs="0" />
+                <xs:element name="Premium_Price" msdata:Caption="preprice" type="xs:decimal" minOccurs="0" />
+                <xs:element name="Diesel_Price" msdata:Caption="dslprice" type="xs:decimal" minOccurs="0" />
+                <xs:element name="Unleaded_Date" msdata:Caption="unldate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="MidGrade_Date" msdata:Caption="middate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Premium_Date" msdata:Caption="predate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Diesel_Date" msdata:Caption="dsldate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LATITUDE" type="xs:decimal" minOccurs="0" />
+                <xs:element name="LONGITUDE" type="xs:decimal" minOccurs="0" />
+                <xs:element name="Phone" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+    <DocumentElement xmlns="">
+      <StationPrices diffgr:id="StationPrices1" msdata:rowOrder="0" diffgr:hasChanges="inserted">
+        <Station_Name>BOBS AUTO AND GAS</Station_Name>
+        <Address1>9694 SE 82ND AVE</Address1>
+        <Address2 />
+        <City>HAPPY VALLEY</City>
+        <State>OR</State>
+        <Zip>97086</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>3.99900000</MidGrade_Price>
+        <Premium_Price>3.93900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T05:40:14.293-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T12:30:30-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:06:57.51-04:00</Premium_Date>
+        <LATITUDE>45.4522300000</LATITUDE>
+        <LONGITUDE>-122.5791300000</LONGITUDE>
+        <Phone>(503)788-0545</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices2" msdata:rowOrder="1" diffgr:hasChanges="inserted">
+        <Station_Name>FRED MEYER FUEL CENTER (DISCOUNT AVAILABLE)</Station_Name>
+        <Address1>14700 SE MCLOUGHLIN BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97267</Zip>
+        <Brand_Name>Fred Meyer</Brand_Name>
+        <Unleaded_Price>3.89900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.09900000</Premium_Price>
+        <Diesel_Price>4.24900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T19:30:18-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T11:48:32.187-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T13:30:31-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T11:48:32.187-04:00</Diesel_Date>
+        <LATITUDE>45.4164747000</LATITUDE>
+        <LONGITUDE>-122.6320856000</LONGITUDE>
+        <Phone>(503)652-4103</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices3" msdata:rowOrder="2" diffgr:hasChanges="inserted">
+        <Station_Name>COSTCO</Station_Name>
+        <Address1>4849 NE 138TH AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97230</Zip>
+        <Brand_Name>Costco</Brand_Name>
+        <Unleaded_Price>3.89900000</Unleaded_Price>
+        <Premium_Price>4.09900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T16:03:33.903-04:00</Unleaded_Date>
+        <Premium_Date>2012-10-08T16:03:33.903-04:00</Premium_Date>
+        <LATITUDE>45.5588700000</LATITUDE>
+        <LONGITUDE>-122.5211000000</LONGITUDE>
+        <Phone>(503)252-2243</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices4" msdata:rowOrder="3" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL</Station_Name>
+        <Address1>3442 NE 82ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97220</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>3.91900000</Unleaded_Price>
+        <MidGrade_Price>4.01900000</MidGrade_Price>
+        <Premium_Price>4.11900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T00:56:47.463-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T00:28:28.697-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T08:06:43.793-04:00</Premium_Date>
+        <LATITUDE>45.5475424409</LATITUDE>
+        <LONGITUDE>-122.5786595020</LONGITUDE>
+        <Phone>(503)252-9630</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices5" msdata:rowOrder="4" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>9950 N WHITAKER RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97217</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.88900000</Unleaded_Price>
+        <MidGrade_Price>3.99900000</MidGrade_Price>
+        <Premium_Price>4.11900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T14:10:21.997-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T14:10:21.997-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T14:10:21.997-04:00</Premium_Date>
+        <LATITUDE>45.5949478149</LATITUDE>
+        <LONGITUDE>-122.6822280883</LONGITUDE>
+        <Phone>(503)283-8962</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices6" msdata:rowOrder="5" diffgr:hasChanges="inserted">
+        <Station_Name>HARRISON ST MART</Station_Name>
+        <Address1>4140 SE HARRISON ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97222</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>3.89900000</Unleaded_Price>
+        <MidGrade_Price>3.99900000</MidGrade_Price>
+        <Premium_Price>4.11900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T03:46:55.277-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T03:46:55.277-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T03:46:55.277-04:00</Premium_Date>
+        <LATITUDE>45.5088000000</LATITUDE>
+        <LONGITUDE>-122.6198000000</LONGITUDE>
+        <Phone>(503)654-4484</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices7" msdata:rowOrder="6" diffgr:hasChanges="inserted">
+        <Station_Name>ASTRO QUICK MART #204</Station_Name>
+        <Address1>7510 N INTERSTATE AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97217</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>3.87900000</Unleaded_Price>
+        <MidGrade_Price>3.99900000</MidGrade_Price>
+        <Premium_Price>4.11900000</Premium_Price>
+        <Diesel_Price>3.94900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T06:36:52.25-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T06:36:52.25-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T06:36:52.25-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T06:36:52.25-04:00</Diesel_Date>
+        <LATITUDE>45.5772584158</LATITUDE>
+        <LONGITUDE>-122.6820952954</LONGITUDE>
+        <Phone>(503)285-5308</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices8" msdata:rowOrder="7" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>16141 SE DIVISION ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97236</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.91900000</Unleaded_Price>
+        <MidGrade_Price>4.01900000</MidGrade_Price>
+        <Premium_Price>4.11900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T10:23:33.14-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T10:23:33.14-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T10:23:33.14-04:00</Premium_Date>
+        <LATITUDE>45.5045700000</LATITUDE>
+        <LONGITUDE>-122.4972500000</LONGITUDE>
+        <Phone>(503)761-0511</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices9" msdata:rowOrder="8" diffgr:hasChanges="inserted">
+        <Station_Name>COSTCO</Station_Name>
+        <Address1>13130 SE 84TH AVE</Address1>
+        <Address2 />
+        <City>Clackamas</City>
+        <State>OR</State>
+        <Zip>97015</Zip>
+        <Brand_Name>Costco</Brand_Name>
+        <Unleaded_Price>3.91900000</Unleaded_Price>
+        <Premium_Price>4.12900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T03:46:55.277-04:00</Unleaded_Date>
+        <Premium_Date>2012-10-09T03:46:55.277-04:00</Premium_Date>
+        <LATITUDE>45.4285316467</LATITUDE>
+        <LONGITUDE>-122.5739593506</LONGITUDE>
+        <Phone />
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices10" msdata:rowOrder="9" diffgr:hasChanges="inserted">
+        <Station_Name>COSTCO</Station_Name>
+        <Address1>15901 SW JENKINS RD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97006</Zip>
+        <Brand_Name>Costco</Brand_Name>
+        <Unleaded_Price>3.92900000</Unleaded_Price>
+        <Premium_Price>4.12900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T17:28:35.373-04:00</Unleaded_Date>
+        <Premium_Date>2012-10-08T17:28:35.373-04:00</Premium_Date>
+        <LATITUDE>45.5090870000</LATITUDE>
+        <LONGITUDE>-122.8419190000</LONGITUDE>
+        <Phone>(503)258-3700</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices11" msdata:rowOrder="10" diffgr:hasChanges="inserted">
+        <Station_Name>SPACE AGE #3</Station_Name>
+        <Address1>12920 SE STARK ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97233</Zip>
+        <Brand_Name>Space Age</Brand_Name>
+        <Unleaded_Price>3.91900000</Unleaded_Price>
+        <MidGrade_Price>4.01900000</MidGrade_Price>
+        <Premium_Price>4.12900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T00:56:47.463-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T13:42:00.797-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T13:42:00.797-04:00</Premium_Date>
+        <LATITUDE>45.5190122303</LATITUDE>
+        <LONGITUDE>-122.5305242827</LONGITUDE>
+        <Phone>(503)257-6662</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices12" msdata:rowOrder="11" diffgr:hasChanges="inserted">
+        <Station_Name>BLUE FLAME TESORO</Station_Name>
+        <Address1>11125 SE FOSTER RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97266</Zip>
+        <Brand_Name>Tesoro</Brand_Name>
+        <Unleaded_Price>3.93900000</Unleaded_Price>
+        <MidGrade_Price>4.03900000</MidGrade_Price>
+        <Premium_Price>4.13900000</Premium_Price>
+        <Diesel_Price>4.11900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T00:56:47.463-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T11:48:32.187-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T11:48:32.187-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T11:48:32.187-04:00</Diesel_Date>
+        <LATITUDE>45.4760731854</LATITUDE>
+        <LONGITUDE>-122.5490760123</LONGITUDE>
+        <Phone>(503)760-8242</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices13" msdata:rowOrder="12" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>11925 SW ALLEN BLVD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97005</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.93900000</Unleaded_Price>
+        <MidGrade_Price>4.03900000</MidGrade_Price>
+        <Premium_Price>4.13900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T07:16:08.847-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T07:16:08.847-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T07:16:08.847-04:00</Premium_Date>
+        <LATITUDE>45.4766540000</LATITUDE>
+        <LONGITUDE>-122.7994470000</LONGITUDE>
+        <Phone>(503)644-3505</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices14" msdata:rowOrder="13" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>9220 SE HOLGATE BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97266</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.93900000</Unleaded_Price>
+        <MidGrade_Price>4.03900000</MidGrade_Price>
+        <Premium_Price>4.13900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T00:56:47.463-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T00:28:29.35-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T00:28:29.35-04:00</Premium_Date>
+        <LATITUDE>45.4898780000</LATITUDE>
+        <LONGITUDE>-122.5682620000</LONGITUDE>
+        <Phone>(503)777-6983</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices15" msdata:rowOrder="14" diffgr:hasChanges="inserted">
+        <Station_Name>SAFEWAY</Station_Name>
+        <Address1>10550 SE 42ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97222</Zip>
+        <Brand_Name>Safeway</Brand_Name>
+        <Unleaded_Price>3.91900000</Unleaded_Price>
+        <MidGrade_Price>4.02900000</MidGrade_Price>
+        <Premium_Price>4.13900000</Premium_Price>
+        <Diesel_Price>4.16900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T04:15:25.423-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T03:46:55.277-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T03:46:55.277-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T03:46:55.277-04:00</Diesel_Date>
+        <LATITUDE>45.4468770000</LATITUDE>
+        <LONGITUDE>-122.6192020000</LONGITUDE>
+        <Phone>(503)659-1840</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices16" msdata:rowOrder="15" diffgr:hasChanges="inserted">
+        <Station_Name>SPACE AGE #8</Station_Name>
+        <Address1>16211 NE GLISAN ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97230</Zip>
+        <Brand_Name>Space Age</Brand_Name>
+        <Unleaded_Price>3.91900000</Unleaded_Price>
+        <MidGrade_Price>4.03900000</MidGrade_Price>
+        <Premium_Price>4.13900000</Premium_Price>
+        <Diesel_Price>4.21900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T16:31:52.467-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T16:31:52.467-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T16:31:52.467-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T16:31:52.467-04:00</Diesel_Date>
+        <LATITUDE>45.5263963087</LATITUDE>
+        <LONGITUDE>-122.4962406296</LONGITUDE>
+        <Phone>(503)253-8015</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices17" msdata:rowOrder="16" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>10975 SW BEAVERTON HILLSDALE HWY</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97005</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.93900000</Unleaded_Price>
+        <MidGrade_Price>4.03900000</MidGrade_Price>
+        <Premium_Price>4.13900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T07:33:37.96-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T07:33:37.96-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T07:33:37.96-04:00</Premium_Date>
+        <LATITUDE>45.4865100000</LATITUDE>
+        <LONGITUDE>-122.7898400000</LONGITUDE>
+        <Phone>(503)626-3658</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices18" msdata:rowOrder="17" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>1511 NE 102ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97220</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.93900000</Unleaded_Price>
+        <MidGrade_Price>4.03900000</MidGrade_Price>
+        <Premium_Price>4.13900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T07:14:37.773-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T07:14:37.773-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T07:14:37.773-04:00</Premium_Date>
+        <LATITUDE>45.5336650000</LATITUDE>
+        <LONGITUDE>-122.5581770000</LONGITUDE>
+        <Phone>(503)255-7851</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices19" msdata:rowOrder="18" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>1800 NE ANDRESEN RD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98661</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.93900000</Unleaded_Price>
+        <MidGrade_Price>4.03900000</MidGrade_Price>
+        <Premium_Price>4.13900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T16:03:33.903-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-06T16:03:38.77-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-06T16:03:38.77-04:00</Premium_Date>
+        <LATITUDE>45.6367600000</LATITUDE>
+        <LONGITUDE>-122.6001200000</LONGITUDE>
+        <Phone>(360)992-0677</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices20" msdata:rowOrder="19" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>3817 MAIN ST</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98663</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.93900000</Unleaded_Price>
+        <MidGrade_Price>4.03900000</MidGrade_Price>
+        <Premium_Price>4.13900000</Premium_Price>
+        <Diesel_Price>4.19900000</Diesel_Price>
+        <Unleaded_Date>2012-10-06T13:41:56.39-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-06T13:41:56.39-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-06T13:41:56.39-04:00</Premium_Date>
+        <Diesel_Date>2012-10-06T13:41:56.39-04:00</Diesel_Date>
+        <LATITUDE>45.6493200000</LATITUDE>
+        <LONGITUDE>-122.6677700000</LONGITUDE>
+        <Phone>(360)693-0411</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices21" msdata:rowOrder="20" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>12140 NE HALSEY ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97220</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.93900000</Unleaded_Price>
+        <MidGrade_Price>4.03900000</MidGrade_Price>
+        <Premium_Price>4.13900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T00:56:47.463-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T13:13:33.33-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T13:13:33.33-04:00</Premium_Date>
+        <LATITUDE>45.5336000000</LATITUDE>
+        <LONGITUDE>-122.5381200000</LONGITUDE>
+        <Phone>(503)255-9721</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices22" msdata:rowOrder="21" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>7509 NE M L KING BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97211</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.87900000</Unleaded_Price>
+        <MidGrade_Price>4.03900000</MidGrade_Price>
+        <Premium_Price>4.13900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T06:36:52.25-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T06:36:52.25-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T06:36:52.25-04:00</Premium_Date>
+        <LATITUDE>45.5773200000</LATITUDE>
+        <LONGITUDE>-122.6612100000</LONGITUDE>
+        <Phone>(503)286-5303</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices23" msdata:rowOrder="22" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>3840 SE BELMONT ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97214</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.95900000</Unleaded_Price>
+        <MidGrade_Price>4.05900000</MidGrade_Price>
+        <Premium_Price>4.15900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T07:16:08.847-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T07:16:08.847-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T07:16:08.847-04:00</Premium_Date>
+        <LATITUDE>45.5164000000</LATITUDE>
+        <LONGITUDE>-122.6238300000</LONGITUDE>
+        <Phone>(503)236-6681</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices24" msdata:rowOrder="23" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>12075 SW CANYON RD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97005</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.95900000</Unleaded_Price>
+        <MidGrade_Price>4.05900000</MidGrade_Price>
+        <Premium_Price>4.15900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T09:26:53.233-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T09:26:53.233-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T09:26:53.233-04:00</Premium_Date>
+        <LATITUDE>45.4888740513</LATITUDE>
+        <LONGITUDE>-122.8009542755</LONGITUDE>
+        <Phone>(503)643-3502</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices25" msdata:rowOrder="24" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>12128 E BURNSIDE ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97216</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.95900000</Unleaded_Price>
+        <MidGrade_Price>4.05900000</MidGrade_Price>
+        <Premium_Price>4.15900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T19:50:16.1-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T19:50:16.1-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T19:50:16.1-04:00</Premium_Date>
+        <LATITUDE>45.5223449470</LATITUDE>
+        <LONGITUDE>-122.5381917908</LONGITUDE>
+        <Phone>(503)254-0377</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices26" msdata:rowOrder="25" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>10314 SE MILL PLAIN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98664</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.95900000</Unleaded_Price>
+        <MidGrade_Price>4.05900000</MidGrade_Price>
+        <Premium_Price>4.15900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T19:50:16.1-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T18:53:35.91-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T18:53:35.91-04:00</Premium_Date>
+        <LATITUDE>45.6210778010</LATITUDE>
+        <LONGITUDE>-122.5657368062</LONGITUDE>
+        <Phone>(360)896-6233</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices27" msdata:rowOrder="26" diffgr:hasChanges="inserted">
+        <Station_Name>76</Station_Name>
+        <Address1>11400 SW BEAVERTON HILLSDALE HWY</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97005</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.95900000</Unleaded_Price>
+        <MidGrade_Price>4.05900000</MidGrade_Price>
+        <Premium_Price>4.15900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T13:41:53.11-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T13:41:53.11-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T13:41:53.11-04:00</Premium_Date>
+        <LATITUDE>45.4865300000</LATITUDE>
+        <LONGITUDE>-122.7949900000</LONGITUDE>
+        <Phone>(503)644-9330</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices28" msdata:rowOrder="27" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>2829 E MILL PLAIN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98661</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.95900000</Unleaded_Price>
+        <MidGrade_Price>4.05900000</MidGrade_Price>
+        <Premium_Price>4.15900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T13:02:27.207-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T00:28:27.507-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T00:28:27.507-04:00</Premium_Date>
+        <LATITUDE>45.6282400000</LATITUDE>
+        <LONGITUDE>-122.6410800000</LONGITUDE>
+        <Phone>(360)567-2231</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices29" msdata:rowOrder="28" diffgr:hasChanges="inserted">
+        <Station_Name>LEATHERS  #13</Station_Name>
+        <Address1>10202 NE SANDY BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97220</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>3.96900000</Unleaded_Price>
+        <MidGrade_Price>4.06900000</MidGrade_Price>
+        <Premium_Price>4.16900000</Premium_Price>
+        <Diesel_Price>4.16900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T20:30:18-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T16:31:52.467-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T16:31:52.467-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T16:31:52.467-04:00</Diesel_Date>
+        <LATITUDE>45.5590407625</LATITUDE>
+        <LONGITUDE>-122.5577123467</LONGITUDE>
+        <Phone>(503)254-2283</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices30" msdata:rowOrder="29" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>6508 N INTERSTATE AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97217</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.89900000</Unleaded_Price>
+        <MidGrade_Price>4.07900000</MidGrade_Price>
+        <Premium_Price>4.17900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T09:26:53.233-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T09:26:53.233-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T09:26:53.233-04:00</Premium_Date>
+        <LATITUDE>45.5700880000</LATITUDE>
+        <LONGITUDE>-122.6818160000</LONGITUDE>
+        <Phone>(503)735-1235</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices31" msdata:rowOrder="30" diffgr:hasChanges="inserted">
+        <Station_Name>SPACE AGE #7</Station_Name>
+        <Address1>11214 SE POWELL BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97266</Zip>
+        <Brand_Name>Space Age</Brand_Name>
+        <Unleaded_Price>3.95900000</Unleaded_Price>
+        <MidGrade_Price>4.07900000</MidGrade_Price>
+        <Premium_Price>4.17900000</Premium_Price>
+        <Diesel_Price>4.15900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T15:35:14.007-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:35:14.007-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:35:14.007-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T15:35:14.007-04:00</Diesel_Date>
+        <LATITUDE>45.4965905031</LATITUDE>
+        <LONGITUDE>-122.5477477046</LONGITUDE>
+        <Phone>(503)760-0118</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices32" msdata:rowOrder="31" diffgr:hasChanges="inserted">
+        <Station_Name>LEATHERS OIL NO 4</Station_Name>
+        <Address1>11421 SE POWELL BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97266</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>3.95900000</Unleaded_Price>
+        <MidGrade_Price>4.07900000</MidGrade_Price>
+        <Premium_Price>4.17900000</Premium_Price>
+        <Diesel_Price>4.15900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T15:35:14.007-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:35:14.007-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:35:14.007-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T15:35:14.007-04:00</Diesel_Date>
+        <LATITUDE>45.4967000000</LATITUDE>
+        <LONGITUDE>-122.5460700000</LONGITUDE>
+        <Phone>(503)761-8655</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices33" msdata:rowOrder="32" diffgr:hasChanges="inserted">
+        <Station_Name>CIRCLE K</Station_Name>
+        <Address1>75 NW 158TH AVE</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97006</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.95900000</Unleaded_Price>
+        <MidGrade_Price>4.07900000</MidGrade_Price>
+        <Premium_Price>4.17900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T19:21:57.32-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-05T12:16:58.357-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-05T12:16:58.357-04:00</Premium_Date>
+        <LATITUDE>45.5202800000</LATITUDE>
+        <LONGITUDE>-122.8396200000</LONGITUDE>
+        <Phone>(503)531-0404</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices34" msdata:rowOrder="33" diffgr:hasChanges="inserted">
+        <Station_Name>SPACE AGE #10</Station_Name>
+        <Address1>8410 SE FOSTER RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97266</Zip>
+        <Brand_Name>Space Age</Brand_Name>
+        <Unleaded_Price>3.95900000</Unleaded_Price>
+        <MidGrade_Price>4.07900000</MidGrade_Price>
+        <Premium_Price>4.17900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T15:35:14.007-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:35:14.007-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:35:14.007-04:00</Premium_Date>
+        <LATITUDE>45.4821367535</LATITUDE>
+        <LONGITUDE>-122.5767553153</LONGITUDE>
+        <Phone>(503)771-9762</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices35" msdata:rowOrder="34" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL</Station_Name>
+        <Address1>16331 SE POWELL BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97236</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>3.97900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Diesel_Price>4.31900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T10:23:33.14-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T10:23:33.14-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T10:23:33.14-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T10:23:33.14-04:00</Diesel_Date>
+        <LATITUDE>45.4945603307</LATITUDE>
+        <LONGITUDE>-122.4955162596</LONGITUDE>
+        <Phone>(503)665-8513</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices36" msdata:rowOrder="35" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>14801 SE STARK ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97233</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Diesel_Price>4.32900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T17:30:22-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T16:03:33.903-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T16:03:33.903-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T16:03:33.903-04:00</Diesel_Date>
+        <LATITUDE>45.5191918916</LATITUDE>
+        <LONGITUDE>-122.5104478186</LONGITUDE>
+        <Phone>(503)256-2689</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices37" msdata:rowOrder="36" diffgr:hasChanges="inserted">
+        <Station_Name>76</Station_Name>
+        <Address1>16531 NE SANDY BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97230</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.97900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Diesel_Price>4.37900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T12:16:53.36-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T12:16:53.36-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T12:16:53.36-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T12:16:53.36-04:00</Diesel_Date>
+        <LATITUDE>45.5487800000</LATITUDE>
+        <LONGITUDE>-122.4920800000</LONGITUDE>
+        <Phone>(503)257-7741</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices38" msdata:rowOrder="37" diffgr:hasChanges="inserted">
+        <Station_Name>FRED MEYER FUEL CENTER (DISCOUNT AVAILABLE)</Station_Name>
+        <Address1>11325 SE MILL PLAIN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98684</Zip>
+        <Brand_Name>Fred Meyer</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Diesel_Price>4.23900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T19:50:16.1-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T16:31:52.467-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T16:31:52.467-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T16:31:52.467-04:00</Diesel_Date>
+        <LATITUDE>45.6194070000</LATITUDE>
+        <LONGITUDE>-122.5555280000</LONGITUDE>
+        <Phone>(360)253-7053</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices39" msdata:rowOrder="38" diffgr:hasChanges="inserted">
+        <Station_Name>7-ELEVEN</Station_Name>
+        <Address1>9701 E MILL PLAIN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98664</Zip>
+        <Brand_Name>7-Eleven</Brand_Name>
+        <Unleaded_Price>3.97900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T19:50:16.1-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T00:28:27.507-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T00:28:27.507-04:00</Premium_Date>
+        <LATITUDE>45.6210867840</LATITUDE>
+        <LONGITUDE>-122.5729487535</LONGITUDE>
+        <Phone>(360)256-7642</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices40" msdata:rowOrder="39" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>9010 SE 82ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97266</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T04:15:25.423-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T04:15:25.423-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T04:15:25.423-04:00</Premium_Date>
+        <LATITUDE>45.4582328208</LATITUDE>
+        <LONGITUDE>-122.5788962570</LONGITUDE>
+        <Phone>(503)777-4642</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices41" msdata:rowOrder="40" diffgr:hasChanges="inserted">
+        <Station_Name>BEST FUEL</Station_Name>
+        <Address1>6010 NE KILLINGSWORTH ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97218</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T18:25:25.897-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T18:25:25.897-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T18:25:25.897-04:00</Premium_Date>
+        <LATITUDE>45.5627507678</LATITUDE>
+        <LONGITUDE>-122.6010808379</LONGITUDE>
+        <Phone>(503)335-8001</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices42" msdata:rowOrder="41" diffgr:hasChanges="inserted">
+        <Station_Name>USA GASOLINE</Station_Name>
+        <Address1>4445 NE CULLY BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97218</Zip>
+        <Brand_Name>Usa Petroleum</Brand_Name>
+        <Unleaded_Price>3.93900000</Unleaded_Price>
+        <MidGrade_Price>4.03900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T18:25:25.897-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T18:25:25.897-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T18:25:25.897-04:00</Premium_Date>
+        <LATITUDE>45.5550053715</LATITUDE>
+        <LONGITUDE>-122.6013406366</LONGITUDE>
+        <Phone>(503)287-2145</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices43" msdata:rowOrder="42" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>10775 SW GREENBURG RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97223</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Diesel_Price>4.19900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T17:56:55.643-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T17:56:55.643-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:56:55.643-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T17:56:55.643-04:00</Diesel_Date>
+        <LATITUDE>45.4418117802</LATITUDE>
+        <LONGITUDE>-122.7787784831</LONGITUDE>
+        <Phone>(503)620-8747</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices44" msdata:rowOrder="43" diffgr:hasChanges="inserted">
+        <Station_Name>KWIK GAS</Station_Name>
+        <Address1>6021 NE PORTLAND HWY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97218</Zip>
+        <Brand_Name>Tesoro</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Diesel_Price>4.33900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T06:36:52.25-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T05:40:13.16-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T06:36:52.25-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T17:01:01.08-04:00</Diesel_Date>
+        <LATITUDE>45.5670267062</LATITUDE>
+        <LONGITUDE>-122.6007327356</LONGITUDE>
+        <Phone>(503)280-1188</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices45" msdata:rowOrder="44" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO</Station_Name>
+        <Address1>12405 SE 97TH AVE</Address1>
+        <Address2 />
+        <City>Clackamas</City>
+        <State>OR</State>
+        <Zip>97015</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.08900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T20:18:41.343-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T20:18:41.343-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T20:18:41.343-04:00</Premium_Date>
+        <LATITUDE>45.4332250000</LATITUDE>
+        <LONGITUDE>-122.5639420000</LONGITUDE>
+        <Phone>(503)786-3038</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices46" msdata:rowOrder="45" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL</Station_Name>
+        <Address1>5434 SE 72ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97206</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>3.98900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T00:00:00-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-05T16:31:57.317-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-05T16:31:57.317-04:00</Premium_Date>
+        <LATITUDE>45.4835470945</LATITUDE>
+        <LONGITUDE>-122.5892076358</LONGITUDE>
+        <Phone>(503)771-7327</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices47" msdata:rowOrder="46" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON EXTRA MILE</Station_Name>
+        <Address1>3520 SW CEDAR HILLS BLVD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97005</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>3.95900000</Unleaded_Price>
+        <MidGrade_Price>4.07900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T06:36:52.25-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T06:36:52.25-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T06:36:52.25-04:00</Premium_Date>
+        <LATITUDE>45.4942099912</LATITUDE>
+        <LONGITUDE>-122.8100868017</LONGITUDE>
+        <Phone>(503)641-2295</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices48" msdata:rowOrder="47" diffgr:hasChanges="inserted">
+        <Station_Name>FRED MEYER FUEL CENTER (DISCOUNT AVAILABLE)</Station_Name>
+        <Address1>8955 SE 82ND AVE</Address1>
+        <Address2 />
+        <City>HAPPY VALLEY</City>
+        <State>OR</State>
+        <Zip>97086</Zip>
+        <Brand_Name>Fred Meyer</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Diesel_Price>4.19900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T05:40:14.293-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T05:40:14.293-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T05:40:14.293-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T05:40:14.293-04:00</Diesel_Date>
+        <LATITUDE>45.4586011264</LATITUDE>
+        <LONGITUDE>-122.5788966550</LONGITUDE>
+        <Phone>(503)788-2000</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices49" msdata:rowOrder="48" diffgr:hasChanges="inserted">
+        <Station_Name>76</Station_Name>
+        <Address1>5065 SW SCHOLLS FERRY RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97225</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T10:51:59.39-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T10:51:59.39-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T10:51:59.39-04:00</Premium_Date>
+        <LATITUDE>45.4832500000</LATITUDE>
+        <LONGITUDE>-122.7552500000</LONGITUDE>
+        <Phone>(503)292-1386</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices50" msdata:rowOrder="49" diffgr:hasChanges="inserted">
+        <Station_Name>76</Station_Name>
+        <Address1>12975 SW CANYON RD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97005</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T09:26:53.233-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T09:26:53.233-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T08:06:43.793-04:00</Premium_Date>
+        <LATITUDE>45.4883260844</LATITUDE>
+        <LONGITUDE>-122.8104290579</LONGITUDE>
+        <Phone>(503)627-9999</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices51" msdata:rowOrder="50" diffgr:hasChanges="inserted">
+        <Station_Name>FRED MEYER FUEL CENTER (DISCOUNT AVAILABLE)</Station_Name>
+        <Address1>15995 SW WALKER RD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97006</Zip>
+        <Brand_Name>Fred Meyer</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Diesel_Price>4.23900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T05:40:14.293-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T05:40:14.293-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T05:40:14.293-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T05:40:14.293-04:00</Diesel_Date>
+        <LATITUDE>45.5174132449</LATITUDE>
+        <LONGITUDE>-122.8417202114</LONGITUDE>
+        <Phone />
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices52" msdata:rowOrder="51" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>15320 NW CORNELL RD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97006</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.95900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T17:28:46.5-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T17:28:46.5-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T17:28:46.5-04:00</Premium_Date>
+        <LATITUDE>45.5318800000</LATITUDE>
+        <LONGITUDE>-122.8341900000</LONGITUDE>
+        <Phone>(503)531-9233</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices53" msdata:rowOrder="52" diffgr:hasChanges="inserted">
+        <Station_Name>ARCO (CASH ONLY)</Station_Name>
+        <Address1>1110 SE POWELL BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97202</Zip>
+        <Brand_Name>Arco</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.19900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T10:23:33.14-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-06T19:21:59.127-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-06T19:21:59.127-04:00</Premium_Date>
+        <LATITUDE>45.5011000000</LATITUDE>
+        <LONGITUDE>-122.6540000000</LONGITUDE>
+        <Phone>(503)236-0968</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices54" msdata:rowOrder="53" diffgr:hasChanges="inserted">
+        <Station_Name>ASTRO #239</Station_Name>
+        <Address1>12479 SE 82ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97266</Zip>
+        <Brand_Name>Texaco</Brand_Name>
+        <Unleaded_Price>3.97900000</Unleaded_Price>
+        <MidGrade_Price>4.09900000</MidGrade_Price>
+        <Premium_Price>4.21900000</Premium_Price>
+        <Diesel_Price>4.29900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T19:21:57.32-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T19:21:57.32-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T19:21:57.32-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T19:21:57.32-04:00</Diesel_Date>
+        <LATITUDE>45.4329700000</LATITUDE>
+        <LONGITUDE>-122.5792500000</LONGITUDE>
+        <Phone>(503)654-0811</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices55" msdata:rowOrder="54" diffgr:hasChanges="inserted">
+        <Station_Name>ASTRO #203</Station_Name>
+        <Address1>420 SE 122ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97233</Zip>
+        <Brand_Name>Texaco</Brand_Name>
+        <Unleaded_Price>3.96900000</Unleaded_Price>
+        <MidGrade_Price>4.18900000</MidGrade_Price>
+        <Premium_Price>4.21900000</Premium_Price>
+        <Diesel_Price>4.22900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T19:50:16.1-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T07:01:32-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T19:50:16.1-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T19:50:16.1-04:00</Diesel_Date>
+        <LATITUDE>45.5194434174</LATITUDE>
+        <LONGITUDE>-122.5376180288</LONGITUDE>
+        <Phone>(503)254-3405</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices56" msdata:rowOrder="55" diffgr:hasChanges="inserted">
+        <Station_Name>SPACE AGE 5</Station_Name>
+        <Address1>7912 NE M L KING BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97211</Zip>
+        <Brand_Name>Space Age</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.11900000</MidGrade_Price>
+        <Premium_Price>4.21900000</Premium_Price>
+        <Diesel_Price>3.99900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T06:36:52.25-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T06:36:52.25-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T06:36:52.25-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T06:36:52.25-04:00</Diesel_Date>
+        <LATITUDE>45.5804400000</LATITUDE>
+        <LONGITUDE>-122.6612000000</LONGITUDE>
+        <Phone>(503)285-1482</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices57" msdata:rowOrder="56" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>3911 SE POWELL BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97202</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.01900000</Unleaded_Price>
+        <MidGrade_Price>4.11900000</MidGrade_Price>
+        <Premium_Price>4.23900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T13:41:53.11-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T09:55:17.66-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T09:55:17.66-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T20:18:46.94-04:00</Diesel_Date>
+        <LATITUDE>45.4973540635</LATITUDE>
+        <LONGITUDE>-122.6224455561</LONGITUDE>
+        <Phone>(503)236-7628</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices58" msdata:rowOrder="57" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL</Station_Name>
+        <Address1>5305 N LOMBARD ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97203</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.11900000</MidGrade_Price>
+        <Premium_Price>4.23900000</Premium_Price>
+        <Diesel_Price>4.03900000</Diesel_Price>
+        <Unleaded_Date>2012-10-06T18:53:38.893-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-06T18:53:38.893-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-06T18:53:38.893-04:00</Premium_Date>
+        <Diesel_Date>2012-10-06T18:53:38.893-04:00</Diesel_Date>
+        <LATITUDE>45.5825135082</LATITUDE>
+        <LONGITUDE>-122.7240562052</LONGITUDE>
+        <Phone>(503)289-8197</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices59" msdata:rowOrder="58" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>5429 N INTERSTATE AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97217</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.95900000</Unleaded_Price>
+        <MidGrade_Price>4.13900000</MidGrade_Price>
+        <Premium_Price>4.23900000</Premium_Price>
+        <Diesel_Price>3.99900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T09:26:53.233-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T09:26:53.233-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T09:26:53.233-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T09:26:53.233-04:00</Diesel_Date>
+        <LATITUDE>45.5621758518</LATITUDE>
+        <LONGITUDE>-122.6821459949</LONGITUDE>
+        <Phone>(503)283-2888</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices60" msdata:rowOrder="59" diffgr:hasChanges="inserted">
+        <Station_Name>ASTRO #238</Station_Name>
+        <Address1>4027 SE 39TH AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97202</Zip>
+        <Brand_Name>Texaco</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <Premium_Price>4.23900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T17:02:21-04:00</Unleaded_Date>
+        <Premium_Date>2012-10-06T00:00:00-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T20:18:46.94-04:00</Diesel_Date>
+        <LATITUDE>45.4938776178</LATITUDE>
+        <LONGITUDE>-122.6226336224</LONGITUDE>
+        <Phone>(503)774-1736</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices61" msdata:rowOrder="60" diffgr:hasChanges="inserted">
+        <Station_Name>76</Station_Name>
+        <Address1>2505 SE 39TH AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97202</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.13900000</MidGrade_Price>
+        <Premium_Price>4.23900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T13:41:53.11-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T09:55:13.193-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T09:55:13.193-04:00</Premium_Date>
+        <LATITUDE>45.5046842436</LATITUDE>
+        <LONGITUDE>-122.6226102189</LONGITUDE>
+        <Phone>(503)238-4640</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices62" msdata:rowOrder="61" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>13038 NE SANDY BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97230</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.11900000</MidGrade_Price>
+        <Premium_Price>4.23900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T14:19:58.66-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T14:19:58.66-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T14:19:58.66-04:00</Premium_Date>
+        <LATITUDE>45.5557000000</LATITUDE>
+        <LONGITUDE>-122.5291100000</LONGITUDE>
+        <Phone>(503)257-6059</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices63" msdata:rowOrder="62" diffgr:hasChanges="inserted">
+        <Station_Name>ASTRO #217</Station_Name>
+        <Address1>11214 SE DIVISION ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97266</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.98900000</Unleaded_Price>
+        <MidGrade_Price>4.11900000</MidGrade_Price>
+        <Premium_Price>4.23900000</Premium_Price>
+        <Diesel_Price>4.25900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T15:06:57.51-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:06:57.51-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:06:57.51-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T15:06:57.51-04:00</Diesel_Date>
+        <LATITUDE>45.5041362767</LATITUDE>
+        <LONGITUDE>-122.5476873786</LONGITUDE>
+        <Phone>(503)254-8962</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices64" msdata:rowOrder="63" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>3105 NE ANDRESEN RD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98661</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.13900000</MidGrade_Price>
+        <Premium_Price>4.23900000</Premium_Price>
+        <Diesel_Price>4.25900000</Diesel_Price>
+        <Unleaded_Date>2012-10-07T09:26:58.977-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T09:26:58.977-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T09:26:58.977-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T09:26:58.977-04:00</Diesel_Date>
+        <LATITUDE>45.6442271563</LATITUDE>
+        <LONGITUDE>-122.6007249860</LONGITUDE>
+        <Phone>(360)892-1900</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices65" msdata:rowOrder="64" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>5727 SE POWELL BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97206</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.02900000</Unleaded_Price>
+        <MidGrade_Price>4.13900000</MidGrade_Price>
+        <Premium_Price>4.24900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T19:30:18-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T17:28:35.373-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:28:35.373-04:00</Premium_Date>
+        <LATITUDE>45.4975337248</LATITUDE>
+        <LONGITUDE>-122.6037891019</LONGITUDE>
+        <Phone>(503)771-3888</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices66" msdata:rowOrder="65" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>13939 SE MCLOUGHLIN BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97267</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T20:18:46.94-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T20:18:46.94-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T20:18:46.94-04:00</Premium_Date>
+        <LATITUDE>45.4223454809</LATITUDE>
+        <LONGITUDE>-122.6334920740</LONGITUDE>
+        <Phone>(503)659-3514</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices67" msdata:rowOrder="66" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>6007 NE GLISAN ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97213</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.14900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T19:50:16.1-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T19:50:16.1-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T19:50:16.1-04:00</Premium_Date>
+        <LATITUDE>45.5264052918</LATITUDE>
+        <LONGITUDE>-122.6020104287</LONGITUDE>
+        <Phone>(503)793-0157</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices68" msdata:rowOrder="67" diffgr:hasChanges="inserted">
+        <Station_Name>76</Station_Name>
+        <Address1>3046 SE HARRISON ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97222</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Diesel_Price>4.19900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T03:46:55.277-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T03:46:55.277-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T03:46:55.277-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T03:46:55.277-04:00</Diesel_Date>
+        <LATITUDE>45.4464829733</LATITUDE>
+        <LONGITUDE>-122.6312687730</LONGITUDE>
+        <Phone>(503)659-7939</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices69" msdata:rowOrder="68" diffgr:hasChanges="inserted">
+        <Station_Name>ASTRO #225</Station_Name>
+        <Address1>12885 SW PACIFIC HWY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97223</Zip>
+        <Brand_Name>Astro</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Diesel_Price>4.31900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T20:18:41.343-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T20:18:41.343-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T20:18:41.343-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T20:18:41.343-04:00</Diesel_Date>
+        <LATITUDE>45.4268800000</LATITUDE>
+        <LONGITUDE>-122.7784400000</LONGITUDE>
+        <Phone>(503)639-8784</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices70" msdata:rowOrder="69" diffgr:hasChanges="inserted">
+        <Station_Name>ASTRO QUICK MART #215</Station_Name>
+        <Address1>11010 SE MCLOUGHLIN BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97222</Zip>
+        <Brand_Name>Texaco</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T07:14:37.773-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T07:14:37.773-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T07:14:37.773-04:00</Premium_Date>
+        <LATITUDE>45.4430604260</LATITUDE>
+        <LONGITUDE>-122.6421091425</LONGITUDE>
+        <Phone>(503)654-1066</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices71" msdata:rowOrder="70" diffgr:hasChanges="inserted">
+        <Station_Name>CIRCLE K</Station_Name>
+        <Address1>2420 SW CEDAR HILLS BLVD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97005</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T19:50:16.1-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T19:50:16.1-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T19:50:16.1-04:00</Premium_Date>
+        <LATITUDE>45.5021200000</LATITUDE>
+        <LONGITUDE>-122.8052200000</LONGITUDE>
+        <Phone>(503)646-0324</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices72" msdata:rowOrder="71" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>11747 SW PACIFIC HWY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97223</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.14900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T19:01:00-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T17:56:55.643-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:56:55.643-04:00</Premium_Date>
+        <LATITUDE>45.4358649919</LATITUDE>
+        <LONGITUDE>-122.7600318334</LONGITUDE>
+        <Phone>(503)639-7151</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices73" msdata:rowOrder="72" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>2001 N LOMBARD ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97217</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T17:57:05.067-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T17:57:05.067-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T17:57:05.067-04:00</Premium_Date>
+        <LATITUDE>45.5770967207</LATITUDE>
+        <LONGITUDE>-122.6869611714</LONGITUDE>
+        <Phone>(503)286-3382</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices74" msdata:rowOrder="73" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON EXTRA MILE</Station_Name>
+        <Address1>15905 LOWER BOONES FERRY RD</Address1>
+        <Address2 />
+        <City>Lake Oswego</City>
+        <State>OR</State>
+        <Zip>97035</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T05:40:14.293-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T05:40:14.293-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T05:40:14.293-04:00</Premium_Date>
+        <LATITUDE>45.4104878368</LATITUDE>
+        <LONGITUDE>-122.7193075910</LONGITUDE>
+        <Phone>(503)636-9249</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices75" msdata:rowOrder="74" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>13970 SW PACIFIC HWY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97223</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.14900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T04:15:25.423-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T01:25:07.583-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T01:25:07.583-04:00</Premium_Date>
+        <LATITUDE>45.4188690353</LATITUDE>
+        <LONGITUDE>-122.7870153233</LONGITUDE>
+        <Phone>(503)639-8428</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices76" msdata:rowOrder="75" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>4513 NE 102ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97220</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.15900000</Unleaded_Price>
+        <MidGrade_Price>4.16900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T20:00:57-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T14:19:58.66-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T14:19:58.66-04:00</Premium_Date>
+        <LATITUDE>45.5554655031</LATITUDE>
+        <LONGITUDE>-122.5576817188</LONGITUDE>
+        <Phone>(503)252-0234</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices77" msdata:rowOrder="76" diffgr:hasChanges="inserted">
+        <Station_Name>7-ELEVEN</Station_Name>
+        <Address1>10136 SE WASHINGTON ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97216</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T14:19:58.66-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T14:19:58.66-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T14:19:58.66-04:00</Premium_Date>
+        <LATITUDE>45.5182912945</LATITUDE>
+        <LONGITUDE>-122.5589389353</LONGITUDE>
+        <Phone />
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices78" msdata:rowOrder="77" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>515 NE 102ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97220</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T07:14:37.773-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T07:14:37.773-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T07:14:37.773-04:00</Premium_Date>
+        <LATITUDE>45.5263154611</LATITUDE>
+        <LONGITUDE>-122.5581896515</LONGITUDE>
+        <Phone>(503)255-0645</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices79" msdata:rowOrder="78" diffgr:hasChanges="inserted">
+        <Station_Name>CIRCLE K</Station_Name>
+        <Address1>425 NE BROADWAY ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97232</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T13:41:53.11-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T13:41:53.11-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T13:41:53.11-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T13:41:53.11-04:00</Diesel_Date>
+        <LATITUDE>45.5350800000</LATITUDE>
+        <LONGITUDE>-122.6613900000</LONGITUDE>
+        <Phone>(503)281-3872</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices80" msdata:rowOrder="79" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>17095 SW TUALATIN VALLEY HWY</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97006</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.14900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T15:35:14.007-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:35:14.007-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:35:14.007-04:00</Premium_Date>
+        <LATITUDE>45.4922965986</LATITUDE>
+        <LONGITUDE>-122.8526724457</LONGITUDE>
+        <Phone>(503)649-8533</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices81" msdata:rowOrder="80" diffgr:hasChanges="inserted">
+        <Station_Name>CIRCLE K</Station_Name>
+        <Address1>2020 E BURNSIDE ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97214</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T00:00:00-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-05T00:00:00-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-06T00:00:00-04:00</Premium_Date>
+        <LATITUDE>45.5228900000</LATITUDE>
+        <LONGITUDE>-122.6450400000</LONGITUDE>
+        <Phone>(503)234-1574</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices82" msdata:rowOrder="81" diffgr:hasChanges="inserted">
+        <Station_Name>FAIRVIEW PLAZA</Station_Name>
+        <Address1>14440 SE DIVISION ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97236</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Diesel_Price>4.40900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T16:01:14-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T13:41:53.11-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T13:41:53.11-04:00</Premium_Date>
+        <Diesel_Date>2012-10-05T12:16:58.357-04:00</Diesel_Date>
+        <LATITUDE>45.5041542428</LATITUDE>
+        <LONGITUDE>-122.5143130182</LONGITUDE>
+        <Phone>(503)762-1730</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices83" msdata:rowOrder="82" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>15900 SW UPPER BOONES FERRY RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97224</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.25900000</Premium_Price>
+        <Diesel_Price>4.41900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T20:00:57-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T17:56:55.643-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:56:55.643-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T17:56:55.643-04:00</Diesel_Date>
+        <LATITUDE>45.4052100000</LATITUDE>
+        <LONGITUDE>-122.7490000000</LONGITUDE>
+        <Phone>(503)620-1780</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices84" msdata:rowOrder="83" diffgr:hasChanges="inserted">
+        <Station_Name>MENLO PARK 76</Station_Name>
+        <Address1>520 NE 122ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97230</Zip>
+        <Brand_Name>Conoco</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.16900000</MidGrade_Price>
+        <Premium_Price>4.26900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T17:56:55.643-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T17:56:55.643-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:56:55.643-04:00</Premium_Date>
+        <LATITUDE>45.5263693595</LATITUDE>
+        <LONGITUDE>-122.5375504128</LONGITUDE>
+        <Phone>(503)253-2122</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices85" msdata:rowOrder="84" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #517</Station_Name>
+        <Address1>11850 SW CANYON RD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97005</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.27900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T09:26:53.233-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T09:26:53.233-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T09:26:53.233-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T09:26:53.233-04:00</Diesel_Date>
+        <LATITUDE>45.4892400000</LATITUDE>
+        <LONGITUDE>-122.7989600000</LONGITUDE>
+        <Phone>(503)469-0389</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices86" msdata:rowOrder="85" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #522</Station_Name>
+        <Address1>5820 NE GLISAN ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97213</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.27900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-07T12:17:00.333-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T12:17:00.333-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T12:17:00.333-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T12:17:00.333-04:00</Diesel_Date>
+        <LATITUDE>45.5264052918</LATITUDE>
+        <LONGITUDE>-122.6038220370</LONGITUDE>
+        <Phone>(503)232-5665</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices87" msdata:rowOrder="86" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>10966 SE MCLOUGHLIN BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97222</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.27900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T07:14:37.773-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T07:14:37.773-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T07:14:37.773-04:00</Premium_Date>
+        <LATITUDE>45.4434110000</LATITUDE>
+        <LONGITUDE>-122.6420340000</LONGITUDE>
+        <Phone>(503)653-6909</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices88" msdata:rowOrder="87" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #519</Station_Name>
+        <Address1>11834 SW PACIFIC HWY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97223</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.27900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-07T17:28:46.5-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T17:28:46.5-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T17:28:46.5-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T17:28:46.5-04:00</Diesel_Date>
+        <LATITUDE>45.4347061767</LATITUDE>
+        <LONGITUDE>-122.7631514358</LONGITUDE>
+        <Phone>(503)968-6791</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices89" msdata:rowOrder="88" diffgr:hasChanges="inserted">
+        <Station_Name>TEXACO</Station_Name>
+        <Address1>11520 SW CANYON RD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97005</Zip>
+        <Brand_Name>Texaco</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.27900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T11:02:33-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T09:26:53.233-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T09:26:53.233-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T09:26:53.233-04:00</Diesel_Date>
+        <LATITUDE>45.4898532053</LATITUDE>
+        <LONGITUDE>-122.7957260910</LONGITUDE>
+        <Phone>(503)626-8126</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices90" msdata:rowOrder="89" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #516</Station_Name>
+        <Address1>12805 NW CORNELL RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97229</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.11900000</Unleaded_Price>
+        <MidGrade_Price>4.23900000</MidGrade_Price>
+        <Premium_Price>4.27900000</Premium_Price>
+        <Diesel_Price>4.29900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T10:23:33.14-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T10:23:33.14-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-06T16:31:58.763-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T10:23:33.14-04:00</Diesel_Date>
+        <LATITUDE>45.5249500000</LATITUDE>
+        <LONGITUDE>-122.8085700000</LONGITUDE>
+        <Phone>(503)641-8607</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices91" msdata:rowOrder="90" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>11440 SW PACIFIC HWY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97223</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.27900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T18:25:17.377-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T18:25:17.377-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T18:25:17.377-04:00</Premium_Date>
+        <LATITUDE>45.4426831373</LATITUDE>
+        <LONGITUDE>-122.7452120134</LONGITUDE>
+        <Phone>(503)244-7851</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices92" msdata:rowOrder="91" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #521</Station_Name>
+        <Address1>3840 SE STARK ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97214</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.27900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-07T16:03:42.727-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T16:03:42.727-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T16:03:42.727-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T09:55:17.66-04:00</Diesel_Date>
+        <LATITUDE>45.5192547730</LATITUDE>
+        <LONGITUDE>-122.6238943007</LONGITUDE>
+        <Phone>(503)459-4407</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices93" msdata:rowOrder="92" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #558</Station_Name>
+        <Address1>608 N STATE ST</Address1>
+        <Address2 />
+        <City>Lake Oswego</City>
+        <State>OR</State>
+        <Zip>97034</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.27900000</Premium_Price>
+        <Unleaded_Date>2012-10-06T00:00:00-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-05T17:02:39.037-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-05T17:02:39.037-04:00</Premium_Date>
+        <LATITUDE>45.4218900000</LATITUDE>
+        <LONGITUDE>-122.6623100000</LONGITUDE>
+        <Phone>(503)635-1253</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices94" msdata:rowOrder="93" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON EXTRA MILE</Station_Name>
+        <Address1>12220 SE FOSTER RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97236</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.15900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.27900000</Premium_Price>
+        <Diesel_Price>4.65900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T20:30:18-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:35:14.007-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:35:14.007-04:00</Premium_Date>
+        <Diesel_Date>2012-10-05T09:26:55.77-04:00</Diesel_Date>
+        <LATITUDE>45.4766391184</LATITUDE>
+        <LONGITUDE>-122.5368828649</LONGITUDE>
+        <Phone>(503)760-6030</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices95" msdata:rowOrder="94" diffgr:hasChanges="inserted">
+        <Station_Name>JUBITZ TRUCK STOP</Station_Name>
+        <Address1>10210 N VANCOUVER WAY</Address1>
+        <Address2>I-5, EXIT 307</Address2>
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97217</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>4.03900000</Unleaded_Price>
+        <MidGrade_Price>4.15900000</MidGrade_Price>
+        <Premium_Price>4.27900000</Premium_Price>
+        <Diesel_Price>4.25900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T06:08:32.52-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T06:08:32.52-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T06:08:32.52-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T06:08:32.52-04:00</Diesel_Date>
+        <LATITUDE>45.5965720030</LATITUDE>
+        <LONGITUDE>-122.6693134120</LONGITUDE>
+        <Phone>(503)283-1111</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices96" msdata:rowOrder="95" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>9 SE 82ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97216</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.27900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T16:03:33.903-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T16:03:33.903-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T16:03:33.903-04:00</Premium_Date>
+        <LATITUDE>45.5226413881</LATITUDE>
+        <LONGITUDE>-122.5789742552</LONGITUDE>
+        <Phone>(503)251-5807</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices97" msdata:rowOrder="96" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>1631 SOUTHSHORE BLVD</Address1>
+        <Address2 />
+        <City>Lake Oswego</City>
+        <State>OR</State>
+        <Zip>97034</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <Premium_Price>4.28900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-07T00:00:00-04:00</Unleaded_Date>
+        <Premium_Date>2012-10-06T00:00:00-04:00</Premium_Date>
+        <Diesel_Date>2012-10-06T00:00:00-04:00</Diesel_Date>
+        <LATITUDE>45.4069377004</LATITUDE>
+        <LONGITUDE>-122.6768025755</LONGITUDE>
+        <Phone>(503)636-8441</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices98" msdata:rowOrder="97" diffgr:hasChanges="inserted">
+        <Station_Name>GAS STATION</Station_Name>
+        <Address1>1230 MCVEY AVE</Address1>
+        <Address2 />
+        <City>Lake Oswego</City>
+        <State>OR</State>
+        <Zip>97034</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.18900000</MidGrade_Price>
+        <Premium_Price>4.28900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-05T05:40:13.303-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-05T05:40:13.303-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-05T05:40:13.303-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T05:40:14.293-04:00</Diesel_Date>
+        <LATITUDE>45.4065900000</LATITUDE>
+        <LONGITUDE>-122.6774400000</LONGITUDE>
+        <Phone />
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices99" msdata:rowOrder="98" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL</Station_Name>
+        <Address1>14373 SE MCLOUGHLIN BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97267</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T20:18:46.94-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T20:18:46.94-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T20:18:46.94-04:00</Premium_Date>
+        <LATITUDE>45.4193451376</LATITUDE>
+        <LONGITUDE>-122.6330138637</LONGITUDE>
+        <Phone>(503)289-5558</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices100" msdata:rowOrder="99" diffgr:hasChanges="inserted">
+        <Station_Name>ASTRO #253</Station_Name>
+        <Address1>2809 N ROSA PARKS WAY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97217</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T18:53:45.813-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T18:53:45.813-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T18:53:45.813-04:00</Premium_Date>
+        <LATITUDE>45.5699372189</LATITUDE>
+        <LONGITUDE>-122.6955578748</LONGITUDE>
+        <Phone>(503)285-6441</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices101" msdata:rowOrder="100" diffgr:hasChanges="inserted">
+        <Station_Name>76</Station_Name>
+        <Address1>14801 SE WEBSTER RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97267</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T19:50:16.1-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T19:50:16.1-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T19:50:16.1-04:00</Premium_Date>
+        <LATITUDE>45.4159500000</LATITUDE>
+        <LONGITUDE>-122.5931500000</LONGITUDE>
+        <Phone>(503)654-8888</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices102" msdata:rowOrder="101" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>120 NW MURRAY BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97229</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T17:30:22-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T10:23:33.14-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T18:01:30-04:00</Premium_Date>
+        <LATITUDE>45.5200273165</LATITUDE>
+        <LONGITUDE>-122.8159405081</LONGITUDE>
+        <Phone>(503)644-9690</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices103" msdata:rowOrder="102" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>6655 SW SCHOLLS FERRY RD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97008</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T18:01:30-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T12:45:17.41-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T12:45:17.41-04:00</Premium_Date>
+        <LATITUDE>45.4725787736</LATITUDE>
+        <LONGITUDE>-122.7731238757</LONGITUDE>
+        <Phone>(503)297-4198</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices104" msdata:rowOrder="103" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #529</Station_Name>
+        <Address1>10725 SE 82ND AVE</Address1>
+        <Address2 />
+        <City>HAPPY VALLEY</City>
+        <State>OR</State>
+        <Zip>97086</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Diesel_Price>4.35900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T18:53:35.91-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T18:53:35.91-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T18:53:35.91-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T18:53:35.91-04:00</Diesel_Date>
+        <LATITUDE>45.4455667008</LATITUDE>
+        <LONGITUDE>-122.5788978504</LONGITUDE>
+        <Phone>(503)654-1219</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices105" msdata:rowOrder="104" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>8710 SW HALL BLVD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97008</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T07:14:37.773-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T07:14:37.773-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T07:14:37.773-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T07:14:37.773-04:00</Diesel_Date>
+        <LATITUDE>45.4570201071</LATITUDE>
+        <LONGITUDE>-122.7826511002</LONGITUDE>
+        <Phone>(503)641-1821</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices106" msdata:rowOrder="105" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>14975 SW WALKER RD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97006</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Diesel_Price>4.25900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T06:36:52.25-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T06:36:52.25-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T06:36:52.25-04:00</Premium_Date>
+        <Diesel_Date>2012-10-06T16:31:58.763-04:00</Diesel_Date>
+        <LATITUDE>45.5142332404</LATITUDE>
+        <LONGITUDE>-122.8309959855</LONGITUDE>
+        <Phone>(503)641-6712</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices107" msdata:rowOrder="106" diffgr:hasChanges="inserted">
+        <Station_Name>MICHAEL J CLABOE</Station_Name>
+        <Address1>6055 SW HALL BLVD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97008</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Diesel_Price>4.33900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T07:16:08.847-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T15:07:03.45-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T15:07:03.45-04:00</Premium_Date>
+        <Diesel_Date>2012-10-05T00:00:00-04:00</Diesel_Date>
+        <LATITUDE>45.4761809822</LATITUDE>
+        <LONGITUDE>-122.8054477229</LONGITUDE>
+        <Phone>(503)646-4888</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices108" msdata:rowOrder="107" diffgr:hasChanges="inserted">
+        <Station_Name>SPACE AGE #4</Station_Name>
+        <Address1>5840 SE 17TH AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97202</Zip>
+        <Brand_Name>Space Age</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Diesel_Price>4.27900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T15:35:14.007-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:35:14.007-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:35:14.007-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T15:35:14.007-04:00</Diesel_Date>
+        <LATITUDE>45.4804838697</LATITUDE>
+        <LONGITUDE>-122.6484009733</LONGITUDE>
+        <Phone>(503)238-8608</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices109" msdata:rowOrder="108" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>7200 SW BEAVERTON HWY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97225</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T17:30:22-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T13:41:53.11-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T13:41:53.11-04:00</Premium_Date>
+        <LATITUDE>45.4859190000</LATITUDE>
+        <LONGITUDE>-122.7511090000</LONGITUDE>
+        <Phone>(503)292-7086</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices110" msdata:rowOrder="109" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #559</Station_Name>
+        <Address1>209 A AVE</Address1>
+        <Address2 />
+        <City>Lake Oswego</City>
+        <State>OR</State>
+        <Zip>97034</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T05:40:14.293-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T05:40:14.293-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T05:40:14.293-04:00</Premium_Date>
+        <LATITUDE>45.4195500000</LATITUDE>
+        <LONGITUDE>-122.6657900000</LONGITUDE>
+        <Phone>(503)636-3586</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices111" msdata:rowOrder="110" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #515</Station_Name>
+        <Address1>1220 NW WATERHOUSE AVE</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97006</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Diesel_Price>4.30900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T05:40:14.293-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T05:40:14.293-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T05:40:14.293-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T00:00:00-04:00</Diesel_Date>
+        <LATITUDE>45.5284500000</LATITUDE>
+        <LONGITUDE>-122.8388100000</LONGITUDE>
+        <Phone>(503)645-4188</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices112" msdata:rowOrder="111" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>1510 NE 42ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97213</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T20:30:18-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-05T08:58:32.203-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-06T00:00:00-04:00</Premium_Date>
+        <LATITUDE>45.5340500000</LATITUDE>
+        <LONGITUDE>-122.6203000000</LONGITUDE>
+        <Phone>(503)287-0550</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices113" msdata:rowOrder="112" diffgr:hasChanges="inserted">
+        <Station_Name>HOLGATE SHELL</Station_Name>
+        <Address1>4525 SE 28TH AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97202</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-06T12:16:57.22-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-06T12:16:57.22-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-06T12:16:57.22-04:00</Premium_Date>
+        <Diesel_Date>2012-10-06T12:16:57.22-04:00</Diesel_Date>
+        <LATITUDE>45.4895837133</LATITUDE>
+        <LONGITUDE>-122.6375912645</LONGITUDE>
+        <Phone>(503)232-7336</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices114" msdata:rowOrder="113" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>14470 SW ALLEN BLVD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97005</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.18900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T07:14:37.773-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T08:06:43.793-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:30:22-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T07:14:37.773-04:00</Diesel_Date>
+        <LATITUDE>45.4765672539</LATITUDE>
+        <LONGITUDE>-122.8256833685</LONGITUDE>
+        <Phone>(503)646-9164</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices115" msdata:rowOrder="114" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #504</Station_Name>
+        <Address1>589 NE M L KING BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97211</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T16:31:52.467-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T16:31:52.467-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T16:31:52.467-04:00</Premium_Date>
+        <LATITUDE>45.5652100000</LATITUDE>
+        <LONGITUDE>-122.6614400000</LONGITUDE>
+        <Phone>(503)978-8996</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices116" msdata:rowOrder="115" diffgr:hasChanges="inserted">
+        <Station_Name>PLAID PANTRIES</Station_Name>
+        <Address1>1002 W FOURTH PLAIN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98660</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T13:02:12.46-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T07:16:08.847-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T07:16:08.847-04:00</Premium_Date>
+        <LATITUDE>45.6403200000</LATITUDE>
+        <LONGITUDE>-122.6811100000</LONGITUDE>
+        <Phone>(360)695-1114</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices117" msdata:rowOrder="116" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>10580 SE 82ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97266</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T18:53:35.91-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T18:53:35.91-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T18:53:35.91-04:00</Premium_Date>
+        <LATITUDE>45.4463163245</LATITUDE>
+        <LONGITUDE>-122.5786256790</LONGITUDE>
+        <Phone>(503)652-0077</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices118" msdata:rowOrder="117" diffgr:hasChanges="inserted">
+        <Station_Name>PATRICIA L TSUI</Station_Name>
+        <Address1>12155 SE FOSTER RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97266</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T15:35:14.007-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:35:14.007-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:35:14.007-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T15:35:14.007-04:00</Diesel_Date>
+        <LATITUDE>45.4766211523</LATITUDE>
+        <LONGITUDE>-122.5376779290</LONGITUDE>
+        <Phone>(503)761-1555</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices119" msdata:rowOrder="118" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>5235 SW MACADAM AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97239</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.05900000</Unleaded_Price>
+        <MidGrade_Price>4.17900000</MidGrade_Price>
+        <Premium_Price>4.29900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T17:28:35.373-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T17:28:35.373-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:28:35.373-04:00</Premium_Date>
+        <LATITUDE>45.4853200000</LATITUDE>
+        <LONGITUDE>-122.6752700000</LONGITUDE>
+        <Phone>(503)223-8226</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices120" msdata:rowOrder="119" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>6702 SE DIVISION ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97206</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.13900000</Unleaded_Price>
+        <MidGrade_Price>4.27900000</MidGrade_Price>
+        <Premium_Price>4.30900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T07:16:08.847-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T07:16:08.847-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T00:00:00-04:00</Premium_Date>
+        <LATITUDE>45.5053579733</LATITUDE>
+        <LONGITUDE>-122.5944611508</LONGITUDE>
+        <Phone>(503)771-9867</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices121" msdata:rowOrder="120" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>9101 N LOMBARD ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97203</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.31900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T08:02:16.38-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T08:02:16.38-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T08:02:16.38-04:00</Premium_Date>
+        <LATITUDE>45.5930200000</LATITUDE>
+        <LONGITUDE>-122.7576400000</LONGITUDE>
+        <Phone>(503)286-9048</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices122" msdata:rowOrder="121" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON EXTRA MILE</Station_Name>
+        <Address1>10950 SE OAK ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97222</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.11900000</Unleaded_Price>
+        <MidGrade_Price>4.21900000</MidGrade_Price>
+        <Premium_Price>4.31900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T03:46:55.277-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T03:46:55.277-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T03:46:55.277-04:00</Premium_Date>
+        <LATITUDE>45.4439163208</LATITUDE>
+        <LONGITUDE>-122.6286010742</LONGITUDE>
+        <Phone>(503)786-9892</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices123" msdata:rowOrder="122" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #527</Station_Name>
+        <Address1>9215 SE POWELL BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97266</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.10900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.31900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-07T00:00:00-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-05T10:51:58.1-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-05T10:51:58.1-04:00</Premium_Date>
+        <Diesel_Date>2012-10-05T10:51:58.1-04:00</Diesel_Date>
+        <LATITUDE>45.4974438942</LATITUDE>
+        <LONGITUDE>-122.5681238057</LONGITUDE>
+        <Phone>(503)771-7619</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices124" msdata:rowOrder="123" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #526</Station_Name>
+        <Address1>2450 SE 122ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97233</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.31900000</Premium_Price>
+        <Diesel_Price>4.43900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T16:03:33.903-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T16:03:33.903-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T16:03:33.903-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T16:03:33.903-04:00</Diesel_Date>
+        <LATITUDE>45.5044955992</LATITUDE>
+        <LONGITUDE>-122.5375784795</LONGITUDE>
+        <Phone>(503)257-7178</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices125" msdata:rowOrder="124" diffgr:hasChanges="inserted">
+        <Station_Name>ASTRO #206</Station_Name>
+        <Address1>1111 NW 21ST AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97209</Zip>
+        <Brand_Name>Astro</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.21900000</MidGrade_Price>
+        <Premium_Price>4.31900000</Premium_Price>
+        <Diesel_Price>4.19900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T15:06:57.51-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:06:57.51-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:06:57.51-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T15:06:57.51-04:00</Diesel_Date>
+        <LATITUDE>45.5306902132</LATITUDE>
+        <LONGITUDE>-122.6944454859</LONGITUDE>
+        <Phone>(503)274-8971</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices126" msdata:rowOrder="125" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #518</Station_Name>
+        <Address1>8725 SW HALL BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97223</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.31900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T07:14:37.773-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T07:14:37.773-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T07:14:37.773-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T07:14:37.773-04:00</Diesel_Date>
+        <LATITUDE>45.4568340000</LATITUDE>
+        <LONGITUDE>-122.7824340000</LONGITUDE>
+        <Phone>(503)643-9675</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices127" msdata:rowOrder="126" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #506</Station_Name>
+        <Address1>519 NE BROADWAY ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97232</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.31900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-07T17:01:01.08-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T17:01:01.08-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T17:01:01.08-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T17:01:01.08-04:00</Diesel_Date>
+        <LATITUDE>45.5354461669</LATITUDE>
+        <LONGITUDE>-122.6601181030</LONGITUDE>
+        <Phone>(503)288-1402</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices128" msdata:rowOrder="127" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #553</Station_Name>
+        <Address1>7433 N INTERSTATE AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97217</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.31900000</Premium_Price>
+        <Diesel_Price>4.19900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T06:36:52.25-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T06:36:52.25-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T06:36:52.25-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T06:36:52.25-04:00</Diesel_Date>
+        <LATITUDE>45.5767014659</LATITUDE>
+        <LONGITUDE>-122.6820853005</LONGITUDE>
+        <Phone>(503)283-4223</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices129" msdata:rowOrder="128" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>1020 N MARINE DR</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97217</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.31900000</Premium_Price>
+        <Diesel_Price>4.29900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T01:25:07.583-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T01:25:07.583-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T01:25:07.583-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T01:25:07.583-04:00</Diesel_Date>
+        <LATITUDE>45.6030000000</LATITUDE>
+        <LONGITUDE>-122.6762600000</LONGITUDE>
+        <Phone>(503)517-0457</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices130" msdata:rowOrder="129" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #532</Station_Name>
+        <Address1>16211 BOONES FERRY RD</Address1>
+        <Address2 />
+        <City>Lake Oswego</City>
+        <State>OR</State>
+        <Zip>97035</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.31900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T05:40:14.293-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T05:40:14.293-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T05:40:14.293-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T05:40:14.293-04:00</Diesel_Date>
+        <LATITUDE>45.4085800000</LATITUDE>
+        <LONGITUDE>-122.7233600000</LONGITUDE>
+        <Phone>(503)636-8037</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices131" msdata:rowOrder="130" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON EXTRA MILE</Station_Name>
+        <Address1>11015 SW CANYON RD</Address1>
+        <Address2 />
+        <City>Beaverton</City>
+        <State>OR</State>
+        <Zip>97005</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.11900000</Unleaded_Price>
+        <MidGrade_Price>4.21900000</MidGrade_Price>
+        <Premium_Price>4.31900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T19:30:18-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T09:26:53.233-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T09:26:53.233-04:00</Premium_Date>
+        <LATITUDE>45.4914162584</LATITUDE>
+        <LONGITUDE>-122.7896598160</LONGITUDE>
+        <Phone>(503)644-1663</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices132" msdata:rowOrder="131" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #505</Station_Name>
+        <Address1>15 NE BROADWAY ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97232</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.31900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T06:08:32.407-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T06:08:32.407-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T06:08:32.407-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T06:08:32.407-04:00</Diesel_Date>
+        <LATITUDE>45.5350900000</LATITUDE>
+        <LONGITUDE>-122.6660200000</LONGITUDE>
+        <Phone>(503)282-0379</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices133" msdata:rowOrder="132" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #531</Station_Name>
+        <Address1>14951 BANGY RD</Address1>
+        <Address2 />
+        <City>Lake Oswego</City>
+        <State>OR</State>
+        <Zip>97035</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.19900000</MidGrade_Price>
+        <Premium_Price>4.31900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T14:19:58.66-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T14:19:58.66-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T14:19:58.66-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T05:40:14.293-04:00</Diesel_Date>
+        <LATITUDE>45.4185300000</LATITUDE>
+        <LONGITUDE>-122.7427400000</LONGITUDE>
+        <Phone>(503)639-4957</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices134" msdata:rowOrder="133" diffgr:hasChanges="inserted">
+        <Station_Name>MINIT MART #709</Station_Name>
+        <Address1>1910 W FOURTH PLAIN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98660</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.21900000</MidGrade_Price>
+        <Premium_Price>4.33900000</Premium_Price>
+        <Diesel_Price>4.28900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T00:28:28.697-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T00:28:28.697-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T00:28:28.697-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T00:00:00-04:00</Diesel_Date>
+        <LATITUDE>45.6404093542</LATITUDE>
+        <LONGITUDE>-122.6908933921</LONGITUDE>
+        <Phone>(360)695-9550</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices135" msdata:rowOrder="134" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>13675 NW CORNELL RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97229</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.13900000</Unleaded_Price>
+        <MidGrade_Price>4.23900000</MidGrade_Price>
+        <Premium_Price>4.33900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T07:01:32-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T17:28:35.373-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:28:35.373-04:00</Premium_Date>
+        <LATITUDE>45.5282378368</LATITUDE>
+        <LONGITUDE>-122.8175394899</LONGITUDE>
+        <Phone>(503)643-2174</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices136" msdata:rowOrder="135" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>10415 SW PARKWAY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97225</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.06900000</Unleaded_Price>
+        <MidGrade_Price>4.25900000</MidGrade_Price>
+        <Premium_Price>4.33900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T10:51:59.39-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T10:51:59.39-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T10:51:59.39-04:00</Premium_Date>
+        <LATITUDE>45.5092656061</LATITUDE>
+        <LONGITUDE>-122.7838976047</LONGITUDE>
+        <Phone>(503)292-0161</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices137" msdata:rowOrder="136" diffgr:hasChanges="inserted">
+        <Station_Name>CHKALOV SHELL</Station_Name>
+        <Address1>503 SE CHKALOV DR</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98683</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.23900000</MidGrade_Price>
+        <Premium_Price>4.33900000</Premium_Price>
+        <Diesel_Price>4.29900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T19:50:16.1-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T12:45:21.903-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T12:45:21.903-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T12:45:21.903-04:00</Diesel_Date>
+        <LATITUDE>45.6185625431</LATITUDE>
+        <LONGITUDE>-122.5547507862</LONGITUDE>
+        <Phone>(360)260-8450</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices138" msdata:rowOrder="137" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #520</Station_Name>
+        <Address1>621 SE GRAND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97214</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.21900000</MidGrade_Price>
+        <Premium_Price>4.33900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T16:31:52.467-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T16:31:52.467-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T16:31:52.467-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T16:31:52.467-04:00</Diesel_Date>
+        <LATITUDE>45.5185200000</LATITUDE>
+        <LONGITUDE>-122.6607700000</LONGITUDE>
+        <Phone>(503)232-2498</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices139" msdata:rowOrder="138" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL</Station_Name>
+        <Address1>7001 NE FOURTH PLAIN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98661</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.21900000</MidGrade_Price>
+        <Premium_Price>4.33900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T19:21:57.32-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T09:26:58.977-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T09:26:58.977-04:00</Premium_Date>
+        <LATITUDE>45.6447032587</LATITUDE>
+        <LONGITUDE>-122.6007918221</LONGITUDE>
+        <Phone>(360)694-3161</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices140" msdata:rowOrder="139" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #523</Station_Name>
+        <Address1>515 NE 82ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97220</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.21900000</MidGrade_Price>
+        <Premium_Price>4.33900000</Premium_Price>
+        <Diesel_Price>4.35900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T15:35:14.007-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:35:14.007-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:35:14.007-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T15:35:14.007-04:00</Diesel_Date>
+        <LATITUDE>45.5264052918</LATITUDE>
+        <LONGITUDE>-122.5788845851</LONGITUDE>
+        <Phone>(503)254-6588</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices141" msdata:rowOrder="140" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #507</Station_Name>
+        <Address1>1714 NE 33RD AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97212</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.11900000</Unleaded_Price>
+        <MidGrade_Price>4.23900000</MidGrade_Price>
+        <Premium_Price>4.35900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-07T17:57:05.067-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T17:57:05.067-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T17:57:05.067-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T17:57:05.067-04:00</Diesel_Date>
+        <LATITUDE>45.5352500000</LATITUDE>
+        <LONGITUDE>-122.6306700000</LONGITUDE>
+        <Phone>(503)249-4021</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices142" msdata:rowOrder="141" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>10134 SE STARK ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97216</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.15900000</Unleaded_Price>
+        <MidGrade_Price>4.25900000</MidGrade_Price>
+        <Premium_Price>4.35900000</Premium_Price>
+        <Diesel_Price>4.45900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T20:30:18-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T11:48:32.187-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T11:48:32.187-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T00:00:00-04:00</Diesel_Date>
+        <LATITUDE>45.5190032472</LATITUDE>
+        <LONGITUDE>-122.5589645256</LONGITUDE>
+        <Phone>(503)254-0926</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices143" msdata:rowOrder="142" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>2721 E FOURTH PLAIN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98661</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.15900000</Unleaded_Price>
+        <MidGrade_Price>4.25900000</MidGrade_Price>
+        <Premium_Price>4.35900000</Premium_Price>
+        <Diesel_Price>4.29900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T01:25:07.583-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T01:25:07.583-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T01:25:07.583-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T01:25:07.583-04:00</Diesel_Date>
+        <LATITUDE>45.6381186730</LATITUDE>
+        <LONGITUDE>-122.6423495207</LONGITUDE>
+        <Phone>(360)695-3359</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices144" msdata:rowOrder="143" diffgr:hasChanges="inserted">
+        <Station_Name>76</Station_Name>
+        <Address1>4450 SE MCLOUGHLIN BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97202</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.16900000</Unleaded_Price>
+        <MidGrade_Price>4.25900000</MidGrade_Price>
+        <Premium_Price>4.35900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T17:00:41.177-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T17:00:41.177-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:00:41.177-04:00</Premium_Date>
+        <LATITUDE>45.4903600000</LATITUDE>
+        <LONGITUDE>-122.6543300000</LONGITUDE>
+        <Phone>(503)231-5737</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices145" msdata:rowOrder="144" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON EXTRA MILE</Station_Name>
+        <Address1>12105 N JANTZEN DR</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97217</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.15900000</Unleaded_Price>
+        <MidGrade_Price>4.23900000</MidGrade_Price>
+        <Premium_Price>4.35900000</Premium_Price>
+        <Diesel_Price>4.59900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T07:01:32-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-05T14:38:37.6-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T18:00:19-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T15:00:41-04:00</Diesel_Date>
+        <LATITUDE>45.6104688026</LATITUDE>
+        <LONGITUDE>-122.6770751121</LONGITUDE>
+        <Phone>(503)289-6332</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices146" msdata:rowOrder="145" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL</Station_Name>
+        <Address1>7709 E MILL PLAIN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98664</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.21900000</MidGrade_Price>
+        <Premium_Price>4.35900000</Premium_Price>
+        <Diesel_Price>4.27900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T13:13:33.33-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T13:13:33.33-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T13:13:33.33-04:00</Premium_Date>
+        <Diesel_Date>2012-10-05T00:28:30.91-04:00</Diesel_Date>
+        <LATITUDE>45.6247069587</LATITUDE>
+        <LONGITUDE>-122.5923512530</LONGITUDE>
+        <Phone>(360)694-4291</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices147" msdata:rowOrder="146" diffgr:hasChanges="inserted">
+        <Station_Name>VISION INTERNATIONAL</Station_Name>
+        <Address1>3515 SE 122ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97236</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.25900000</MidGrade_Price>
+        <Premium_Price>4.35900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T13:13:33.33-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T13:13:33.33-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T13:13:33.33-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T13:13:33.33-04:00</Diesel_Date>
+        <LATITUDE>45.4969857579</LATITUDE>
+        <LONGITUDE>-122.5375850322</LONGITUDE>
+        <Phone>(503)761-2854</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices148" msdata:rowOrder="147" diffgr:hasChanges="inserted">
+        <Station_Name>KEVORKS AUTO CARE</Station_Name>
+        <Address1>10275 SW PARKWAY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97225</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.27900000</MidGrade_Price>
+        <Premium_Price>4.35900000</Premium_Price>
+        <Unleaded_Date>2012-10-06T15:35:19.333-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-06T15:35:19.333-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-06T15:35:19.333-04:00</Premium_Date>
+        <LATITUDE>45.5084930626</LATITUDE>
+        <LONGITUDE>-122.7822590907</LONGITUDE>
+        <Phone>(503)292-7929</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices149" msdata:rowOrder="148" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>6510 E MILL PLAIN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98661</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.15900000</Unleaded_Price>
+        <MidGrade_Price>4.25900000</MidGrade_Price>
+        <Premium_Price>4.35900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T17:00:41.177-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T17:00:41.177-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:00:41.177-04:00</Premium_Date>
+        <LATITUDE>45.6274018779</LATITUDE>
+        <LONGITUDE>-122.6046734875</LONGITUDE>
+        <Phone>(360)693-5009</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices150" msdata:rowOrder="149" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>15710 SE MCLOUGHLIN BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97267</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.23900000</MidGrade_Price>
+        <Premium_Price>4.35900000</Premium_Price>
+        <Diesel_Price>4.29900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T20:30:18-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T20:18:46.94-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T20:18:46.94-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T20:18:46.94-04:00</Diesel_Date>
+        <LATITUDE>45.4094547844</LATITUDE>
+        <LONGITUDE>-122.6267922673</LONGITUDE>
+        <Phone>(503)659-1210</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices151" msdata:rowOrder="150" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>9025 SW BARBUR BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97219</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.15900000</Unleaded_Price>
+        <MidGrade_Price>4.25900000</MidGrade_Price>
+        <Premium_Price>4.35900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T02:30:25-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:35:14.007-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:35:14.007-04:00</Premium_Date>
+        <LATITUDE>45.4597509585</LATITUDE>
+        <LONGITUDE>-122.7078907519</LONGITUDE>
+        <Phone>(503)246-1039</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices152" msdata:rowOrder="151" diffgr:hasChanges="inserted">
+        <Station_Name>B AND B FOOD AND FUEL</Station_Name>
+        <Address1>8411 E MILL PLAIN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98664</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.22900000</MidGrade_Price>
+        <Premium_Price>4.35900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T19:50:16.1-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T07:16:08.847-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T07:16:08.847-04:00</Premium_Date>
+        <LATITUDE>45.6230773926</LATITUDE>
+        <LONGITUDE>-122.5851974487</LONGITUDE>
+        <Phone>(360)696-2411</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices153" msdata:rowOrder="152" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL</Station_Name>
+        <Address1>5124 SE 17TH AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97202</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.15900000</Unleaded_Price>
+        <MidGrade_Price>4.25900000</MidGrade_Price>
+        <Premium_Price>4.36900000</Premium_Price>
+        <Diesel_Price>4.26900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T17:00:41.177-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T17:00:41.177-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:00:41.177-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T17:00:41.177-04:00</Diesel_Date>
+        <LATITUDE>45.4858377758</LATITUDE>
+        <LONGITUDE>-122.6483127023</LONGITUDE>
+        <Phone>(503)206-6979</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices154" msdata:rowOrder="153" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>5520 NE M L KING BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97211</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.15900000</Unleaded_Price>
+        <MidGrade_Price>4.27900000</MidGrade_Price>
+        <Premium_Price>4.37900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T15:06:57.51-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:06:57.51-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:06:57.51-04:00</Premium_Date>
+        <LATITUDE>45.5628800000</LATITUDE>
+        <LONGITUDE>-122.6613700000</LONGITUDE>
+        <Phone>(503)281-6483</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices155" msdata:rowOrder="154" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>8604 SW BARBUR BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97219</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.27900000</MidGrade_Price>
+        <Premium_Price>4.37900000</Premium_Price>
+        <Diesel_Price>4.35900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T07:14:37.773-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T07:14:37.773-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T07:14:37.773-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T07:14:37.773-04:00</Diesel_Date>
+        <LATITUDE>45.4623919793</LATITUDE>
+        <LONGITUDE>-122.7032313700</LONGITUDE>
+        <Phone>(503)245-5190</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices156" msdata:rowOrder="155" diffgr:hasChanges="inserted">
+        <Station_Name>KING ROAD FASTRAK</Station_Name>
+        <Address1>6140 SE KING RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97222</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>4.07900000</Unleaded_Price>
+        <MidGrade_Price>4.25900000</MidGrade_Price>
+        <Premium_Price>4.37900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T03:18:32.54-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T03:18:32.54-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T03:18:32.54-04:00</Premium_Date>
+        <LATITUDE>45.4479651789</LATITUDE>
+        <LONGITUDE>-122.5993738795</LONGITUDE>
+        <Phone>(503)772-4848</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices157" msdata:rowOrder="156" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>3323 NE KILLINGSWORTH ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97211</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.17900000</Unleaded_Price>
+        <MidGrade_Price>4.27900000</MidGrade_Price>
+        <Premium_Price>4.37900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T00:00:00-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-06T11:48:36.863-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T00:00:00-04:00</Premium_Date>
+        <LATITUDE>45.5627238186</LATITUDE>
+        <LONGITUDE>-122.6303807251</LONGITUDE>
+        <Phone>(503)282-2077</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices158" msdata:rowOrder="157" diffgr:hasChanges="inserted">
+        <Station_Name>GARDEN HOME GAS STAT</Station_Name>
+        <Address1>7545 SW OLESON RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97223</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.11900000</Unleaded_Price>
+        <MidGrade_Price>4.24900000</MidGrade_Price>
+        <Premium_Price>4.37900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T18:25:17.377-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T18:25:17.377-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T18:25:17.377-04:00</Premium_Date>
+        <LATITUDE>45.4653833395</LATITUDE>
+        <LONGITUDE>-122.7539850297</LONGITUDE>
+        <Phone>(503)977-9399</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices159" msdata:rowOrder="158" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>2835 E EVERGREEN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98661</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.13900000</Unleaded_Price>
+        <MidGrade_Price>4.27900000</MidGrade_Price>
+        <Premium_Price>4.37900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T13:02:16.107-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T00:28:27.507-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T00:28:27.507-04:00</Premium_Date>
+        <LATITUDE>45.6260544183</LATITUDE>
+        <LONGITUDE>-122.6417545076</LONGITUDE>
+        <Phone>(360)694-5741</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices160" msdata:rowOrder="159" diffgr:hasChanges="inserted">
+        <Station_Name>ROSE CITY SPEEDWAY</Station_Name>
+        <Address1>5710 NE FREMONT ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97213</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>3.99900000</Unleaded_Price>
+        <MidGrade_Price>4.27900000</MidGrade_Price>
+        <Premium_Price>4.37900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T15:35:23.19-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T15:35:23.19-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T15:35:23.19-04:00</Premium_Date>
+        <LATITUDE>45.5482000000</LATITUDE>
+        <LONGITUDE>-122.6044900000</LONGITUDE>
+        <Phone>(503)595-5940</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices161" msdata:rowOrder="160" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>2 MONROE PKWY</Address1>
+        <Address2 />
+        <City>Lake Oswego</City>
+        <State>OR</State>
+        <Zip>97035</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.15900000</Unleaded_Price>
+        <MidGrade_Price>4.27900000</MidGrade_Price>
+        <Premium_Price>4.37900000</Premium_Price>
+        <Diesel_Price>4.55900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T00:28:28.697-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T00:28:28.697-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T00:28:28.697-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T05:40:14.293-04:00</Diesel_Date>
+        <LATITUDE>45.4321370205</LATITUDE>
+        <LONGITUDE>-122.7023311704</LONGITUDE>
+        <Phone>(503)636-0945</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices162" msdata:rowOrder="161" diffgr:hasChanges="inserted">
+        <Station_Name>76</Station_Name>
+        <Address1>8715 SW CANYON RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97225</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.11900000</Unleaded_Price>
+        <MidGrade_Price>4.29900000</MidGrade_Price>
+        <Premium_Price>4.39900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T12:16:53.36-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T12:16:53.36-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T12:16:53.36-04:00</Premium_Date>
+        <LATITUDE>45.4980100000</LATITUDE>
+        <LONGITUDE>-122.7670500000</LONGITUDE>
+        <Phone>(503)297-3001</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices163" msdata:rowOrder="162" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>3435 NE MARTIN LUTHER KING</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97212</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.29900000</Unleaded_Price>
+        <MidGrade_Price>4.29900000</MidGrade_Price>
+        <Premium_Price>4.39900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T07:01:32-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:06:57.51-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T16:01:14-04:00</Premium_Date>
+        <LATITUDE>45.5480634586</LATITUDE>
+        <LONGITUDE>-122.6615373234</LONGITUDE>
+        <Phone>(503)249-0359</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices164" msdata:rowOrder="163" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>3901 MAIN ST</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98663</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.29900000</MidGrade_Price>
+        <Premium_Price>4.39900000</Premium_Price>
+        <Diesel_Price>4.29900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T20:30:18-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:06:57.51-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:06:57.51-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T15:06:57.51-04:00</Diesel_Date>
+        <LATITUDE>45.6499044526</LATITUDE>
+        <LONGITUDE>-122.6676301477</LONGITUDE>
+        <Phone>(360)993-0517</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices165" msdata:rowOrder="164" diffgr:hasChanges="inserted">
+        <Station_Name>JACKSONS FOOD STORE #508</Station_Name>
+        <Address1>10131 NE SANDY BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97220</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.15900000</Unleaded_Price>
+        <MidGrade_Price>4.27900000</MidGrade_Price>
+        <Premium_Price>4.39900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T03:18:32.54-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T03:18:32.54-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T03:18:32.54-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T03:18:32.54-04:00</Diesel_Date>
+        <LATITUDE>45.5592000000</LATITUDE>
+        <LONGITUDE>-122.5583100000</LONGITUDE>
+        <Phone>(503)253-5937</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices166" msdata:rowOrder="165" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON EXTRA MILE</Station_Name>
+        <Address1>4224 NE 122ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97230</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.17900000</Unleaded_Price>
+        <MidGrade_Price>4.29900000</MidGrade_Price>
+        <Premium_Price>4.39900000</Premium_Price>
+        <Diesel_Price>4.49900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T19:30:18-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T13:13:33.33-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T13:13:33.33-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T18:01:30-04:00</Diesel_Date>
+        <LATITUDE>45.5535700767</LATITUDE>
+        <LONGITUDE>-122.5369575483</LONGITUDE>
+        <Phone>(503)257-7111</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices167" msdata:rowOrder="166" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>10512 SE MILL PLAIN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98664</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.29900000</MidGrade_Price>
+        <Premium_Price>4.39900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T18:53:35.91-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T18:53:35.91-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T18:53:35.91-04:00</Premium_Date>
+        <LATITUDE>45.6210778010</LATITUDE>
+        <LONGITUDE>-122.5642378658</LONGITUDE>
+        <Phone>(360)253-8289</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices168" msdata:rowOrder="167" diffgr:hasChanges="inserted">
+        <Station_Name>76</Station_Name>
+        <Address1>3445 NE 82ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97220</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.17900000</Unleaded_Price>
+        <MidGrade_Price>4.29900000</MidGrade_Price>
+        <Premium_Price>4.39900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T14:10:21.997-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T14:10:21.997-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T14:10:21.997-04:00</Premium_Date>
+        <LATITUDE>45.5477900000</LATITUDE>
+        <LONGITUDE>-122.5787500000</LONGITUDE>
+        <Phone>(503)254-5415</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices169" msdata:rowOrder="168" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>527 SE 82ND AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97216</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.27900000</MidGrade_Price>
+        <Premium_Price>4.39900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T01:53:30.403-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T01:53:30.403-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T01:53:30.403-04:00</Premium_Date>
+        <LATITUDE>45.5188954505</LATITUDE>
+        <LONGITUDE>-122.5789415559</LONGITUDE>
+        <Phone>(503)254-4809</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices170" msdata:rowOrder="169" diffgr:hasChanges="inserted">
+        <Station_Name>10TH POWELL SHELL</Station_Name>
+        <Address1>2920 SE 10TH AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97202</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.13900000</Unleaded_Price>
+        <MidGrade_Price>4.26900000</MidGrade_Price>
+        <Premium_Price>4.39900000</Premium_Price>
+        <Unleaded_Date>2012-10-06T00:00:00-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-05T17:56:57.887-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-05T17:56:57.887-04:00</Premium_Date>
+        <LATITUDE>45.5019623752</LATITUDE>
+        <LONGITUDE>-122.6557003254</LONGITUDE>
+        <Phone>(503)234-9274</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices171" msdata:rowOrder="170" diffgr:hasChanges="inserted">
+        <Station_Name>NOW C STORE 41</Station_Name>
+        <Address1>2517 NE ANDRESEN RD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98661</Zip>
+        <Brand_Name>Texaco</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.29900000</MidGrade_Price>
+        <Premium_Price>4.39900000</Premium_Price>
+        <Diesel_Price>4.29900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T19:30:18-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T11:48:40.727-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T11:48:40.727-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T14:30:21-04:00</Diesel_Date>
+        <LATITUDE>45.6409606933</LATITUDE>
+        <LONGITUDE>-122.6000976562</LONGITUDE>
+        <Phone>(360)909-1368</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices172" msdata:rowOrder="171" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>6217 SE KING RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97222</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.27900000</MidGrade_Price>
+        <Premium_Price>4.39900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T05:11:53.077-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T05:11:53.077-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T05:11:53.077-04:00</Premium_Date>
+        <LATITUDE>45.4479651789</LATITUDE>
+        <LONGITUDE>-122.5988484532</LONGITUDE>
+        <Phone>(503)788-2204</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices173" msdata:rowOrder="172" diffgr:hasChanges="inserted">
+        <Station_Name>76</Station_Name>
+        <Address1>3975 SW BEAVERTON HILLSDALE HWY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97221</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.15900000</Unleaded_Price>
+        <MidGrade_Price>4.29900000</MidGrade_Price>
+        <Premium_Price>4.41900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T18:53:45.813-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T18:53:45.813-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T18:53:45.813-04:00</Premium_Date>
+        <LATITUDE>45.4850300000</LATITUDE>
+        <LONGITUDE>-122.7179600000</LONGITUDE>
+        <Phone>(503)452-1257</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices174" msdata:rowOrder="173" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>9138 SE FOSTER RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97266</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.15900000</Unleaded_Price>
+        <MidGrade_Price>4.31900000</MidGrade_Price>
+        <Premium_Price>4.43900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T18:01:30-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T08:58:33.15-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T08:58:33.15-04:00</Premium_Date>
+        <LATITUDE>45.4800436996</LATITUDE>
+        <LONGITUDE>-122.5691523335</LONGITUDE>
+        <Phone>(503)771-9451</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices175" msdata:rowOrder="174" diffgr:hasChanges="inserted">
+        <Station_Name>CAPUTO SHELL</Station_Name>
+        <Address1>1525 SE LADD AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97214</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.33900000</MidGrade_Price>
+        <Premium_Price>4.43900000</Premium_Price>
+        <Diesel_Price>4.35900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T10:23:33.14-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T10:23:33.14-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T10:23:33.14-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T14:10:21.997-04:00</Diesel_Date>
+        <LATITUDE>45.5118617115</LATITUDE>
+        <LONGITUDE>-122.6532804284</LONGITUDE>
+        <Phone>(503)233-4249</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices176" msdata:rowOrder="175" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>500 SE CHKALOV DR</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98683</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.33900000</MidGrade_Price>
+        <Premium_Price>4.43900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T00:28:28.697-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T00:28:28.697-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T00:28:28.697-04:00</Premium_Date>
+        <LATITUDE>45.6185715262</LATITUDE>
+        <LONGITUDE>-122.5547631794</LONGITUDE>
+        <Phone>(360)256-9196</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices177" msdata:rowOrder="176" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL</Station_Name>
+        <Address1>9920 NE SANDY BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97220</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.31900000</MidGrade_Price>
+        <Premium_Price>4.43900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-09T03:18:32.54-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T03:18:32.54-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T03:18:32.54-04:00</Premium_Date>
+        <Diesel_Date>2012-10-09T03:18:32.54-04:00</Diesel_Date>
+        <LATITUDE>45.5593012713</LATITUDE>
+        <LONGITUDE>-122.5605574316</LONGITUDE>
+        <Phone>(503)251-3819</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices178" msdata:rowOrder="177" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>3815 FRUIT VALLEY RD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98660</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.31900000</MidGrade_Price>
+        <Premium_Price>4.43900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T00:28:28.697-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T00:28:28.697-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T00:28:28.697-04:00</Premium_Date>
+        <LATITUDE>45.6494732656</LATITUDE>
+        <LONGITUDE>-122.6922133542</LONGITUDE>
+        <Phone>(360)693-5244</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices179" msdata:rowOrder="178" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL</Station_Name>
+        <Address1>9218 SE DIVISION ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97266</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.31900000</MidGrade_Price>
+        <Premium_Price>4.43900000</Premium_Price>
+        <Diesel_Price>4.45900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T09:55:13.193-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T09:55:13.193-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T09:55:13.193-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T09:55:13.193-04:00</Diesel_Date>
+        <LATITUDE>45.5044057686</LATITUDE>
+        <LONGITUDE>-122.5684236097</LONGITUDE>
+        <Phone>(503)788-1018</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices180" msdata:rowOrder="179" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>1817 SW SKYLINE BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97221</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.21900000</Unleaded_Price>
+        <MidGrade_Price>4.33900000</MidGrade_Price>
+        <Premium_Price>4.45900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T08:06:43.793-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T08:06:43.793-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T08:06:43.793-04:00</Premium_Date>
+        <LATITUDE>45.5096339117</LATITUDE>
+        <LONGITUDE>-122.7353534636</LONGITUDE>
+        <Phone>(503)228-5708</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices181" msdata:rowOrder="180" diffgr:hasChanges="inserted">
+        <Station_Name>NORTHWEST GAS</Station_Name>
+        <Address1>1613 NW KEARNEY ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97209</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <MidGrade_Price>4.22900000</MidGrade_Price>
+        <Premium_Price>4.45900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T14:30:29-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T18:30:28-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T08:06:10-04:00</Premium_Date>
+        <LATITUDE>45.5293158044</LATITUDE>
+        <LONGITUDE>-122.6874441063</LONGITUDE>
+        <Phone>(503)205-3340</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices182" msdata:rowOrder="181" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>15670 SW UPPER BOONES FERRY RD</Address1>
+        <Address2 />
+        <City>Lake Oswego</City>
+        <State>OR</State>
+        <Zip>97034</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.17900000</Unleaded_Price>
+        <MidGrade_Price>4.31900000</MidGrade_Price>
+        <Premium_Price>4.45900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T20:00:57-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T07:33:37.96-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T19:01:00-04:00</Premium_Date>
+        <LATITUDE>45.4068676621</LATITUDE>
+        <LONGITUDE>-122.7456237561</LONGITUDE>
+        <Phone>(503)639-3003</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices183" msdata:rowOrder="182" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL</Station_Name>
+        <Address1>8517 SW TERWILLIGER BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97219</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.25900000</Unleaded_Price>
+        <MidGrade_Price>4.35900000</MidGrade_Price>
+        <Premium_Price>4.45900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T04:43:32.373-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T04:43:32.373-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T04:43:32.373-04:00</Premium_Date>
+        <LATITUDE>45.4627230000</LATITUDE>
+        <LONGITUDE>-122.6852260000</LONGITUDE>
+        <Phone>(503)245-4274</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices184" msdata:rowOrder="183" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL</Station_Name>
+        <Address1>2800 SW SAM JACKSON PARK RD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97201</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.21900000</Unleaded_Price>
+        <MidGrade_Price>4.33900000</MidGrade_Price>
+        <Premium_Price>4.46900000</Premium_Price>
+        <Diesel_Price>4.55900000</Diesel_Price>
+        <Unleaded_Date>2012-10-06T17:02:06.523-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-06T17:02:06.523-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T00:00:00-04:00</Premium_Date>
+        <Diesel_Date>2012-10-06T17:02:06.523-04:00</Diesel_Date>
+        <LATITUDE>45.5025642405</LATITUDE>
+        <LONGITUDE>-122.6897778439</LONGITUDE>
+        <Phone>(503)274-0055</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices185" msdata:rowOrder="184" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>210 E MILL PLAIN BLVD</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98660</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.33900000</MidGrade_Price>
+        <Premium_Price>4.47900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T20:30:18-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T15:06:57.51-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T15:06:57.51-04:00</Premium_Date>
+        <LATITUDE>45.6318390000</LATITUDE>
+        <LONGITUDE>-122.6703550000</LONGITUDE>
+        <Phone>(360)693-7767</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices186" msdata:rowOrder="185" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>4100 E 4TH PLN</Address1>
+        <Address2 />
+        <City>Vancouver</City>
+        <State>WA</State>
+        <Zip>98661</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.33900000</MidGrade_Price>
+        <Premium_Price>4.47900000</Premium_Price>
+        <Diesel_Price>4.45900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T20:00:57-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T14:19:58.66-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:02:21-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T14:19:58.66-04:00</Diesel_Date>
+        <LATITUDE>45.6387025721</LATITUDE>
+        <LONGITUDE>-122.6258009063</LONGITUDE>
+        <Phone>(360)695-9633</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices187" msdata:rowOrder="186" diffgr:hasChanges="inserted">
+        <Station_Name>76</Station_Name>
+        <Address1>1967 SW 4TH AVE</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97201</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.29900000</Unleaded_Price>
+        <MidGrade_Price>4.39900000</MidGrade_Price>
+        <Premium_Price>4.49900000</Premium_Price>
+        <Unleaded_Date>2012-10-07T15:35:23.19-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T15:35:23.19-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T15:35:23.19-04:00</Premium_Date>
+        <LATITUDE>45.5090949279</LATITUDE>
+        <LONGITUDE>-122.6816256091</LONGITUDE>
+        <Phone>(503)224-5353</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices188" msdata:rowOrder="187" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>6303 SW CAPITOL HWY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97239</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.29900000</Unleaded_Price>
+        <MidGrade_Price>4.39900000</MidGrade_Price>
+        <Premium_Price>4.49900000</Premium_Price>
+        <Unleaded_Date>2012-10-09T07:14:37.773-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-09T07:14:37.773-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-09T07:14:37.773-04:00</Premium_Date>
+        <LATITUDE>45.4785400000</LATITUDE>
+        <LONGITUDE>-122.6943500000</LONGITUDE>
+        <Phone>(503)244-3104</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices189" msdata:rowOrder="188" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>4719 NE SANDY BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97213</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.23900000</Unleaded_Price>
+        <MidGrade_Price>4.37900000</MidGrade_Price>
+        <Premium_Price>4.49900000</Premium_Price>
+        <Diesel_Price>4.49900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T18:01:30-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T15:35:23.19-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T15:35:23.19-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T14:00:53-04:00</Diesel_Date>
+        <LATITUDE>45.5383078513</LATITUDE>
+        <LONGITUDE>-122.6147092023</LONGITUDE>
+        <Phone>(503)287-1618</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices190" msdata:rowOrder="189" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL SERVICE STATION</Station_Name>
+        <Address1>9085 SW BEAVERTON HWY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97225</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.27900000</Unleaded_Price>
+        <MidGrade_Price>4.39900000</MidGrade_Price>
+        <Premium_Price>4.49900000</Premium_Price>
+        <Diesel_Price>4.59900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T07:33:37.96-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T07:33:37.96-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T07:33:37.96-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T07:33:37.96-04:00</Diesel_Date>
+        <LATITUDE>45.4867360821</LATITUDE>
+        <LONGITUDE>-122.7704948985</LONGITUDE>
+        <Phone>(503)595-5678</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices191" msdata:rowOrder="190" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>4419 SW MULTNOMAH BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97219</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.19900000</Unleaded_Price>
+        <MidGrade_Price>4.39900000</MidGrade_Price>
+        <Premium_Price>4.49900000</Premium_Price>
+        <Diesel_Price>4.39900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T19:01:00-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T05:40:17.857-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T05:40:17.857-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T05:40:17.857-04:00</Diesel_Date>
+        <LATITUDE>45.4675392748</LATITUDE>
+        <LONGITUDE>-122.7223240730</LONGITUDE>
+        <Phone>(503)244-6388</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices192" msdata:rowOrder="191" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL SERVICE STATION</Station_Name>
+        <Address1>4228 SE WOODSTOCK BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97206</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.25900000</Unleaded_Price>
+        <MidGrade_Price>4.40900000</MidGrade_Price>
+        <Premium_Price>4.50900000</Premium_Price>
+        <Diesel_Price>4.59900000</Diesel_Price>
+        <Unleaded_Date>2012-10-07T00:00:00-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T00:00:00-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T00:00:00-04:00</Premium_Date>
+        <Diesel_Date>2012-10-05T00:00:00-04:00</Diesel_Date>
+        <LATITUDE>45.4792082747</LATITUDE>
+        <LONGITUDE>-122.6193092000</LONGITUDE>
+        <Phone>(503)771-6909</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices193" msdata:rowOrder="192" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>1850 SW SKYLINE BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97221</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.27900000</Unleaded_Price>
+        <MidGrade_Price>4.41900000</MidGrade_Price>
+        <Premium_Price>4.51900000</Premium_Price>
+        <Diesel_Price>4.49900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T20:00:57-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T07:33:37.96-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T07:33:37.96-04:00</Premium_Date>
+        <Diesel_Date>2012-10-08T07:33:37.96-04:00</Diesel_Date>
+        <LATITUDE>45.5094362843</LATITUDE>
+        <LONGITUDE>-122.7353968806</LONGITUDE>
+        <Phone>(503)292-4545</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices194" msdata:rowOrder="193" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL SERVICE STATION</Station_Name>
+        <Address1>10120 SW CAPITOL HWY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97219</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.35900000</Unleaded_Price>
+        <MidGrade_Price>4.45900000</MidGrade_Price>
+        <Premium_Price>4.55900000</Premium_Price>
+        <Diesel_Price>4.49900000</Diesel_Price>
+        <Unleaded_Date>2012-10-07T08:30:34.157-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T08:30:34.157-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T08:30:34.157-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T08:30:34.157-04:00</Diesel_Date>
+        <LATITUDE>45.4524207785</LATITUDE>
+        <LONGITUDE>-122.7217994852</LONGITUDE>
+        <Phone>(503)245-3848</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices195" msdata:rowOrder="194" diffgr:hasChanges="inserted">
+        <Station_Name>UNION 76</Station_Name>
+        <Address1>400 W BURNSIDE ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97209</Zip>
+        <Brand_Name>76</Brand_Name>
+        <Unleaded_Price>4.36900000</Unleaded_Price>
+        <MidGrade_Price>4.46900000</MidGrade_Price>
+        <Premium_Price>4.56900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T17:56:55.643-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T17:56:55.643-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:56:55.643-04:00</Premium_Date>
+        <LATITUDE>45.5231444396</LATITUDE>
+        <LONGITUDE>-122.6744170813</LONGITUDE>
+        <Phone>(503)224-6420</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices196" msdata:rowOrder="195" diffgr:hasChanges="inserted">
+        <Station_Name>LOVEJOY CONVENIENCE STORE</Station_Name>
+        <Address1>2110 NW LOVEJOY ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97210</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.39900000</Unleaded_Price>
+        <MidGrade_Price>4.51900000</MidGrade_Price>
+        <Premium_Price>4.61900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T18:01:30-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T17:56:55.643-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T17:56:55.643-04:00</Premium_Date>
+        <LATITUDE>45.5299086867</LATITUDE>
+        <LONGITUDE>-122.6946321009</LONGITUDE>
+        <Phone>(503)223-3332</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices197" msdata:rowOrder="196" diffgr:hasChanges="inserted">
+        <Station_Name>CHEVRON</Station_Name>
+        <Address1>2230 W BURNSIDE ST</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97210</Zip>
+        <Brand_Name>Chevron</Brand_Name>
+        <Unleaded_Price>4.39900000</Unleaded_Price>
+        <MidGrade_Price>4.51900000</MidGrade_Price>
+        <Premium_Price>4.61900000</Premium_Price>
+        <Unleaded_Date>2012-10-08T18:53:35.91-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-08T18:53:35.91-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-08T18:53:35.91-04:00</Premium_Date>
+        <LATITUDE>45.5233151178</LATITUDE>
+        <LONGITUDE>-122.6968140125</LONGITUDE>
+        <Phone>(503)222-3923</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices198" msdata:rowOrder="197" diffgr:hasChanges="inserted">
+        <Station_Name>SHELL</Station_Name>
+        <Address1>11465 SW PACIFIC HWY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97223</Zip>
+        <Brand_Name>Shell</Brand_Name>
+        <Unleaded_Price>4.29900000</Unleaded_Price>
+        <MidGrade_Price>4.59900000</MidGrade_Price>
+        <Premium_Price>4.69900000</Premium_Price>
+        <Diesel_Price>4.85900000</Diesel_Price>
+        <Unleaded_Date>2012-10-06T12:45:19.27-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-06T12:45:19.27-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-06T12:45:19.27-04:00</Premium_Date>
+        <Diesel_Date>2012-10-06T12:45:19.27-04:00</Diesel_Date>
+        <LATITUDE>45.4423956793</LATITUDE>
+        <LONGITUDE>-122.7461214126</LONGITUDE>
+        <Phone>(503)245-0450</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices199" msdata:rowOrder="198" diffgr:hasChanges="inserted">
+        <Station_Name>OLSON BROS SERVICE</Station_Name>
+        <Address1>14115 SE MCLOUGHLIN BLVD</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97267</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>4.09900000</Unleaded_Price>
+        <Premium_Price>4.89900000</Premium_Price>
+        <Diesel_Price>4.29900000</Diesel_Price>
+        <Unleaded_Date>2012-10-08T18:30:31-04:00</Unleaded_Date>
+        <Premium_Date>2012-10-07T03:46:50.187-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T03:46:50.187-04:00</Diesel_Date>
+        <LATITUDE>45.4211500000</LATITUDE>
+        <LONGITUDE>-122.6332100000</LONGITUDE>
+        <Phone>(503)654-2220</Phone>
+      </StationPrices>
+      <StationPrices diffgr:id="StationPrices200" msdata:rowOrder="199" diffgr:hasChanges="inserted">
+        <Station_Name>HANDY ANDY AUTO REPAIR</Station_Name>
+        <Address1>7991 SW CAPITOL HWY</Address1>
+        <Address2 />
+        <City>Portland</City>
+        <State>OR</State>
+        <Zip>97219</Zip>
+        <Brand_Name>Unbranded</Brand_Name>
+        <Unleaded_Price>4.99900000</Unleaded_Price>
+        <MidGrade_Price>4.99900000</MidGrade_Price>
+        <Premium_Price>4.99900000</Premium_Price>
+        <Diesel_Price>4.99900000</Diesel_Price>
+        <Unleaded_Date>2012-10-06T12:45:19.27-04:00</Unleaded_Date>
+        <MidGrade_Date>2012-10-07T09:55:17.66-04:00</MidGrade_Date>
+        <Premium_Date>2012-10-07T09:55:17.66-04:00</Premium_Date>
+        <Diesel_Date>2012-10-07T09:55:17.66-04:00</Diesel_Date>
+        <LATITUDE>45.4666319854</LATITUDE>
+        <LONGITUDE>-122.7166721847</LONGITUDE>
+        <Phone>(503)246-8497</Phone>
+      </StationPrices>
+    </DocumentElement>
+  </diffgr:diffgram>
+</StationPricesDataTable>

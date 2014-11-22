@@ -1,28 +1,26 @@
 import sys
 from random import randrange       
 
-def qsort1a(list):
+
+def qsort1a(u_list):
     """
-    Quicksort using list comprehensions and randomized pivot
-    >>> qsort1a<<docstring test numeric input>>
-    <<docstring test numeric output>>
-    >>> qsort1a<<docstring test string input>>
-    <<docstring test string output>>
+    Quick sort using list comprehensions and randomized pivot
     """
-    if list == []:
+
+    if u_list:
+        print "list = %s" % u_list
+        pivot = u_list.pop(randrange(len(u_list)))
+        lesser = qsort1a([l for l in u_list if l < pivot])
+        greater = qsort1a([l for l in u_list if l >= pivot])
+        print "ret: %s %s %s" % (lesser, [pivot], greater)
+        return lesser + [pivot] + greater
+    else:
         print "list is empty"
         return []
-    else:
-         print "list = %s" % list
-         pivot = list.pop(randrange(len(list)))
-         lesser = qsort1a([l for l in list if l < pivot])
-         greater = qsort1a([l for l in list if l >= pivot])
-         print "ret: %s %s %s" % (lesser, [pivot], greater)
-         return lesser + [pivot] + greater
 
 if __name__ == "__main__":
-    listToSort = map(int, sys.argv[1:])
-    print "about to sort %s" % listToSort
+    list_to_sort = map(int, sys.argv[1:])
+    print "about to sort %s" % list_to_sort
     
-    result = qsort1a(listToSort)
+    result = qsort1a(list_to_sort)
     print result

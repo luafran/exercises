@@ -2,7 +2,7 @@ import sys
 from collections import defaultdict
 
 if len(sys.argv) < 2:
-    print "usage:",sys.argv[0],"filename"
+    print "usage:", sys.argv[0], "filename"
     raise SystemExit
 
 filename = sys.argv[1]
@@ -19,7 +19,6 @@ for line in f:
     print 'user = {0}, uid = {1}'.format(user, uid)
     users[uid].append(user)
 
-for k, v in users.iteritems():
+for k, v in users.items():
     if len(v) > 1:
         print 'uid {0} has duplicated users {1}'.format(k, v)
-

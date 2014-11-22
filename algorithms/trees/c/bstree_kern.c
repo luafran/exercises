@@ -126,7 +126,7 @@ int main()
     printf("applyinorder\n");
     applyinorder(treep, printNode, "applyinorder");
     printf("\napplypostorder\n");
-    applyinorder(treep, printNode, "applypostorder");
+    applypostorder(treep, printNode, "applypostorder");
     
     return 0;
 }

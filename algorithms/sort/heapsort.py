@@ -1,43 +1,44 @@
 import heapq
 
+
 ## {{{ http://code.activestate.com/recipes/577086/ (r1)
-def HeapSort(A):
-    def heapify(A):
-        start = (len(A) - 2) / 2
+def heap_sort(u_list):
+    def heapify(a):
+        start = (len(a) - 2) / 2
         while start >= 0:
-            siftDown(A, start, len(A) - 1)
+            shift_down(a, start, len(a) - 1)
             start -= 1
 
-    def siftDown(A, start, end):
+    def shift_down(a, start, end):
         root = start
         while root * 2 + 1 <= end:
             child = root * 2 + 1
-            if child + 1 <= end and A[child] < A[child + 1]:
+            if child + 1 <= end and a[child] < a[child + 1]:
                 child += 1
-            if child <= end and A[root] < A[child]:
-                A[root], A[child] = A[child], A[root]
+            if child <= end and a[root] < a[child]:
+                a[root], a[child] = a[child], a[root]
                 root = child
             else:
                 return
 
-    heapify(A)
-    end = len(A) - 1
+    heapify(u_list)
+    end = len(u_list) - 1
     while end > 0:
-        A[end], A[0] = A[0], A[end]
-        siftDown(A, 0, end - 1)
+        u_list[end], u_list[0] = u_list[0], u_list[end]
+        shift_down(u_list, 0, end - 1)
         end -= 1
 
-def HeapSort2(A):
-    heap = list(A)
+
+def heap_sort_2(u_list):
+    heap = list(u_list)
     heapq.heapify(heap)
-    for i in range(len(A)):
-        A[i] = heapq.heappop(heap)
+    for i in range(len(u_list)):
+        u_list[i] = heapq.heappop(heap)
 
 if __name__ == '__main__':
-    T1 = [13, 14, 94, 33, 82, 25, 59, 94, 65, 23, 45, 27, 73, 25, 39, 10]
-    T2 = [13, 14, 94, 33, 82, 25, 59, 94, 65, 23, 45, 27, 73, 25, 39, 10]
-    HeapSort(T1)
-    HeapSort2(T2)
-    print T1
-    print T2
-
+    list1 = [13, 14, 94, 33, 82, 25, 59, 94, 65, 23, 45, 27, 73, 25, 39, 10]
+    list2 = [13, 14, 94, 33, 82, 25, 59, 94, 65, 23, 45, 27, 73, 25, 39, 10]
+    heap_sort(list1)
+    heap_sort_2(list2)
+    print list1
+    print list2

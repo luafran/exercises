@@ -1,7 +1,7 @@
 import sys
 
 
-def merge_sort(alist):
+def merge_sort2(alist):
 
     print("Splitting ", alist)
 
@@ -37,7 +37,7 @@ def merge_sort(alist):
     print("Merging ", alist)
 
 
-def merge_sort2(x):
+def merge_sort(x):
     if len(x) <= 1:
         return x
 
@@ -46,8 +46,8 @@ def merge_sort2(x):
     left_half = x[:mid]
     right_half = x[mid:]
 
-    left_half = merge_sort2(left_half)
-    right_half = merge_sort2(right_half)
+    left_half = merge_sort(left_half)
+    right_half = merge_sort(right_half)
 
     # *Conquer*: merge the now-sorted sub lists.
     return merge(left_half, right_half)
@@ -79,8 +79,8 @@ if __name__ == "__main__":
     list_to_sort = map(int, sys.argv[1:])
     print "about to sort %s" % list_to_sort
 
-    result = merge_sort2(list_to_sort)
+    result = merge_sort(list_to_sort)
     print result
 
-    #merge_sort(list_to_sort)
+    #merge_sort2(list_to_sort)
     #print list_to_sort

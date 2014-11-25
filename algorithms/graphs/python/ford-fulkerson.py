@@ -3,8 +3,9 @@ class Edge(object):
         self.source = u
         self.sink = v
         self.capacity = w
+
     def __repr__(self):
-        return "%s->%s:%s" % (self.source, self.sink, self.capacity)
+        return '"%s->%s": "%s"' % (self.source, self.sink, self.capacity)
 
 
 class FlowNetwork(object):
@@ -21,8 +22,8 @@ class FlowNetwork(object):
     def add_edge(self, u, v, w=0):
         if u == v:
             raise ValueError("u == v")
-        edge = Edge(u,v,w)
-        redge = Edge(v,u,0)
+        edge = Edge(u, v, w)
+        redge = Edge(v, u, 0)
         edge.redge = redge
         redge.redge = edge
         self.adj[u].append(edge)
@@ -35,9 +36,9 @@ class FlowNetwork(object):
             return path
         for edge in self.get_edges(source):
             residual = edge.capacity - self.flow[edge]
-            if residual > 0 and not (edge,residual) in path:
-                result = self.find_path( edge.sink, sink, path + [(edge,residual)] ) 
-                if result != None:
+            if residual > 0 and not (edge, residual) in path:
+                result = self.find_path(edge.sink, sink, path + [(edge, residual)])
+                if result is not None:
                     return result
 
     def __repr__(self):
@@ -45,9 +46,9 @@ class FlowNetwork(object):
 
     def max_flow(self, source, sink):
         path = self.find_path(source, sink, [])
-        while path != None:
-            flow = min(res for edge,res in path)
-            for edge,res in path:
+        while path is not None:
+            flow = min(res for edge, res in path)
+            for edge, res in path:
                 self.flow[edge] += flow
                 self.flow[edge.redge] -= flow
             path = self.find_path(source, sink, [])
@@ -55,16 +56,17 @@ class FlowNetwork(object):
 
 
 if __name__ == "__main__":
-    g=FlowNetwork()
-    map(g.add_vertex, ['s','o','p','q','r','t'])
-    g.add_edge('s','o',3)
-    g.add_edge('s','p',3)
-    g.add_edge('o','p',2)
-    g.add_edge('o','q',3)
-    g.add_edge('p','r',2)
-    g.add_edge('r','t',3)
-    g.add_edge('q','r',4)
-    g.add_edge('q','t',2)
-    print g
-    print g.max_flow('s','t')
-
+    g = FlowNetwork()
+    map(g.add_vertex, ['s', 'o', 'p', 'q', 'r', 't'])
+    g.add_edge('s', 'o', 3)
+    g.add_edge('s', 'p', 3)
+    g.add_edge('o', 'p', 2)
+    g.add_edge('o', 'q', 3)
+    g.add_edge('p', 'r', 2)
+    g.add_edge('r', 't', 3)
+    g.add_edge('q', 'r', 4)
+    g.add_edge('q', 't', 2)
+    gp = repr(g)
+    gp = gp.replace("'", '"')
+    print gp
+    print g.max_flow('s', 't')

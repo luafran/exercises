@@ -54,7 +54,7 @@ stack_t stack_new(int maxSize)
 
   /* Allocate a new array to hold the contents. */
 
-  newContents = (stackElementT *)malloc(sizeof(stackElementT) * maxSize);
+  newContents = (stackElementT *) malloc(sizeof(stackElementT) * maxSize);
 
   if (newContents == NULL) {
     fprintf(stderr, "Insufficient memory to initialize stack.\n");

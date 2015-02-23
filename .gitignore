@@ -1,0 +1,8 @@
+.tox
+*.pyc
+*.egg-info
+.coverage*
+tags
+*.log
+.idea/
+*.prof

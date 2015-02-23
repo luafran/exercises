@@ -4,26 +4,19 @@ from collections import deque
 class Vertex:
     def __init__(self, key):
         self.id = key
-        self.edges = []
+        self.edges = {}
         self.neighbors = {}
         self.distance = 0
         self.predecessor = None
         self.color = 'white'
 
-    #def __str__(self):
-    #    return str(self.id) + ' connectedTo: ' + str([x.id for x in self.get_connections()])
-
     def __str__(self):
         str_edges = str(self.id) + '\n'
         str_edges += 'color: ' + self.color + '\n'
         str_edges += 'nbrs: ' + str([k.get_id() for k in self.get_connections()]) + '\n'
-        for e in self.get_edges():
-            str_edges = str_edges + '    ' + str(e) + '\n'
+        for k, v in self.edges.items():
+            str_edges = str_edges + '    ' + str(v) + '\n'
         return str_edges
-        #return str(self.id) + '\n' + str([x for x in self.get_edges()])
-
-    #def __repr__(self):
-    #    return str([x for x in self.get_edges()]) + '\n'
 
     def __getitem__(self, key):
         for e in self.edges:
@@ -32,10 +25,10 @@ class Vertex:
         return None
 
     def add_edge(self, edge):
-        self.edges.append(edge)
+        self.edges[edge.sink] = edge
 
     def get_edges(self):
-        return self.edges
+        return self.edges.values()
 
     def add_neighbor(self, nbr, weight=0):
         self.neighbors[nbr] = weight
@@ -176,6 +169,7 @@ def bfs(start):
                 q.appendleft(nbr)
         current_vert.set_color('black')
 
+
 def bfs2(start):
     start.set_distance(0)
     start.set_predecessor(None)
@@ -183,7 +177,7 @@ def bfs2(start):
     q.appendleft(start)
     while len(q) > 0:
         current_vert = q.pop()
-        for edge in current_vert.get_edges():
+        for nbr in current_vert.get_connections():
             if nbr.get_color() == 'white':
                 nbr.set_color('gray')
                 nbr.set_distance(current_vert.get_distance() + 1)
@@ -360,15 +354,15 @@ def test1():
     print '#' * 20
     print 'number of vertex:', g.vertex_count()
 
-    #print 'path cordoba-salta:'
-    #path, cost = shortest_path(g, 'cordoba', 'salta')
-    #print path
-    #print 'cost =', cost
+    print 'path cordoba-salta:'
+    path, cost = shortest_path(g, 'cordoba', 'salta')
+    print path
+    print 'cost =', cost
 
-    #print g.get_vertex('cordoba').get_edges()
-    #print g.get_edges('cordoba')
+    print g.get_vertex('cordoba').get_edges()
+    print g.get_edges('cordoba')
 
-    bfs(g.get_vertex('jujuy'))
+    bfs2(g.get_vertex('jujuy'))
     print g
     traverse(g.get_vertex('santa cruz'))
 

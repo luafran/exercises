@@ -353,15 +353,15 @@ def test1():
     print g
     print '#' * 20
     print 'number of vertex:', g.vertex_count()
-
+    print '#' * 20
     print 'path cordoba-salta:'
     path, cost = shortest_path(g, 'cordoba', 'salta')
     print path
     print 'cost =', cost
-
+    print '#' * 20
     print g.get_vertex('cordoba').get_edges()
     print g.get_edges('cordoba')
-
+    print '#' * 20
     bfs2(g.get_vertex('jujuy'))
     print g
     traverse(g.get_vertex('santa cruz'))

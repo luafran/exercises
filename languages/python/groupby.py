@@ -28,11 +28,17 @@ l = [
     }
 ]
 
+print 'l=', l
+
 s = sorted(l, key=lambda x: x['category'])
 # print s
 
 for key, group in groupby(s, lambda x: x['category']):
-    print key
+    print 'key: {0}, group: {1}'.format(key, group)
     for item in group:
-        print item
+        print 'item:', item
     print " "
+
+print
+for key in groupby(s, lambda x: x['category']):
+    print 'key: {0}'.format(key)

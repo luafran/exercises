@@ -7,4 +7,5 @@ try:
         for line in f:
             print line.rstrip('\n')
 except IOError as ex:
+    print 'exception:'
     print ex

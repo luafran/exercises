@@ -1,0 +1,6 @@
+@old.com some text
+some text @old.com
+some text @old.com some text
+file11@new.com some text
+some text file11@new.com
+some text file11@new.com some text

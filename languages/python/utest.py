@@ -1,5 +1,4 @@
 import unittest
-import xmlrunner
 
 class TestSample(unittest.TestCase):
 
@@ -31,8 +30,6 @@ class TestSample(unittest.TestCase):
     def test_test04(self):
         self.assertEqual(1, 0, "Note that with comment you dont see actual vs expected values")
 
-if __name__ == "__main__":
-    suite = unittest.TestLoader().loadTestsFromTestCase(TestSample)
-    #runner = unittest.TextTestRunner(verbosity=3)
-    runner = xmlrunner.XMLTestRunner(output='test-reports', verbose=True)
-    runner.run(suite)
+
+# pip install nose
+# nosetests file.py

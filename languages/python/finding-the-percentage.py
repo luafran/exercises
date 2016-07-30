@@ -1,3 +1,5 @@
+# In Python 2 input() evaluates the string and raw_input() does not.
+# In Python 3 there is only input() and is like Python 2 raw_input().
 n = input()
 d = {}
 for i in range(0,n):

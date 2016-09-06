@@ -6,3 +6,6 @@ tags
 *.log
 .idea/
 *.prof
+algorithms/other/tomohiko-sakamoto-dow
+c-sockets/echo-client
+c-sockets/echo-server

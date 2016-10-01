@@ -115,7 +115,7 @@ class BinarySearchTreeNode(object):
 
         for i in range(indent):
             print " ",
-        #print "left"
+        # print "left"
         if self.left:
             self.left.print_tree(indent + 1)
         else:
@@ -125,13 +125,24 @@ class BinarySearchTreeNode(object):
 
         for i in range(indent):
             print " ",
-        #print "right"
+        # print "right"
         if self.right:
             self.right.print_tree(indent + 1)
         else:
             for i in range(indent + 1):
                 print " ",
             print "None"
+
+    def __iter__(self):
+        if self:
+            if self.left:
+                for elem in self.left:
+                    yield elem
+            yield self.key
+            if self.right:
+                for elem in self.right:
+                    yield elem
+
 
 if __name__ == '__main__':
     tree = BinarySearchTree()
@@ -169,3 +180,7 @@ if __name__ == '__main__':
     print
     print 'apply levelorder'
     tree.apply_levelorder(f)
+
+    print
+    for n in tree.root:
+        print n

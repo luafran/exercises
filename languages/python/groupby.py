@@ -40,5 +40,7 @@ for key, group in groupby(s, lambda x: x['category']):
     print " "
 
 print
+
+# return tuple in key
 for key in groupby(s, lambda x: x['category']):
     print 'key: {0}'.format(key)

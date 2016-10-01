@@ -1,5 +1,6 @@
 import sys
 
+
 def chars_in_both_strings(string1, string2):
 
     for c in string1:

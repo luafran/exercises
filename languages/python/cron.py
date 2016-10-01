@@ -12,7 +12,7 @@ allMatch = AllMatch()
 
 
 def conv_to_set(obj):  # Allow single integer to be provided
-    if isinstance(obj, (int,long)):
+    if isinstance(obj, (int, long)):
         return set([obj])  # Single item
     if not isinstance(obj, set):
         obj = set(obj)
@@ -52,7 +52,7 @@ class CronTab(object):
         self.events = events
 
     def run(self):
-        t=datetime(*datetime.now().timetuple()[:5])
+        t = datetime(*datetime.now().timetuple()[:5])
         while 1:
             print "{0} tick".format(time.strftime('%X'))
             print "minute: {0}, hour: {1}, day: {2}, month: {3}, weekday: {4}".format(t.minute, t.hour, t.day, t.month, t.weekday())
@@ -69,8 +69,10 @@ def task1():
     print "{0} Executing task1".format(time.strftime('%X'))
     time.sleep(3)
 
+
 def task2():
     print "{0} Executing task2".format(time.strftime('%X'))
+
 
 def task3():
     print "{0} Executing task3".format(time.strftime('%X'))
@@ -78,8 +80,8 @@ def task3():
 
 c = CronTab(
     Event(task1),
-    Event(task2, range(0,60,15)),
-    Event(task3, range(0,60,3)),
+    Event(task2, range(0, 60, 15)),
+    Event(task3, range(0, 60, 3)),
 )
 
 c.run()

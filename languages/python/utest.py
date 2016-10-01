@@ -1,5 +1,6 @@
 import unittest
 
+
 class TestSample(unittest.TestCase):
 
     @classmethod
@@ -14,7 +15,7 @@ class TestSample(unittest.TestCase):
         print "setUp()"
         self.seq = range(10)
 
-    def tearDown (self):
+    def tearDown(self):
         print "tearDown()"
 
     def test_test01(self):
@@ -28,7 +29,7 @@ class TestSample(unittest.TestCase):
         self.assertEqual(1, 0)
 
     def test_test04(self):
-        self.assertEqual(1, 0, "Note that with comment you dont see actual vs expected values")
+        self.assertEqual(1, 0, "Note that with comment you don't see actual vs expected values")
 
 
 # pip install nose

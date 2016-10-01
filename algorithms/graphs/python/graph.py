@@ -134,7 +134,7 @@ class Graph(object):
                     return result
 
     def __getitem__(self, v):
-        #return self.get_vertex(v)
+        # return self.get_vertex(v)
         return self.adj[v]
 
     def __repr__(self):
@@ -388,4 +388,4 @@ def test2():
 if __name__ == "__main__":
 
     test1()
-    #print g.max_flow('s','t')
+    # print g.max_flow('s','t')

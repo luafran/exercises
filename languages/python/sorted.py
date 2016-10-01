@@ -1,6 +1,6 @@
 from operator import itemgetter
 
-list = [
+alist = [
     {
         'name': 'product3',
         'price': 30
@@ -15,11 +15,11 @@ list = [
     }
 ]
 
-s1 = sorted(list)
+s1 = sorted(alist)
 print s1
 
-s2 = sorted(list, key=lambda item: item.get('price'))
+s2 = sorted(alist, key=lambda item: item.get('price'))
 print s2
 
-s3 = sorted(list, key=itemgetter('price'))
+s3 = sorted(alist, key=itemgetter('price'))
 print s3

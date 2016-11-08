@@ -1,7 +1,8 @@
 import sys
 
 if len(sys.argv) < 2:
-    print "usage:", sys.argv[0], "filename. - to read from stdin"
+    sys.stderr.write("usage: %s filename. - to read from stdin\n" % sys.argv[0])
+    raise SystemExit(1)
 
 file_name = sys.argv[1]
 if file_name == '-':

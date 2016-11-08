@@ -18,16 +18,18 @@ class Stack:
         return len(self.items)
 
 
-s = Stack()
+if __name__ == '__main__':
 
-print('is_empty: {0}'.format(s.is_empty()))
-s.push(4)
-s.push('dog')
-print(s.peek())
-s.push(True)
-print(s.size())
-print('is_empty: {0}'.format(s.is_empty()))
-s.push(8.4)
-print(s.pop())
-print(s.pop())
-print(s.size())
+    s = Stack()
+
+    print('is_empty: {0}'.format(s.is_empty()))
+    s.push(4)
+    s.push('dog')
+    print(s.peek())
+    s.push(True)
+    print(s.size())
+    print('is_empty: {0}'.format(s.is_empty()))
+    s.push(8.4)
+    print(s.pop())
+    print(s.pop())
+    print(s.size())

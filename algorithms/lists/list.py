@@ -65,6 +65,25 @@ class UnorderedList:
         return self.search(item)
 
 
+def has_cycle(head):
+    seen = list()
+
+    cycle = False
+    while head is not None:
+        print 'seen:', seen
+        print 'head:', head
+        print 'head.item', head.item
+
+        if head in seen:
+            cycle = True
+            break
+        seen.append(head)
+        head = head.next
+
+    print '#' * 10
+    return cycle
+
+
 class TestUnorderedList(unittest.TestCase):
 
     def test_add_and_search(self):
@@ -117,3 +136,22 @@ class TestUnorderedList(unittest.TestCase):
 
         self.assertTrue('item3' in a_list)
         self.assertFalse('item4' in a_list)
+
+    def test_has_cycle_false(self):
+        node1 = Node('item1')
+        self.assertFalse(has_cycle(node1))
+
+        node2 = Node('item2')
+        node1.next = node2
+
+        self.assertFalse(has_cycle(node1))
+
+    def test_has_cycle_true(self):
+        node1 = Node('item1')
+        node2 = Node('item2')
+        node3 = Node('item3')
+        node1.next = node2
+        node2.next = node3
+        node3.next = node2
+
+        self.assertTrue(has_cycle(node1))

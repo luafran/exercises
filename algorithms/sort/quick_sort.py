@@ -65,8 +65,8 @@ if __name__ == "__main__":
     list_to_sort = map(int, sys.argv[1:])
     print "about to sort %s" % list_to_sort
     
-    #result = qsort1a(list_to_sort)
-    #print result
+    # result = qsort1a(list_to_sort)
+    # print result
 
     quick_sort(list_to_sort)
     print list_to_sort

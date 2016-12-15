@@ -29,12 +29,11 @@ class UnorderedList:
 
         while current is not None:
             if current.item == item:
-                # found
-                # in head
                 if previous is None:
+                    # found in head
                     self.head = current.next
-                # in some other place
                 else:
+                    # found in some other place
                     previous.next = current.next
 
                 self.size -= 1

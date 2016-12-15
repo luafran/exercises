@@ -1,4 +1,5 @@
 from itertools import groupby
+from operator import itemgetter
 
 l = [
     {
@@ -30,10 +31,10 @@ l = [
 
 print 'l=', l
 
-s = sorted(l, key=lambda x: x['category'])
+s = sorted(l, key=itemgetter('category'))
 # print s
 
-for key, group in groupby(s, lambda x: x['category']):
+for key, group in groupby(s, itemgetter('category')):
     print 'key: {0}, group: {1}'.format(key, group)
     for item in group:
         print 'item:', item
@@ -42,5 +43,5 @@ for key, group in groupby(s, lambda x: x['category']):
 print
 
 # return tuple in key
-for key in groupby(s, lambda x: x['category']):
+for key in groupby(s, itemgetter('category')):
     print 'key: {0}'.format(key)

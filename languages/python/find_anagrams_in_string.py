@@ -1,5 +1,3 @@
-from collections import deque
-
 a = 'abbc'
 b = 'bbccbbabc'
 

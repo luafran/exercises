@@ -19,12 +19,12 @@
 # left rotations.
 #
 # Sample Input
-#
 # 5 4
 # 1 2 3 4 5
-# Sample Output
 #
+# Sample Output
 # 5 1 2 3 4
+#
 # Explanation
 #
 # When we perform  left rotations, the array undergoes the following sequence of changes:

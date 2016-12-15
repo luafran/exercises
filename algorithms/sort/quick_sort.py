@@ -9,7 +9,7 @@ def qsort1a(u_list):
 
     if u_list:
         print "list = %s" % u_list
-        pivot = u_list.pop(randrange(len(u_list)))
+        pivot = u_list.dequeue(randrange(len(u_list)))
         lesser = qsort1a([l for l in u_list if l < pivot])
         greater = qsort1a([l for l in u_list if l >= pivot])
         print "ret: %s %s %s" % (lesser, [pivot], greater)

@@ -1,5 +1,5 @@
 import unittest
-import xmlrunner
+
 
 class TestSample(unittest.TestCase):
 
@@ -15,7 +15,7 @@ class TestSample(unittest.TestCase):
         print "setUp()"
         self.seq = range(10)
 
-    def tearDown (self):
+    def tearDown(self):
         print "tearDown()"
 
     def test_test01(self):
@@ -29,10 +29,8 @@ class TestSample(unittest.TestCase):
         self.assertEqual(1, 0)
 
     def test_test04(self):
-        self.assertEqual(1, 0, "Note that with comment you dont see actual vs expected values")
+        self.assertEqual(1, 0, "Note that with comment you don't see actual vs expected values")
 
-if __name__ == "__main__":
-    suite = unittest.TestLoader().loadTestsFromTestCase(TestSample)
-    #runner = unittest.TextTestRunner(verbosity=3)
-    runner = xmlrunner.XMLTestRunner(output='test-reports', verbose=True)
-    runner.run(suite)
+
+# pip install nose
+# nosetests file.py

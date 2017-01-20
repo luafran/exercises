@@ -134,10 +134,10 @@ class Graph(object):
                     return result
 
     def __getitem__(self, v):
-        #return self.get_vertex(v)
+        # return self.get_vertex(v)
         return self.adj[v]
 
-    def __repr__(self):
+    def __str__(self):
         value = ''
         for k, v in self.vert_list.items():
             value += str(v) + '\n'
@@ -152,22 +152,6 @@ class Graph(object):
                 self.flow[edge.redge] -= flow
             path = self.find_path(source, sink, [])
         return sum(self.flow[edge] for edge in self.get_edges(source))
-
-
-def bfs(start):
-    start.set_distance(0)
-    start.set_predecessor(None)
-    q = deque()
-    q.appendleft(start)
-    while len(q) > 0:
-        current_vert = q.pop()
-        for nbr in current_vert.get_connections():
-            if nbr.get_color() == 'white':
-                nbr.set_color('gray')
-                nbr.set_distance(current_vert.get_distance() + 1)
-                nbr.set_predecessor(current_vert)
-                q.appendleft(nbr)
-        current_vert.set_color('black')
 
 
 def bfs2(start):
@@ -297,12 +281,6 @@ def shortest_path(graph, start, end):
 
 def test1():
     g = Graph()
-    #map(g.add_vertex, ['jujuy', 'salta', 'tucuman', 'formosa', 'chaco',
-    #                   'catamarca', 'santiago del estero',
-    #                   'misiones', 'corrientes', 'entre rios',
-    #                   'la rioja', 'san juan', 'mendoza',
-    #                   'cordoba', 'san luis', 'santa fe', 'buenos aires', 'la pampa',
-    #                   'neuquen', 'rio negro', 'chubut', 'santa cruz', 'tierra del fuego'])
 
     g.add_edge('jujuy', 'salta', 1)
     g.add_edge('salta', 'formosa', 1)
@@ -366,26 +344,12 @@ def test1():
     print g
     traverse(g.get_vertex('santa cruz'))
 
-
 def test2():
     g = Graph()
-    g.add_edge('jujuy', 'salta', 1)
-    g.add_edge('salta', 'formosa', 1)
-    g.add_edge('salta', 'chaco', 1)
-    g.add_edge('salta', 'santiago del estero', 1)
-    g.add_edge('salta', 'tucuman', 1)
-    g.add_edge('salta', 'catamarca', 1)
-    g.add_edge('tucuman', 'santiago del estero', 1)
-    g.add_edge('tucuman', 'catamarca', 1)
-
-    gp = repr(g)
-    gp = gp.replace("'", '"')
-    print gp
-
-    bfs(g.get_vertex('jujuy'))
-    traverse(g.get_vertex('tucuman'))
+    g.add_edge('A', 'B', )
 
 if __name__ == "__main__":
 
     test1()
-    #print g.max_flow('s','t')
+    test2()
+    # print g.max_flow('s','t')

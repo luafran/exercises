@@ -58,7 +58,7 @@ def merge(left, right):
     # assign the element of the sublists to 'result' variable until there is no element to merge.
     while len(left) > 0 or len(right) > 0:
         if len(left) > 0 and len(right) > 0:
-           # compare the first two element, which is the small one, of each two sublists.
+            # compare the first two element, which is the small one, of each two sublists.
             if left[0] <= right[0]:
                 result.append(left[0])
                 left = left[1:]
@@ -79,8 +79,8 @@ if __name__ == "__main__":
     list_to_sort = map(int, sys.argv[1:])
     print "about to sort %s" % list_to_sort
 
-    result = merge_sort(list_to_sort)
-    print result
+    res = merge_sort(list_to_sort)
+    print res
 
     #merge_sort2(list_to_sort)
     #print list_to_sort

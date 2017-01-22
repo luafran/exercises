@@ -2,6 +2,7 @@ import os
 import fnmatch
 import gzip, bz2
 import re
+import sys
 import unittest
 import argparse
 
@@ -14,63 +15,84 @@ import argparse
 # print args.dir
 
 
-def grep_in_lines(lines, pattern, ignore_case=False):
+class NullFileIter:
 
-    match_lines = []
-    c_pattern = re.compile(pattern)
+    def __init__(self):
+        pass
 
-    flags = 0
-    if ignore_case:
-        flags = re.IGNORECASE
-    try:
+    def __iter__(self):
+        return self
 
-        for line in f:
-            if re.search(c_pattern, line, flags):
-                match_lines.append(line.strip())
-
-    except IOError as ex:
-        print ex.message
-
-    return match_lines
+    def next(self):
+        raise StopIteration()
 
 
-def gfind(dir, file_types=None, substring=None, pattern=None):
+class NullFile:
 
-    for root, dirs, files in os.walk(dir):
-        for file_name in files:
-            full_path = os.path.join(root, file_name)
+    def __init__(self):
+        self.my_iter = NullFileIter()
+        pass
 
-            if substring in file_name:
-                print full_path
-                if pattern is not None:
-                    with open(file_name, 'r') as f:
-                        for line in f:
-                            match_lines = grep_in_file(full_path, pattern)
-                    print match_lines
+    def __iter__(self):
+        return self.my_iter
 
 
+# A function that generates files that match a given filename pattern
 def gen_find(file_pattern, top):
-    for path, dir_list, file_list in os.walk(top):
-        for file_name in fnmatch.filter(file_list, file_pattern):
-            yield os.path.join(path, file_name)
+    try:
+        for path, dir_list, file_list in os.walk(top):
+            for file_name in fnmatch.filter(file_list, file_pattern):
+                yield os.path.join(path, file_name)
+    except Exception as ex:
+        print 'Exception in find: ' + ex.message
 
 
-def gen_open(filenames):
-    for name in filenames:
-        if name.endswith(".gz"):
-            yield gzip.open(name)
-        elif name.endswith(".bz2"):
-            yield bz2.BZ2File(name)
-        else:
-            yield open(name)
+# Takes a sequence of file_names as input and yields a sequence of file
+# objects that have been suitably open
+def gen_open(file_names):
+    for name in file_names:
+        try:
+            if name.endswith(".gz"):
+                yield gzip.open(name)
+            elif name.endswith(".bz2"):
+                yield bz2.BZ2File(name)
+            else:
+                yield open(name)
+        except IOError as ex:
+            sys.stderr.write("Can't open {0}: {1}\n".format(name, ex.strerror))
+            yield NullFile()
 
-# Example use
+
+# Grep a sequence of lines that match a re pattern
+def gen_grep(pattern, lines):
+    patc = re.compile(pattern)
+    for line in lines:
+        if patc.search(line):
+            yield line
+
+
+# Concatenate multiple generators into a single sequence
+def gen_cat(sources):
+    try:
+        for s in sources:
+            for item in s:
+                yield item
+    except Exception as ex:
+        print 'Exception: ', ex.message
+
+
+def lines_from_dir(file_pattern, dir_name):
+    names = gen_find(file_pattern, dir_name)
+    files = gen_open(names)
+    lines = gen_cat(files)
+    return lines
+
 
 if __name__ == '__main__':
-    file_names = gen_find("*.py", ".")
-    files = gen_open(file_names)
-    for f in files:
-        print f
+    lines = lines_from_dir('*.txt', 'test-traverse-dirs')
+    match_lines = gen_grep(r'some text', lines)
+    for line in match_lines:
+        print line,
 
 
 class TestGFind(unittest.TestCase):

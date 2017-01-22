@@ -9,8 +9,8 @@ tuples = [
 
 colnames = ('col1', 'col2', 'col3')
 
-records = (dict(zip(colnames,t)) for t in tuples)
-orecords = (OrderedDict(zip(colnames,t)) for t in tuples)
+records = (dict(zip(colnames, t)) for t in tuples)
+orecords = (OrderedDict(zip(colnames, t)) for t in tuples)
 
 print 'dict:'
 for record in records:
@@ -22,6 +22,6 @@ for orecord in orecords:
     print json.dumps(orecord)
 
 print
-t = (1,2,3)
-print zip(colnames,t)
-print dict(zip(colnames,t))
+t = (1, 2, 3)
+print zip(colnames, t)
+print dict(zip(colnames, t))

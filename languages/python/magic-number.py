@@ -34,65 +34,69 @@
 # 825
 # 852
 
-def build_for_path(path):
-    l_path = len(path)
-    for pos in range(l_path-1):
-        curr = path[pos]
-        next = path[pos+1]
-        print 'curr:', curr
-        print 'next:', next
-        for value in valid_values(curr, next, l_path-1):
-           print value
-            
-	    
-def valid_values(curr, next, n_len):
-    values = []
-    value_base = next - curr
-    if value_base < 0:
-        value_base = value_base + n_len
-    print 'value_base:', value_base
-    val = value_base
-    while val <= 9:
-        if val in seen_values:
-            continue
-        values.append(val)
-        seen_values.append(val)
-        val += n_len
-    
-    return values
+import unittest
 
 
-# min, max = raw_input().split()
-#l_min = len(min)
-#l_max = len(max)
-l_min = 2
+def is_valid(in_str):
 
-res = [0] * l_min
-seen_values = []
-paths = [ [0,1,0] ]
-for path in paths:
-    build_for_path(path)
+    # print 'in_str:', in_str
+
+    if len(set(in_str)) != len(in_str):
+        return False
+
+    # Don't add 0 since we always visit it.
+    visited = []
+    str_len = len(in_str)
+    rem = str_len
+    pos = 0
+
+    while True:
+        steps = int(in_str[pos])
+        pos += steps
+        if pos >= str_len:
+            pos %= str_len
+        rem -= 1
+        # print 'pos:', pos
+        # print 'rem:', rem
+        if pos in visited:
+            return False
+
+        if rem == 0:
+            return True
+
+        visited.append(pos)
+        # print
 
 
-#path2 = [0,2,1,0]
-# 0,1,0
-# 0,1,2,0 0,2,1,0
+class TestIsValid(unittest.TestCase):
 
-# 0,1,2,3,0 0,1,3,2,0
-# 0,2,1,3,0 0,2,3,1,0
-# 0,3,1,2 0 0,3,2,1,0
+    def test_invalid1(self):
+        val = '111'
+        self.assertFalse(is_valid(val))
 
-#for pos in range (l_min):
-    #next = path1[pos+1]
-    #print curr, next
-    #val = next - curr
-    #if val < 0:
-    #    val += l_min
-    #while val in seen:
-    #    val += l_min
-    #print 'val:',val
-    #res[curr] = val
-    #seen_val.append(val)
+    def test_invalid2(self):
+        val = '141'
+        self.assertFalse(is_valid(val))
 
-#print res
+    def test_invalid3(self):
+        val = '104'
+        self.assertFalse(is_valid(val))
 
+    def test_valid1(self):
+        val = '147'
+        self.assertTrue(is_valid(val))
+
+    def test_valid2(self):
+        val = '258'
+        self.assertTrue(is_valid(val))
+
+if __name__ == '__main__':
+    min = 100
+    max = 1000
+    magic_numbers = []
+
+    for i in range(min, max):
+        if is_valid(str(i)):
+            magic_numbers.append(i)
+
+    print magic_numbers

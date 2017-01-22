@@ -1,7 +1,7 @@
 import heapq
 
 
-## {{{ http://code.activestate.com/recipes/577086/ (r1)
+# {{{ http://code.activestate.com/recipes/577086/ (r1)
 def heap_sort(alist):
     def heapify(a):
         start = (len(a) - 2) / 2

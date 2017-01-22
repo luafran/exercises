@@ -9,3 +9,4 @@ tags
 algorithms/other/tomohiko-sakamoto-dow
 c-sockets/echo-client
 c-sockets/echo-server
+languages/python/test-traverse-dirs/file_without_permissions.txt

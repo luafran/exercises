@@ -344,6 +344,7 @@ def test1():
     print g
     traverse(g.get_vertex('santa cruz'))
 
+
 def test2():
     g = Graph()
     g.add_edge('A', 'B', )

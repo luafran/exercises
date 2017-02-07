@@ -1,4 +1,5 @@
 import sys
+import unittest
 
 
 def merge_sort2(alist):
@@ -38,6 +39,7 @@ def merge_sort2(alist):
 
 
 def merge_sort(x):
+    print('merge_sort: {0}'.format(x))
     if len(x) <= 1:
         return x
 
@@ -54,6 +56,7 @@ def merge_sort(x):
 
 
 def merge(left, right):
+    print('merging: {0}, {1}'.format(left, right))
     result = list()
     # assign the element of the sublists to 'result' variable until there is no element to merge.
     while len(left) > 0 or len(right) > 0:
@@ -75,6 +78,27 @@ def merge(left, right):
     return result
 
 
+class TestMergeSort(unittest.TestCase):
+    def setUp(self):
+        self.merge_sort = merge_sort
+
+    def test_empty_list(self):
+        print('#' * 20)
+        self.assertEqual([], self.merge_sort([]))
+
+    def test_one_element_list(self):
+        print('#' * 20)
+        self.assertEqual([3], self.merge_sort([3]))
+
+    def test_two_element_list(self):
+        print('#' * 20)
+        self.assertEqual([20, 27], self.merge_sort([27, 20]))
+
+    def test_several_elements_list_1(self):
+        print('#' * 20)
+        self.assertEqual([2, 5, 7, 11, 12, 13, 15, 20, 27, 30],
+                         self.merge_sort([27, 20, 15, 12, 13, 11, 30, 5, 7, 2]))
+
 if __name__ == "__main__":
     list_to_sort = map(int, sys.argv[1:])
     print "about to sort %s" % list_to_sort
@@ -82,5 +106,5 @@ if __name__ == "__main__":
     res = merge_sort(list_to_sort)
     print res
 
-    #merge_sort2(list_to_sort)
-    #print list_to_sort
+    # merge_sort2(list_to_sort)
+    # print list_to_sort

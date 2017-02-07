@@ -69,9 +69,9 @@ def has_cycle(head):
 
     cycle = False
     while head is not None:
-        print 'seen:', seen
-        print 'head:', head
-        print 'head.item', head.item
+        print('seen:', seen)
+        print('head:', head)
+        print('head.item', head.item)
 
         if head in seen:
             cycle = True
@@ -79,7 +79,7 @@ def has_cycle(head):
         seen.append(head)
         head = head.next
 
-    print '#' * 10
+    print('#' * 10)
     return cycle
 
 
@@ -125,7 +125,7 @@ class TestUnorderedList(unittest.TestCase):
         a_list.add('item3')
 
         for node in a_list:
-            print node.item
+            print(node.item)
 
     def test_contains(self):
         a_list = UnorderedList()

@@ -5,21 +5,21 @@ class BinarySearchTree(object):
     def __init__(self):
         self.root = None
 
-    def put(self, key, value):
+    def insert(self, key, value):
         if self.root:
-            self._put(key, value, self.root)
+            self._insert(key, value, self.root)
         else:
             self.root = BinarySearchTreeNode(key, value, True)
 
-    def _put(self, key, value, current_node):
+    def _insert(self, key, value, current_node):
         if key < current_node.key:
             if current_node.left:
-                self._put(key, value, current_node.left)
+                self._insert(key, value, current_node.left)
             else:
                 current_node.left = BinarySearchTreeNode(key, value)
         else:
             if current_node.right:
-                self._put(key, value, current_node.right)
+                self._insert(key, value, current_node.right)
             else:
                 current_node.right = BinarySearchTreeNode(key, value)
 
@@ -100,6 +100,7 @@ class BinarySearchTree(object):
 class BinarySearchTreeNode(object):
     def __init__(self, key, value, is_root=False):
         self.is_root = is_root
+        self.parent = None
         self.left = None
         self.right = None
         self.key = key
@@ -146,41 +147,41 @@ class BinarySearchTreeNode(object):
 
 if __name__ == '__main__':
     tree = BinarySearchTree()
-    tree.put('F', '1')
-    tree.put('B', '2')
-    tree.put('G', '3')
-    tree.put('A', '4')
-    tree.put('D', '5')
-    tree.put('I', '6')
-    tree.put('C', '7')
-    tree.put('E', '8')
-    tree.put('H', '9')
+    tree.insert('F', '1')
+    tree.insert('B', '2')
+    tree.insert('G', '3')
+    tree.insert('A', '4')
+    tree.insert('D', '5')
+    tree.insert('I', '6')
+    tree.insert('C', '7')
+    tree.insert('E', '8')
+    tree.insert('H', '9')
 
     tree.print_tree(1)
 
     key = 'I'
-    print 'get({0})'.format(key)
+    print('get({0})'.format(key))
     value = tree.get(key)
-    print 'value:', value
+    print('value:', value)
 
     def f(node):
         print node.key,
 
-    print 'apply preorder'
+    print('apply preorder')
     tree.apply_preorder(f)
 
-    print
-    print 'apply inorder'
+    print()
+    print('apply inorder')
     tree.apply_inorder(f)
 
-    print
-    print 'apply postorder'
+    print()
+    print('apply postorder')
     tree.apply_postorder(f)
 
-    print
-    print 'apply levelorder'
+    print()
+    print('apply levelorder')
     tree.apply_levelorder(f)
 
-    print
+    print()
     for n in tree.root:
-        print n
+        print(n)

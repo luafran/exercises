@@ -29,11 +29,11 @@ def heap_sort(alist):
         end -= 1
 
 
-def heap_sort_2(alist):
-    heap = list(alist)
+def heap_sort_2(a_list):
+    heap = list(a_list)
     heapq.heapify(heap)
-    for i in range(len(alist)):
-        alist[i] = heapq.heappop(heap)
+    for i in range(len(a_list)):
+        a_list[i] = heapq.heappop(heap)
 
 if __name__ == '__main__':
     list1 = [13, 14, 94, 33, 82, 25, 59, 94, 65, 23, 45, 27, 73, 25, 39, 10]

@@ -3,6 +3,7 @@ from collections import deque
 
 g_parent = []
 
+
 # Implementation using queue
 def bfs1(adj, start):
 
@@ -78,19 +79,33 @@ def dfs(adj):
     print 'topological_sort:', topological_sort
 
 
-adj_1 = defaultdict(dict)
-adj_1['A']['B'] = 3
-adj_1['A']['C'] = 5
-adj_1['B']['C'] = 1
-adj_1['B']['D'] = 4
-adj_1['B']['E'] = 2
-adj_1['E']['C'] = 3
+def dfs_stack(adj):
+    parent = {}
+    stack = []
+    for start in adj:
+        stack.append(start)
+        while stack:
+            v = stack.pop()
+            if v not in parent:
+                parent[v]
 
-print 'bfs1(adj_1, A)'
-bfs1(adj_1, 'A')
+
+# https://en.wikipedia.org/wiki/Tree_traversal
+adj_1 = defaultdict(dict)
+adj_1['F']['B'] = 1
+adj_1['F']['G'] = 1
+adj_1['B']['A'] = 1
+adj_1['B']['D'] = 1
+adj_1['D']['C'] = 1
+adj_1['D']['E'] = 1
+adj_1['G']['I'] = 1
+adj_1['I']['H'] = 1
+
+print 'bfs1(adj_1, F)'
+bfs1(adj_1, 'F')
 print
-print 'bfs2(adj_1, A)'
-bfs2(adj_1, 'A')
+print 'bfs2(adj_1, F)'
+bfs2(adj_1, 'F')
 print
 
 print 'dfs(adj_1)'

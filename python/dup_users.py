@@ -10,9 +10,9 @@ filename = sys.argv[1]
 users = defaultdict(list)
 
 f = open(filename)
-#for line in open(filename):
+# for line in open(filename):
 for line in f:
-    #print line,
+    # print line,
     fields = line.split(':')
     user = fields[0].strip()
     uid = fields[2].strip()

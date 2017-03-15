@@ -1,187 +1,321 @@
+import unittest
 from collections import deque
 
 
-class BinarySearchTree(object):
-    def __init__(self):
-        self.root = None
+class BstNode:
+    def __init__(self, value, parent=None):
+        self.parent = parent
+        self.left = None
+        self.right = None
+        self.value = value
 
-    def insert(self, key, value):
-        if self.root:
-            self._insert(key, value, self.root)
-        else:
-            self.root = BinarySearchTreeNode(key, value, True)
-
-    def _insert(self, key, value, current_node):
-        if key < current_node.key:
-            if current_node.left:
-                self._insert(key, value, current_node.left)
+    def insert(self, value):
+        if value < self.value:
+            if not self.left:
+                self.left = BstNode(value, self)
             else:
-                current_node.left = BinarySearchTreeNode(key, value)
-        else:
-            if current_node.right:
-                self._insert(key, value, current_node.right)
+                self.left.insert(value)
+        elif value > self.value:
+            if not self.right:
+                self.right = BstNode(value, self)
             else:
-                current_node.right = BinarySearchTreeNode(key, value)
+                self.right.insert(value)
+        else:
+            raise ValueError('Duplicated key')
 
-    def get(self, key):
-        if self.root:
-            res = self._get(key, self.root)
-            if res:
-                return res.value
+    def get(self, value):
+        if value == self.value:
+            return self
+        elif value < self.value:
+            if self.left:
+                return self.left.get(value)
             else:
                 return None
         else:
-            return None
+            if self.right:
+                return self.right.get(value)
+            else:
+                return None
 
-    def _get(self, key, current_node):
-        if not current_node:
-            return None
-        elif current_node.key == key:
-            return current_node
-        elif key < current_node.key:
-            return self._get(key, current_node.left)
+    def delete(self, value):
+
+        # Incomplete!
+        node_to_remove = self.get(value)
+
+        if not (node_to_remove.left or node_to_remove.right):
+            # is a leaf
+            if node_to_remove == node_to_remove.parent.left:
+                node_to_remove.parent.left = None
+            else:
+                node_to_remove.parent.right = None
+
+    def find_min(self):
+        current = self
+        while current.left:
+            current = current.left
+        return current
+
+    def find_max(self):
+        current = self
+        while current.right:
+            current = current.right
+        return current
+
+    def contains(self, value):
+        if value == self.value:
+            return True
+        elif value < self.value:
+            if self.left:
+                return self.left.contains(value)
+            else:
+                return False
         else:
-            return self._get(key, current_node.right)
+            if self.right:
+                return self.right.contains(value)
+            else:
+                return False
 
-    def apply_preorder(self, func):
-        if self.root:
-            self._apply_preorder(self.root, func)
+    def apply_preorder(self, f):
 
-    def _apply_preorder(self, current_node, func):
-        if current_node is None:
-            return
-        func(current_node)
-        self._apply_preorder(current_node.left, func)
-        self._apply_preorder(current_node.right, func)
+        f(self)
+        if self.left:
+            self.left.apply_preorder(f)
+        if self.right:
+            self.right.apply_preorder(f)
 
-    def apply_inorder(self, func):
-        if self.root:
-            self._apply_inorder(self.root, func)
+    def apply_preorder2(self, f):
+        stack = []
+        node = self
+        while stack or node is not None:
+            if node:
+                f(node)
+                if node.right:
+                    stack.append(node.right)
+                node = node.left
+            else:
+                node = stack.pop()
 
-    def _apply_inorder(self, current_node, func):
-        if current_node is None:
-            return
-        self._apply_inorder(current_node.left, func)
-        func(current_node)
-        self._apply_inorder(current_node.right, func)
+    def apply_inorder(self, f):
+        if self.left:
+            self.left.apply_inorder(f)
+        f(self)
+        if self.right:
+            self.right.apply_inorder(f)
 
-    def apply_postorder(self, func):
-        if self.root:
-            self._apply_postorder(self.root, func)
+    def apply_inorder2(self, f):
+        stack = []
+        node = self
+        while stack or node is not None:
+            if node:
+                stack.append(node)
+                node = node.left
+            else:
+                node = stack.pop()
+                f(node)
+                node = node.right
 
-    def _apply_postorder(self, current_node, func):
-        if current_node is None:
-            return
-        self._apply_postorder(current_node.left, func)
-        self._apply_postorder(current_node.right, func)
-        func(current_node)
+    def apply_postorder(self, f):
+        if self.left:
+            self.left.apply_postorder(f)
+        if self.right:
+            self.right.apply_postorder(f)
+        f(self)
 
-    def apply_levelorder(self, func):
+    def apply_postorder2(self, f):
+        stack = []
+        last_visited = None
+        node = self
+        while stack or node is not None:
+            if node:
+                stack.append(node)
+                node = node.left
+            else:
+                peek_node = stack[len(stack)-1]
+                if peek_node.right and last_visited is not peek_node.right:
+                    node = peek_node.right
+                else:
+                    f(peek_node)
+                    last_visited = stack.pop()
+
+    def apply_levelorder(self, f):
         q = deque()
-        q.appendleft(self.root)
+        q.appendleft(self)
+
         while len(q) > 0:
             node = q.pop()
-            func(node)
+            f(node)
             if node.left:
                 q.appendleft(node.left)
             if node.right:
                 q.appendleft(node.right)
 
-    def __getitem__(self, key):
-        return self.get(key)
+    def apply_levelorder2(self, f):
 
-    def print_tree(self, indent):
-        if self.root is None:
-            print "Empty"
+        order = []
+        parent = {self.value: None}
+        level = {self: 0}
+
+        frontier = [self]
+
+        next_level = 1
+        while frontier:
+            next_frontier = []
+            for node in frontier:
+                f(node)
+
+                if node.left:
+                    level[node.left.value] = next_level
+                    parent[node.left.value] = node.value
+                    next_frontier.append(node.left)
+
+                if node.right:
+                    level[node.right.value] = next_level
+                    parent[node.right.value] = node.value
+                    next_frontier.append(node.right)
+
+            frontier = next_frontier
+            next_level += 1
+
+        print 'levels:', next_level-1
+        print 'order:', order
+        print 'parent:', parent
+        print 'level:', level
+
+    def __str__(self):
+        return 'value: {0}, parent: {1}'.format(self.value, self.parent.value if self.parent else None)
+
+
+def tree_clone(original_root):
+
+    if not original_root:
+        return None
+
+    new_root = BstNode(original_root.value)
+    clone = new_root
+
+    while original_root:
+        if original_root.left and not clone.left:
+            clone.left = BstNode(original_root.left.value, clone)
+            original_root = original_root.left
+            clone = clone.left
+        elif original_root.right and not clone.right:
+            clone.right = BstNode(original_root.right.value, clone)
+            original_root = original_root.right
+            clone = clone.right
         else:
-            self.root.print_tree(indent)
+            original_root = original_root.parent
+            clone = clone.parent
+
+    return new_root
 
 
-class BinarySearchTreeNode(object):
-    def __init__(self, key, value, is_root=False):
-        self.is_root = is_root
-        self.parent = None
-        self.left = None
-        self.right = None
-        self.key = key
-        self.value = value
+class TestTree(unittest.TestCase):
 
-    def print_tree(self, indent):
-        if self.is_root:
-            print "root"
+    def setUp(self):
 
-        for i in range(indent):
-            print " ",
-        print "%s: %s" % (self.key, self.value)
+        # Tree from wikipedia
+        # https://en.wikipedia.org/wiki/Tree_traversal
+        self.tree = BstNode('F')
+        self.tree.insert('B')
+        self.tree.insert('A')
+        self.tree.insert('D')
+        self.tree.insert('C')
+        self.tree.insert('E')
+        self.tree.insert('G')
+        self.tree.insert('I')
+        self.tree.insert('H')
 
-        for i in range(indent):
-            print " ",
-        # print "left"
-        if self.left:
-            self.left.print_tree(indent + 1)
-        else:
-            for i in range(indent + 1):
-                print " ",
-            print "None"
+    def test_insert(self):
 
-        for i in range(indent):
-            print " ",
-        # print "right"
-        if self.right:
-            self.right.print_tree(indent + 1)
-        else:
-            for i in range(indent + 1):
-                print " ",
-            print "None"
+        tree = self.tree
+        self.assertTrue(tree.contains('A'))
+        self.assertTrue(tree.contains('B'))
+        self.assertTrue(tree.contains('C'))
+        self.assertTrue(tree.contains('D'))
+        self.assertTrue(tree.contains('E'))
+        self.assertTrue(tree.contains('F'))
+        self.assertTrue(tree.contains('G'))
+        self.assertTrue(tree.contains('H'))
+        self.assertTrue(tree.contains('I'))
+        self.assertFalse(tree.contains('J'))
 
-    def __iter__(self):
-        if self:
-            if self.left:
-                for elem in self.left:
-                    yield elem
-            yield self.key
-            if self.right:
-                for elem in self.right:
-                    yield elem
+    def test_insert_duplicates(self):
+        tree = BstNode('F')
+        self.assertTrue(tree.contains('F'))
+        self.assertRaises(ValueError, tree.insert, 'F')
 
+    def test_get(self):
 
-if __name__ == '__main__':
-    tree = BinarySearchTree()
-    tree.insert('F', '1')
-    tree.insert('B', '2')
-    tree.insert('G', '3')
-    tree.insert('A', '4')
-    tree.insert('D', '5')
-    tree.insert('I', '6')
-    tree.insert('C', '7')
-    tree.insert('E', '8')
-    tree.insert('H', '9')
+        node = self.tree.get('D')
+        self.assertEqual(node.value, 'D')
+        self.assertEqual(node.parent.value, 'B')
+        self.assertEqual(node.left.value, 'C')
+        self.assertEqual(node.right.value, 'E')
 
-    tree.print_tree(1)
+    def test_find_min(self):
 
-    key = 'I'
-    print('get({0})'.format(key))
-    value = tree.get(key)
-    print('value:', value)
+        self.assertEqual(self.tree.find_min().value, 'A')
 
-    def f(node):
-        print node.key,
+    def test_find_max(self):
+        self.assertEqual(self.tree.find_max().value, 'I')
 
-    print('apply preorder')
-    tree.apply_preorder(f)
+    def test_apply(self):
 
-    print()
-    print('apply inorder')
-    tree.apply_inorder(f)
+        tree = self.tree
 
-    print()
-    print('apply postorder')
-    tree.apply_postorder(f)
+        def f(node):
+            print node
 
-    print()
-    print('apply levelorder')
-    tree.apply_levelorder(f)
+        print 'preorder'
+        tree.apply_preorder(f)
+        print
+        tree.apply_preorder2(f)
+        print
+        print 'inorder'
+        tree.apply_inorder(f)
+        print
+        tree.apply_inorder2(f)
+        print
+        print 'postorder'
+        tree.apply_postorder(f)
+        print
+        tree.apply_postorder2(f)
+        print
+        print 'levelorder'
+        tree.apply_levelorder(f)
+        print
+        tree.apply_levelorder2(f)
 
-    print()
-    for n in tree.root:
-        print(n)
+    def test_delete(self):
+        tree = BstNode('F')
+        tree.insert('B')
+        tree.insert('A')
+        tree.insert('D')
+        tree.insert('C')
+        tree.insert('E')
+        tree.insert('G')
+        tree.insert('I')
+        tree.insert('H')
+
+        # Node with no children
+        self.assertTrue(tree.contains('H'))
+        tree.delete('H')
+        self.assertFalse(tree.contains('H'))
+
+        # Node with one child
+        self.assertTrue(tree.contains('G'))
+        tree.delete('G')
+        self.assertFalse(tree.contains('G'))
+
+    def test_clone(self):
+        print
+        tree = self.tree
+        tree2 = tree_clone(tree)
+
+        def f(node):
+            print node
+
+        print 'original inorder'
+        tree.apply_inorder(f)
+        print 'cloned inorder'
+        tree2.apply_inorder(f)

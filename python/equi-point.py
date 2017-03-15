@@ -16,13 +16,12 @@
 #   A[6] =  2
 #   A[7] =  1
 # P = 1 is an equilibrium index of this array, because:
-#
 # A[0] = -1 = A[2] + A[3] + A[4] + A[5] + A[6] + A[7]
+#
 # P = 3 is an equilibrium index of this array, because:
-#
 # A[0] + A[1] + A[2] = -2 = A[4] + A[5] + A[6] + A[7]
-# P = 7 is also an equilibrium index, because:
 #
+# P = 7 is also an equilibrium index, because:
 # A[0] + A[1] + A[2] + A[3] + A[4] + A[5] + A[6] = 0
 # and there are no elements with indices greater than 7.
 #

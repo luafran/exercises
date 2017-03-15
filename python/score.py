@@ -1,28 +1,6 @@
 import unittest
 
 
-def total_score(blocks, n):
-    score = []
-    for symbol in blocks:
-        print symbol
-        if isinstance(symbol, int):
-            score.append(symbol)
-        elif isinstance(symbol, str):
-            if symbol == 'Z':
-                score.pop()
-            elif symbol == 'X':
-                last = score[len(score)-1]
-                score.append(last*2)
-            elif symbol == '+':
-                last2 = score[len(score) - 2]
-                last1 = score[len(score) - 1]
-                score.append(last1+last2)
-        print score
-    result = sum(score)
-
-    return result
-
-
 def is_number(s):
     try:
         int(s)
@@ -31,7 +9,7 @@ def is_number(s):
         return False
 
 
-def totalScore(blocks, n):
+def total_score(blocks, n):
 
     scores = []
     for symbol in blocks:
@@ -65,7 +43,7 @@ class TestTotalScore(unittest.TestCase):
         blocks = ['5', '-2', '4', 'Z', 'X', '9', '+', '+']
         n = 8
 
-        result = totalScore(blocks, n)
+        result = total_score(blocks, n)
 
         self.assertEqual(result, 27)
 
@@ -73,7 +51,7 @@ class TestTotalScore(unittest.TestCase):
         blocks = ['1', '2', '+', 'Z']
         n = 4
 
-        result = totalScore(blocks, n)
+        result = total_score(blocks, n)
 
         self.assertEqual(result, 3)
 
@@ -81,7 +59,7 @@ class TestTotalScore(unittest.TestCase):
         blocks = ['Z', '2', '+', 'Z']
         n = 4
 
-        result = totalScore(blocks, n)
+        result = total_score(blocks, n)
 
         self.assertEqual(result, 2)
 
@@ -89,6 +67,6 @@ class TestTotalScore(unittest.TestCase):
         blocks = ['+', '2', '+', 'Z']
         n = 4
 
-        result = totalScore(blocks, n)
+        result = total_score(blocks, n)
 
         self.assertEqual(result, 2)

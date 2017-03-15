@@ -1,9 +1,11 @@
+import unittest
 import os
+import pwd
+import grp
 import fnmatch
 import gzip, bz2
 import re
 import sys
-import unittest
 import argparse
 
 # parser = argparse.ArgumentParser(description='grep and find')
@@ -38,11 +40,23 @@ class NullFile:
 
 
 # A function that generates files that match a given filename pattern
-def gen_find(file_pattern, top):
+def gen_find_files(file_pattern, top):
+    top_absolute = os.path.abspath(top)
     try:
-        for path, dir_list, file_list in os.walk(top):
+        for path, dir_list, file_list in os.walk(top_absolute):
             for file_name in fnmatch.filter(file_list, file_pattern):
                 yield os.path.join(path, file_name)
+    except Exception as ex:
+        print 'Exception in find: ' + ex.message
+
+
+# A function that generates dirs that match a given filename pattern
+def gen_find_dirs(file_pattern, top):
+    top_absolute = os.path.abspath(top)
+    try:
+        for path, dir_list, file_list in os.walk(top_absolute):
+            for dir_name in fnmatch.filter(dir_list, file_pattern):
+                yield os.path.join(path, dir_name)
     except Exception as ex:
         print 'Exception in find: ' + ex.message
 
@@ -82,10 +96,28 @@ def gen_cat(sources):
 
 
 def lines_from_dir(file_pattern, dir_name):
-    names = gen_find(file_pattern, dir_name)
+    names = gen_find_files(file_pattern, dir_name)
     files = gen_open(names)
     lines = gen_cat(files)
     return lines
+
+
+class TestGenerators(unittest.TestCase):
+
+    def test_test1(self):
+        # file_names = gen_find_files('*.txt', '.')
+        file_names = gen_find_dirs('dir*', '.')
+        for file_name in file_names:
+            print file_name,
+            stat_info = os.stat(file_name)
+            mode = stat_info.st_mode
+            print oct(mode),
+            uid = stat_info.st_uid
+            gid = stat_info.st_gid
+            user = pwd.getpwuid(uid)[0]
+            group = grp.getgrgid(gid)[0]
+            print user, group
+            # print uid, gid
 
 
 if __name__ == '__main__':
@@ -94,23 +126,3 @@ if __name__ == '__main__':
     for line in match_lines:
         print line,
 
-
-class TestGFind(unittest.TestCase):
-
-    def search_substring_in_filename_no_pattern(self):
-
-        in_dir = '.'
-        substring = 'gfind'
-        gfind(in_dir, substring=substring)
-
-    def search_substring_in_filename_pattern(self):
-        in_dir = '.'
-        substring = 'gfind'
-        pattern = 'gfind'
-        gfind(in_dir, substring=substring, pattern=pattern)
-
-    def test_search_substring_in_filename_pattern_case(self):
-        in_dir = '.'
-        substring = 'gfind'
-        pattern = 'GFIND'
-        gfind(in_dir, substring=substring, pattern=pattern)

@@ -11,9 +11,10 @@ class MinHeap:
             self.build_heap(a_list)
 
     def build_heap(self, a_list):
-        i = len(a_list) // 2  # don't have to process leaves
         self.size = len(a_list)
         self.heap = [0] + a_list[:]
+
+        i = len(a_list) // 2  # don't have to process leaves
         while i > 0:
             self._swap_down(i)
             i -= 1

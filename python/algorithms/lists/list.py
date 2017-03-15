@@ -7,6 +7,18 @@ class Node:
         self.next = None
 
 
+def list_search(head, item):
+    current = head
+    found = False
+    while current is not None and not found:
+        if current.item == item:
+            found = True
+        else:
+            current = current.next
+
+    return found
+
+
 class UnorderedList:
 
     def __init__(self):
@@ -65,7 +77,7 @@ class UnorderedList:
 
 
 def has_cycle(head):
-    seen = list()
+    seen = []
 
     cycle = False
     while head is not None:
@@ -81,6 +93,20 @@ def has_cycle(head):
 
     print('#' * 10)
     return cycle
+
+
+def merge(list1, list2):
+    if not list1:
+        return list2
+    if not list2:
+        return list1
+
+    if list1.head.item < list2.head.item:
+        list1.head.next = merge(list1.head.next, list2.head)
+        return list1
+    else:
+        list2.head.next = merge(list2.head.next, list1.head)
+        return list2
 
 
 class TestUnorderedList(unittest.TestCase):
@@ -154,3 +180,18 @@ class TestUnorderedList(unittest.TestCase):
         node3.next = node2
 
         self.assertTrue(has_cycle(node1))
+
+    def test_merge(self):
+        a_list1 = UnorderedList()
+        a_list1.add('item11')
+        a_list1.add('item21')
+        a_list1.add('item31')
+
+        a_list2 = UnorderedList()
+        a_list2.add('item12')
+        a_list2.add('item22')
+        a_list2.add('item32')
+
+        head = merge(a_list1, a_list2)
+        for node in head:
+            print node.item

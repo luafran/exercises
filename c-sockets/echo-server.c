@@ -5,14 +5,16 @@
 #include <unistd.h>
 #include <string.h>
 #include <errno.h>
- 
+
+#define BUF_SIZE 1024
+
 int main()
 {
  
-    char str[100];
+    char str[BUF_SIZE];
     int listen_fd, comm_fd;
     int i;
-    int bw;
+    int br, bw;
     struct sockaddr_in servaddr;
     struct linger lo = { 1, 0 };
 
@@ -26,7 +28,7 @@ int main()
     servaddr.sin_port = htons(22000);
  
     bind(listen_fd, (struct sockaddr *) &servaddr, sizeof(servaddr));
- 
+
     listen(listen_fd, 10);
  
     comm_fd = accept(listen_fd, (struct sockaddr*) NULL, NULL);
@@ -37,10 +39,12 @@ int main()
     i = 0;
     while(1)
     {
-        bzero( str, 100);
-        sprintf(str, "message%d", ++i);
+        bzero( str, BUF_SIZE);
+        /*sprintf(str, "message%d", ++i);*/
+        br = read(comm_fd, str, BUF_SIZE);
+        printf("[%d] bytes read = %d\n", i, br);
  
-        /*printf("Echoing back - %s",str);*/
+        printf("Received: %s\n", str);
         bw = write(comm_fd, str, strlen(str)+1);
         if (bw < 0)
         {
@@ -53,5 +57,6 @@ int main()
             printf("[%d] bytes written = %d\n", i, bw);
         }
         sleep(4);
+        i++;
     }
 }

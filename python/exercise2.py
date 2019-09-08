@@ -21,26 +21,26 @@ class Stack:
         return len(self.items)
 
 
-def divide_by_base(decNumber):
+def divide_by_base(dec_number):
     remstack = Stack()
 
-    print decNumber
-    while abs(decNumber) > 0:
-        rem = decNumber % 2
-        print 'rem:', rem
+    print(dec_number)
+    while abs(dec_number) > 0:
+        rem = dec_number % 2
+        print('rem:', rem)
         remstack.push(rem)
-        decNumber = decNumber // -2
+        dec_number = dec_number // -2
 
-    binString = ""
+    bin_string = ""
     while not remstack.is_empty():
-        binString = binString + str(remstack.pop())
+        bin_string = bin_string + str(remstack.pop())
 
-    return binString
+    return bin_string
 
 
 x = 0
 for i in range(len(A)):
     x = x + A[i] * pow((-2), i)
 
-print x
-print divide_by_base(-x)
+print(x)
+print(divide_by_base(-x))

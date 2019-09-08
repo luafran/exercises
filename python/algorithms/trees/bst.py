@@ -176,10 +176,10 @@ class BstNode:
             frontier = next_frontier
             next_level += 1
 
-        print 'levels:', next_level-1
-        print 'order:', order
-        print 'parent:', parent
-        print 'level:', level
+        print('levels:', next_level-1)
+        print('order:', order)
+        print('parent:', parent)
+        print('level:', level)
 
     def __str__(self):
         return 'value: {0}, parent: {1}'.format(self.value, self.parent.value if self.parent else None)
@@ -264,26 +264,26 @@ class TestTree(unittest.TestCase):
         tree = self.tree
 
         def f(node):
-            print node
+            print(node)
 
-        print 'preorder'
+        print('preorder')
         tree.apply_preorder(f)
-        print
+        print()
         tree.apply_preorder2(f)
-        print
-        print 'inorder'
+        print()
+        print('inorder')
         tree.apply_inorder(f)
-        print
+        print()
         tree.apply_inorder2(f)
-        print
-        print 'postorder'
+        print()
+        print('postorder')
         tree.apply_postorder(f)
-        print
+        print()
         tree.apply_postorder2(f)
-        print
-        print 'levelorder'
+        print()
+        print('levelorder')
         tree.apply_levelorder(f)
-        print
+        print()
         tree.apply_levelorder2(f)
 
     def test_delete(self):
@@ -308,14 +308,14 @@ class TestTree(unittest.TestCase):
         self.assertFalse(tree.contains('G'))
 
     def test_clone(self):
-        print
+        print()
         tree = self.tree
         tree2 = tree_clone(tree)
 
         def f(node):
-            print node
+            print(node)
 
-        print 'original inorder'
+        print('original inorder')
         tree.apply_inorder(f)
-        print 'cloned inorder'
+        print('cloned inorder')
         tree2.apply_inorder(f)

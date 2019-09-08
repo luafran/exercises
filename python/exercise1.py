@@ -6,14 +6,14 @@ import unittest
 def solution(X, A):
 
     x_total = sum(1 if x == X else 0 for x in A)
-    print 'x_total:', x_total
+    print('x_total:', x_total)
 
     x_before = 0
     non_x_after = len(A) - x_total
-    for i in xrange(len(A) + 1):
-        print 'i:', i
-        print 'x_before:', x_before
-        print 'non_x_after:', non_x_after
+    for i in range(len(A) + 1):
+        print('i:', i)
+        print('x_before:', x_before)
+        print('non_x_after:', non_x_after)
         if x_before == non_x_after:
             return i
         if A[i] == X:
@@ -85,6 +85,7 @@ class TestOne(unittest.TestCase):
         a = [9, 9, 9, 0, 9, 9, 9]
         sol = solution(x, a)
         self.assertEqual(1, sol)
+
 
 if __name__ == '__main__':
     pass

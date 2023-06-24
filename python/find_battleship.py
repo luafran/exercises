@@ -1,139 +1,161 @@
-
-battle_field0 = [
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-]
-
-battle_field1 = [
-    ['X', 'X', 'X', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-]
-
-battle_field2 = [
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', 'X', 'X', 'X', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-]
-
-battle_field3 = [
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', 'X', 'X', 'X'],
-]
-
-battle_field4 = [
-    ['X', '.', '.', '.', '.', '.'],
-    ['X', '.', '.', '.', '.', '.'],
-    ['X', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-]
-
-battle_field5 = [
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', 'X', '.', '.', '.', '.'],
-    ['.', 'X', '.', '.', '.', '.'],
-    ['.', 'X', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-]
-
-battle_field6 = [
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', '.'],
-    ['.', '.', '.', '.', '.', 'X'],
-    ['.', '.', '.', '.', '.', 'X'],
-    ['.', '.', '.', '.', '.', 'X'],
-]
+# Python 3.8
+from typing import List
+from collections import deque
+import unittest
 
 
-def bomb_location(x, y):
-    if battle_field[y][x] == 'X':
-        return True
-    else:
-        return False
+class FindBattleShips:
+    SHIP = 'X'
+    WATER = '.'
+
+    def __init__(self, battle_field: List[List[str]]):
+        self.battle_field = battle_field
+        self.rows_num = len(battle_field)
+        if self.rows_num > 0:
+            self.cols_num = len(battle_field[0])
+        else:
+            self.cols_num = 0
+        # print('rows_num:', self.rows_num, 'cols_num:', self.cols_num)
+
+    def is_valid(self, row, col):
+        return 0 <= row < self.rows_num and 0 <= col < self.cols_num and self.battle_field[row][col] == self.SHIP
+
+    def sink_ship(self, i, j):
+        dir_row = [0, 1, 0, -1]
+        dir_col = [-1, 0, 1, 0]
+
+        ship_coordinates = []
+        stack = deque()
+        stack.appendleft((i, j))
+        while len(stack) > 0:
+            row, col = stack.popleft()
+            # print('processing', row, col)
+            if not self.is_valid(row, col):
+                continue
+
+            # print('sinking:', row, col)
+            ship_coordinates.append([row, col])
+            self.battle_field[row][col] = self.WATER
+
+            for k in range(4):
+                adj_x = row + dir_row[k]
+                adj_y = col + dir_col[k]
+                # print('adding', adj_x, adj_y, 'to stack')
+                stack.appendleft((adj_x, adj_y))
+
+        return ship_coordinates
+
+    def find_battle_ships(self) -> int:
+        ships_found = 0
+        if self.rows_num < 1:
+            return ships_found
+
+        for i in range(self.rows_num):
+            for j in range(self.cols_num):
+                if self.is_valid(i, j):
+                    print('found ship at:', i, j)
+                    ship_coordinates = self.sink_ship(i, j)
+                    print('ship coordinates:', ship_coordinates)
+                    ships_found += 1
+
+        return ships_found
 
 
-def find_battleship(grid_size):
-    # print 'grid_size:', grid_size
-    for y in range(0, grid_size):
-        for x in range(0, grid_size):
-            if bomb_location(x, y):
-                if x+1 < grid_size and bomb_location(x+1, y):
-                    return (x, y), (x+1, y), (x+2, y)
-                else:
-                    return (x, y), (x, y+1), (x, y+2)
-    return None
+class TestsFindBattleShips(unittest.TestCase):
 
+    def test_empty(self):
+        battle_field = []
+        c = FindBattleShips(battle_field)
+        battle_ships = c.find_battle_ships()
+        self.assertEqual(0, battle_ships)
 
-def print_battlefield(battle_field):
-    grid_size = len(battle_field[0])
-    for y in range(0, grid_size):
-        print battle_field[y]
+    def test_no_ship(self):
+        battle_field = [
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+        ]
+        c = FindBattleShips(battle_field)
+        battle_ships = c.find_battle_ships()
+        self.assertEqual(0, battle_ships)
 
+    def test_one_ship_top_left_h(self):
+        battle_field = [
+            ['X', 'X', 'X', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+        ]
+        c = FindBattleShips(battle_field)
+        battle_ships = c.find_battle_ships()
+        self.assertEqual(1, battle_ships)
 
-def test_battlefield(battle_field):
-    grid_size = len(battle_field[0])
-    print 'grid_size =', grid_size
-    for y in range(0, grid_size):
-        for x in range(0, grid_size):
-            print '[x={0},y={1}] {2}'.format(x, y, bomb_location(x, y))
+    def test_one_ship_top_left_v(self):
+        battle_field = [
+            ['X', '.', '.', '.', '.', '.'],
+            ['X', '.', '.', '.', '.', '.'],
+            ['X', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+        ]
+        c = FindBattleShips(battle_field)
+        battle_ships = c.find_battle_ships()
+        self.assertEqual(1, battle_ships)
 
-print 'battle_field0'
-battle_field=battle_field0
-print_battlefield(battle_field)
-location = find_battleship(len(battle_field[0]))
-print 'ship is in:', location
+    def test_one_ship_middle_h(self):
+        battle_field = [
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', 'X', 'X', 'X', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+        ]
+        c = FindBattleShips(battle_field)
+        battle_ships = c.find_battle_ships()
+        self.assertEqual(1, battle_ships)
 
-print 'battle_field1'
-battle_field=battle_field1
-print_battlefield(battle_field)
-location = find_battleship(len(battle_field[0]))
-print 'ship is in:', location
+    def test_one_ship_middle_v(self):
+        battle_field = [
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', 'X', '.', '.', '.', '.'],
+            ['.', 'X', '.', '.', '.', '.'],
+            ['.', 'X', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+        ]
+        c = FindBattleShips(battle_field)
+        battle_ships = c.find_battle_ships()
+        self.assertEqual(1, battle_ships)
 
-print 'battle_field2'
-battle_field=battle_field2
-print_battlefield(battle_field)
-location  = find_battleship(len(battle_field[0]))
-print 'ship is in:', location
+    def test_one_ship_bottom_right_h(self):
+        battle_field = [
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', 'X', 'X', 'X'],
+        ]
+        c = FindBattleShips(battle_field)
+        battle_ships = c.find_battle_ships()
+        self.assertEqual(1, battle_ships)
 
-print 'battle_field3'
-battle_field=battle_field3
-print_battlefield(battle_field)
-location = find_battleship(len(battle_field[0]))
-print 'ship is in:', location
-
-print 'battle_field4'
-battle_field=battle_field4
-print_battlefield(battle_field)
-location = find_battleship(len(battle_field[0]))
-print 'ship is in:', location
-
-print 'battle_field5'
-battle_field=battle_field5
-print_battlefield(battle_field)
-location = find_battleship(len(battle_field[0]))
-print 'ship is in:', location
-
-print 'battle_field6'
-battle_field=battle_field6
-print_battlefield(battle_field)
-location = find_battleship(len(battle_field[0]))
-print 'ship is in:', location
-
+    def test_one_ship_bottom_right_v(self):
+        battle_field = [
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', '.'],
+            ['.', '.', '.', '.', '.', 'X'],
+            ['.', '.', '.', '.', '.', 'X'],
+            ['.', '.', '.', '.', '.', 'X'],
+        ]
+        c = FindBattleShips(battle_field)
+        battle_ships = c.find_battle_ships()
+        self.assertEqual(1, battle_ships)

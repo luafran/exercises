@@ -17,7 +17,6 @@ class Graph:
         # Since dictionaries obey iterator protocol, a graph represented as described here could be handed without
         # modification to an algorithm using dictionary of lists representation.
         self.adj = defaultdict(dict)
-        pass
 
     def add_edge(self, source, dest, weight):
         self.adj[source][dest] = weight
@@ -26,6 +25,18 @@ class Graph:
             # we have to add the vertex even if it has no adjacent vertexes
             self.adj[dest] = {}
 
+    # https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/
+    # See Dijkstra’s shortest path algorithm for Adjacency List using Heap in O(E logV):
+    # For Dijkstra’s algorithm, it is always recommended to use Heap (or priority queue) as the required operations
+    # (extract minimum and decrease key) match with the specialty of the heap (or priority queue).
+    # However, the problem is, that priority_queue doesn't support the decrease key. To resolve this problem,
+    # do not update a key, but insert one more copy of it. So we allow multiple instances of the same vertex in
+    # the priority queue. This approach doesn't require decreasing key operations and has below important properties.
+    # Whenever the distance of a vertex is reduced, we add one more instance of a vertex in priority_queue.
+    # Even if there are multiple instances, we only consider the instance with minimum distance and
+    # ignore other instances.
+    # The time complexity remains O(E * LogV) as there will be at most O(E) vertices in the priority queue and
+    # O(logE) is the same as O(logV)
     def dijkstra(self, start):
         predecessor = {
             start: None
@@ -51,7 +62,7 @@ class Graph:
             for v, weight in self.adj[u].items():
                 print('checking', u, '-', weight, '->', v)
                 print('current dist from {} to {} is {} and dist from {} to {} is {}'.format(start, u, dist[u], start, v, dist[v]))
-                # If there is shorted path to v through u. Relax distance
+                # If there is shorted path to v through u. Relax distance and enqueue to process that node
                 if dist[v] > dist[u] + weight:
                     print('relaxing', v)
                     # update distance of v

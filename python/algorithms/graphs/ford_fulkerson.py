@@ -1,77 +1,86 @@
 import unittest
+from collections import defaultdict
 
 
 class Edge(object):
-    def __init__(self, u, v, capacity, flow=0):
-        self.source = u
-        self.sink = v
+    def __init__(self, source, dest, capacity, flow=0):
+        self.source = source
+        self.dest = dest
         self.capacity = capacity
         self.flow = flow
-
-    def set_flow(self, flow):
-        self.flow = flow
+        self.r_edge = None
 
     def __str__(self):
-        return '{}->{}": "{}/{}'.format(self.source, self.sink, self.flow, self.capacity)
+        return '{}->{}": "{}/{}'.format(self.source, self.dest, self.flow, self.capacity)
 
     def __repr__(self):
-        return '{}->{}": "{}/{}'.format(self.source, self.sink, self.flow, self.capacity)
+        return '{}->{}": "{}/{}'.format(self.source, self.dest, self.flow, self.capacity)
 
 
 class FlowNetwork(object):
     def __init__(self):
-        self.adj = {}
-        self.flow = {}
+        # Graph representation: A vertex can be any object that can be used as an index into a dictionary (hashable).
+        # G is a dictionary, indexed by vertices. For any vertex v,
+        # G[v] is itself a dictionary, indexed by the neighbors of v.
+        # For any edge u->v, G[u][v] could be just the weight/capacity/cost of the edge or a more complex Edge object
+        # Other common representation is G being a dictionary mapping vertices to lists of neighbors,
+        # however dictionaries of edges have many advantages over lists:
+        # they support fast existence tests, and they allow easy modification of the graph by edge
+        # insertion and removal. Such modifications are not needed here but are important in other graph algorithms.
+        # Since dictionaries obey iterator protocol, a graph represented as described here could be handed without
+        # modification to an algorithm using dictionary of lists representation.
+        self.adj = defaultdict(dict)
 
-    def add_edge(self, u, v, capacity=0):
-        if u == v:
-            raise ValueError("u == v")
-        if u not in self.adj:
-            self.adj[u] = []
-        if v not in self.adj:
-            self.adj[v] = []
-        edge = Edge(u, v, capacity)
-        redge = Edge(v, u, 0)
-        edge.redge = redge
-        redge.redge = edge
-        self.adj[u].append(edge)
-        self.adj[v].append(redge)
-        self.flow[edge] = 0
-        self.flow[redge] = 0
+    def add_edge(self, source, dest, capacity=0):
+        if source == dest:
+            raise ValueError("source == sink")
+
+        edge = Edge(source, dest, capacity)
+        r_edge = Edge(dest, source, 0)
+        edge.r_edge = r_edge
+        r_edge.r_edge = edge
+        self.adj[source][dest] = edge
+        self.adj[dest][source] = r_edge
 
     def __str__(self):
         result = []
         print('Graph:')
         for vertex, neighbors in self.adj.items():
-            [print(edge) for edge in neighbors if edge.capacity > 0]
+            # [print(edge) for edge in neighbors.values() if edge.capacity > 0]
+            [print(edge) for edge in neighbors.values()]
         return '\n'.join(result)
 
     def find_augmenting_path(self, source, sink, path):
+        # print('find_augmenting_path({}, {}, {})'.format(source, sink, path))
         if source == sink:
             return path
-        for edge in self.adj[source]:
-            residual = edge.capacity - self.flow[edge]
-            # print('edge', edge, '{}/{}'.format(self.flow[edge], edge.capacity), 'residual:', residual)
+        for edge in self.adj[source].values():
+            # reverse edges may have a negative flow (always equal to forward edge current flow) and
+            # always 0 capacity, so residual could be positive for them.
+            residual = edge.capacity - edge.flow
+            # print('edge', edge, 'residual:', residual)
             if residual > 0 and not (edge, residual) in path:
                 # print('adding', (edge, residual), 'to path')
-                result = self.find_augmenting_path(edge.sink, sink, path + [(edge, residual)])
-                if result is not None:
+                result = self.find_augmenting_path(edge.dest, sink, path + [(edge, residual)])
+                # if this is a result from a call that got a path return that
+                if result:
                     return result
+        return None
 
     def max_flow(self, source, sink):
         path = self.find_augmenting_path(source, sink, [])
-        while path is not None:
+        while path:
             flow = min(residual for edge, residual in path)
-            print('path:', path, 'flow:', flow)
+            print('#### path:', path, 'can take flow:', flow)
             for edge, residual in path:
                 edge.flow += flow
-                edge.redge.flow -= flow
-                self.flow[edge] += flow
-                self.flow[edge.redge] -= flow
+                # If in the path found using residual network edge is a reverse edge,
+                # then edge.redge is the original edge and here we are "cancelling" that flow
+                edge.r_edge.flow -= flow
             print(self)
             path = self.find_augmenting_path(source, sink, [])
-        out_flow_at_s = sum(self.flow[edge] for edge in self.adj[source])
-        in_flow_at_t = sum(self.flow[edge] for edge in self.adj[sink])
+        out_flow_at_s = sum(edge.flow for edge in self.adj[source].values())
+        in_flow_at_t = sum(edge.flow for edge in self.adj[sink].values())
         print('out flow at s:', out_flow_at_s)
         print('in flow at t:', in_flow_at_t)
         return out_flow_at_s
@@ -91,7 +100,7 @@ class TestFlowNetwork(unittest.TestCase):
         g.add_edge('d', 'e', 2)
         g.add_edge('e', 't', 3)
         print(g)
-        print(g.max_flow('s', 't'))
+        g.max_flow('s', 't')
 
     def test_02(self):
         g = FlowNetwork()

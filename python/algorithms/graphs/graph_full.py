@@ -20,12 +20,12 @@ class Vertex:
 
     def __getitem__(self, key):
         for e in self.edges:
-            if e.sink == key:
+            if e.dest == key:
                 return e.capacity
         return None
 
     def add_edge(self, edge):
-        self.edges[edge.sink] = edge
+        self.edges[edge.dest] = edge
 
     def get_edges(self):
         return self.edges.values()

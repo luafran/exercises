@@ -34,7 +34,7 @@ def bfs1(adj, start):
 
 
 # Implementation using queue
-def bfs2(adj, start):
+def bfs_queue(adj, start):
 
     order = []
     parent = {start: None}
@@ -140,7 +140,7 @@ class TestBFS(unittest.TestCase):
         bfs1(self.adj_1, start='F')
 
     def test_bfs2_adj_1_start_F(self):
-        bfs2(self.adj_1, start='F')
+        bfs_queue(self.adj_1, start='F')
 
     def test_dfs_adj_1_all(self):
         dfs_recursive(self.adj_1)
@@ -152,7 +152,7 @@ class TestBFS(unittest.TestCase):
         bfs1(self.adj_2, '2')
 
     def test_bfs2_adj_2_start_2(self):
-        bfs2(self.adj_2, '2')
+        bfs_queue(self.adj_2, '2')
 
     def test_dfs_adj_2_all(self):
         dfs_recursive(self.adj_2)

@@ -36,6 +36,7 @@ class Graph:
             # we have to add the vertex even if it has no adjacent vertexes
             self.adj[dest] = {}
 
+    # https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/
     def bellman_ford(self, start):
         predecessor = {
             start: None
@@ -61,6 +62,7 @@ class Graph:
                 if dist[v] > dist[u] + weight:
                     # print('relaxing', v)
                     dist[v] = dist[u] + weight
+                    predecessor[v] = u
 
         # Step 3: check for negative-weight cycles. The above step
         # guarantees shortest distances if graph doesn't contain

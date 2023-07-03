@@ -123,16 +123,6 @@ class Graph(object):
     def vertex_count(self):
         return len(self.vert_list)
 
-    def find_path(self, source, sink, path):
-        if source == sink:
-            return path
-        for edge in self.get_edges(source):
-            residual = edge.capacity - self.flow[edge]
-            if residual > 0 and not (edge, residual) in path:
-                result = self.find_path(edge.sink, sink, path + [(edge, residual)])
-                if result is not None:
-                    return result
-
     def __getitem__(self, v):
         # return self.get_vertex(v)
         return self.adj[v]
@@ -142,16 +132,6 @@ class Graph(object):
         for k, v in self.vert_list.items():
             value += str(v) + '\n'
         return value
-
-    def max_flow(self, source, sink):
-        path = self.find_path(source, sink, [])
-        while path is not None:
-            flow = min(res for edge, res in path)
-            for edge, res in path:
-                self.flow[edge] += flow
-                self.flow[edge.redge] -= flow
-            path = self.find_path(source, sink, [])
-        return sum(self.flow[edge] for edge in self.get_edges(source))
 
 
 def bfs2(start):
@@ -176,108 +156,6 @@ def traverse(y):
         print(x.get_id())
         x = x.get_predecessor()
     print(x.get_id())
-
-
-# Dijkstra's algorithm for shortest paths
-# David Eppstein, UC Irvine, 4 April 2002
-
-# G = {'s':{'u':10, 'x':5}, 'u':{'v':1, 'x':2}, 'v':{'y':4}, 'x':{'u':3, 'v':9, 'y':2}, 'y':{'s':7, 'v':6}}
-# The shortest path from s to v is ['s', 'x', 'u', 'v'] and has length 9.
-
-# http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/117228
-from priodict import priorityDictionary
-
-
-def dijkstra(graph, start, end=None):
-    """
-    Find shortest paths from the start vertex to all
-    vertices nearer than or equal to the end.
-
-    The input graph G is assumed to have the following
-    representation: A vertex can be any object that can
-    be used as an index into a dictionary.  G is a
-    dictionary, indexed by vertices.  For any vertex v,
-    G[v] is itself a dictionary, indexed by the neighbors
-    of v.  For any edge v->w, G[v][w] is the length of
-    the edge.  This is related to the representation in
-    <http://www.python.org/doc/essays/graphs.html>
-    where Guido van Rossum suggests representing graphs
-    as dictionaries mapping vertices to lists of neighbors,
-    however dictionaries of edges have many advantages
-    over lists: they can store extra information (here,
-    the lengths), they support fast existence tests,
-    and they allow easy modification of the graph by edge
-    insertion and removal.  Such modifications are not
-    needed here but are important in other graph algorithms.
-    Since dictionaries obey iterator protocol, a graph
-    represented as described here could be handed without
-    modification to an algorithm using Guido's representation.
-
-    Of course, G and G[v] need not be Python dict objects;
-    they can be any other object that obeys dict protocol,
-    for instance a wrapper in which vertices are URLs
-    and a call to G[v] loads the web page and finds its links.
-
-    The output is a pair (D,P) where D[v] is the distance
-    from start to v and P[v] is the predecessor of v along
-    the shortest path from s to v.
-
-    Dijkstra's algorithm is only guaranteed to work correctly
-    when all edge lengths are positive. This code does not
-    verify this property for all edges (only the edges seen
-    before the end vertex is reached), but will correctly
-    compute shortest paths even for some graphs with negative
-    edges, and will raise an exception if it discovers that
-    a negative edge has caused it to make a mistake.
-    """
-
-    final_distances = {}  # dictionary of final distances
-    predecessors = {}  # dictionary of predecessors
-    estimated_distance = priorityDictionary()   # est.dist. of non-final vert.
-    estimated_distance[start] = 0
-
-    # print 'estimated_distance = ', estimated_distance
-    for v in estimated_distance:
-        final_distances[v] = estimated_distance[v]
-        if v == end:
-            break
-
-        for w in graph[v]:
-            # print 'v:', v, 'w:', w
-            vw_length = final_distances[v] + graph[v][w]
-            # print 'vw_length=', vw_length
-            if w in final_distances:
-                if vw_length < final_distances[w]:
-                    raise ValueError("Dijkstra: found better path to already-final vertex")
-            elif w not in estimated_distance or vw_length < estimated_distance[w]:
-                # print 'adding estimated_distance for ', w
-                estimated_distance[w] = vw_length
-                predecessors[w] = v
-
-    return final_distances, predecessors
-
-
-def shortest_path(graph, start, end):
-    """
-    Find a single shortest path from the given start vertex
-    to the given end vertex.
-    The input has the same conventions as Dijkstra().
-    The output is a list of the vertices in order along
-    the shortest path.
-    """
-
-    final_distances, predecessors = dijkstra(graph, start, end)
-    cost = final_distances[end]
-    path = []
-    while 1:
-        path.append(end)
-        if end == start:
-            break
-        end = predecessors[end]
-
-    path.reverse()
-    return path, cost
-
 
 def test1():
     g = Graph()
@@ -327,21 +205,18 @@ def test1():
     g.add_edge('rio negro', 'chubut', 1)
     g.add_edge('chubut', 'santa cruz', 1)
     g.add_edge('santa cruz', 'tierra del fuego', 1)
-    print '#' * 20
-    print g
-    print '#' * 20
-    print 'number of vertex:', g.vertex_count()
-    print '#' * 20
-    print 'path cordoba-salta:'
-    path, cost = shortest_path(g, 'cordoba', 'salta')
-    print path
-    print 'cost =', cost
-    print '#' * 20
-    print g.get_vertex('cordoba').get_edges()
-    print g.get_edges('cordoba')
-    print '#' * 20
+    print('#' * 20)
+    print(g)
+    print('#' * 20)
+    print('number of vertex:', g.vertex_count())
+    print('#' * 20)
+    print('path cordoba-salta:')
+    print('#' * 20)
+    print(g.get_vertex('cordoba').get_edges())
+    print(g.get_edges('cordoba'))
+    print('#' * 20)
     bfs2(g.get_vertex('jujuy'))
-    print g
+    print(g)
     traverse(g.get_vertex('santa cruz'))
 
 
@@ -353,4 +228,3 @@ if __name__ == "__main__":
 
     test1()
     test2()
-    # print g.max_flow('s','t')

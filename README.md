@@ -1,4 +1,4 @@
-excercises
+exercises
 ==========
 
 Exercises
